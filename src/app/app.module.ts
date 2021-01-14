@@ -15,6 +15,7 @@ import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import { PaginaKComponent } from './pagina-k/pagina-k.component';
+import { PaginaLComponent } from './pagina-l/pagina-l.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PaginaKComponent } from './pagina-k/pagina-k.component';
     PaginaHComponent,
     PaginaIComponent,
     PaginaJComponent,
-    PaginaKComponent
+    PaginaKComponent,
+    PaginaLComponent
   ],
   imports: [
     BrowserModule,

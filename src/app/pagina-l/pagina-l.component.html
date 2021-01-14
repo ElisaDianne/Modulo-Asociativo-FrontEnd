@@ -1,0 +1,48 @@
+<form>
+    <div class="principal">
+      <div class="Contenido">
+        <h2 style="padding-left:15px ; text-align: left;background-color: #5d87fa; color: antiquewhite;">L. DATOS DEL ENCUESTADO</h2>
+        <textarea class="observaciones"></textarea>
+        <div class="botones">
+            <button style="background-color: rgba(253, 53, 53, 0.733);">Anterior</button>
+            <button style="background-color: rgba(80, 196, 13, 0.733);">Siguiente</button>
+        </div>        
+      </div>
+      <div class="Definiciones">
+        <h3>Definiciones</h3>
+        <textarea class="def" readonly="readonly"> Definiciones</textarea>
+      </div>
+    </div>
+</form>  
+<style>
+div.principal{
+  width: 90%;
+  padding: 10px;  
+  overflow: hidden;
+} 
+div.Contenido{
+  border: 1px solid #5d87fa;
+  width: 60%;
+  height: 16.5cm;
+  float: left;
+}
+div.Definiciones{
+  border: 1px solid #5d87fa;
+  overflow: hidden;  
+}
+textarea.def{
+  margin: 0 1rem ;
+  height: 15cm;
+  width:90%;
+}
+textarea.observaciones{
+  margin: 1rem ;
+  height: 60%;
+  width:90%;
+}
+.botones {
+  margin-top: 2cm;
+    float: right;
+    flex-direction: row;   
+}
+</style>
