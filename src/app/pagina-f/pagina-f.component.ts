@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-pagina-f',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagina-f.component.scss']
 })
 export class PaginaFComponent implements OnInit {
-
+  ActAgro = new FormControl();
+  disableSelect = new FormControl();
   constructor() { }
 
   ngOnInit(): void {

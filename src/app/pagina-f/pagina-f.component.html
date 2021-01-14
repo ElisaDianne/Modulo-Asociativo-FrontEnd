@@ -1,1 +1,71 @@
-<p>pagina-f works!</p>
+<mat-toolbar color="primary">
+    <div fxLayout="row" fxLayoutAlign="space-around center" >
+        <div fxFlex="20">
+            <img
+            width="40"
+            alt="Angular Logo"
+            src="../../assets/MGSF.png"
+            />
+        </div>
+
+        <div fxFlex="80">
+            <span>F. GESTIÓN Y PARTICIPACIÓN SOCIO ORGANIZATIVA</span>
+        </div>
+    </div>
+</mat-toolbar>
+<div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxFlex="70" >
+
+            <form>
+                <mat-form-field >
+                  <mat-label>1. Seleccione las Principales actividades agroproductivas que realiza la organización</mat-label>
+                  <mat-select [formControl]="ActAgro" multiple>
+                    <mat-select-trigger>
+                      {{ActAgro.value ? ActAgro.value[0] : ''}}
+                      <span *ngIf="ActAgro.value?.length > 1">
+                        (+{{ActAgro.value.length - 1}} {{ActAgro.value?.length === 2 ? 'other' : 'others'}})
+                      </span>
+                    </mat-select-trigger>
+                    <mat-option>Agrícola</mat-option>
+                    <mat-option>Pecuaria</mat-option>
+                    <mat-option>Silvicultura</mat-option>
+                    <mat-option>Recolección</mat-option>
+                    <mat-option>Apicultura</mat-option>
+                    <mat-option>Agroforestal</mat-option>
+                    <mat-option>Fungicultura</mat-option>
+                    <mat-option>Servicios de Comercialización</mat-option>
+                    <mat-option>Servicios de Transporte</mat-option>
+                    <mat-option>Servicios de Acopio</mat-option>
+                    <mat-option>Servicios de Turismo</mat-option>
+                    <mat-option>Productos Procesados</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+
+                    <p>
+                    <mat-checkbox [formControl]="disableSelect">Otro</mat-checkbox>
+                  </p>
+
+                  <mat-form-field>
+                    <mat-label>2. Tipo de la producción asociativa</mat-label>
+                    <mat-select [disabled]="disableSelect.value" multiple>
+                        <mat-option>Convencional</mat-option>
+                        <mat-option>Orgánica</mat-option>
+                        <mat-option>Agroecológica</mat-option>
+                        <mat-option>En transición</mat-option>
+                        <mat-option>Convencional</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <input matInput [disabled]="disableSelect.value" placeholder="Otro">
+              </form>
+              <button mat-flat-button color="warn">Atras</button>
+              <button mat-flat-button color="primary">Seguiente</button>
+        </div>
+
+        <div fxFlex="30" style="border: 1px groove black;">
+        Definiciones
+        </div>
+    </div>
+</div>
