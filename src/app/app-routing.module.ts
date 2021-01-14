@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'PaginaF', component: PaginaFComponent },
-  { path: 'paginaG', component: PaginaGComponent },
+  { path: 'PaginaG', component: PaginaGComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
