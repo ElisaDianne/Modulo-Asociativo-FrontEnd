@@ -15,6 +15,14 @@ import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import { PaginaKComponent } from './pagina-k/pagina-k.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -29,14 +37,22 @@ import { PaginaKComponent } from './pagina-k/pagina-k.component';
     PaginaHComponent,
     PaginaIComponent,
     PaginaJComponent,
-    PaginaKComponent
+    PaginaKComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatListModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
