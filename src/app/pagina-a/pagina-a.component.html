@@ -1,1 +1,138 @@
-<p>pagina-a works!</p>
+<style>
+    .spacer {
+        margin-left: 5%;
+    }
+
+    .main {
+        flex-direction: row;
+        padding-top: 2%;
+        display: flex;
+        min-height: 80%;
+    }
+
+    .contenido {
+        float: left;
+        width: 62.5%;
+        
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        padding: 1%;
+    }
+
+    .definiciones {
+        float: right;
+        width: 25%;
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        padding: 1%;
+
+    }
+
+    mat-form-field {
+        margin-left: 1%;
+    }
+
+    mat-label {
+        margin-left: 1%;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        margin: 1%;
+    }
+
+    .botones {
+        float: right;
+        flex-direction: row;
+        display: flex;
+
+    }
+
+    .example-full-width {
+        padding-top: 1%;
+    }
+</style>
+<mat-toolbar color="primary">
+    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    <div class="spacer"></div>
+
+    <span>A. DATOS DE LA ORGANIZACIÓN</span>
+</mat-toolbar>
+<div class="enunciado" style=" padding:30px 3% 0px ;">
+    <h3> Los datos que le solicitan en este formulario son estrictamente confidenciales y en ninguna circunstancia
+    pueden ser usados con un objeto diferente al procesamiento estadístico por parte del MAG. </h3>
+</div>
+<div class="main" role="main">
+    <div class="contenido">
+        <div>
+            
+            <table>
+                <tr>
+                    <td><label for="ruc">RUC</label></td>
+                    <td><input id="ruc" type="text" style="width: 500px;"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td><label for="razonSocial">Razón Social</label></td>
+                    <td><input id="razonSocial" type="text" style="width: 500px;"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td><label for="telefonoFijo">Télefono Fijo</label></td>
+                    <td><input id="telefonoFijo" type="text" style="width: 500px;"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td><label for="telefonoCelular">Télefono celular</label></td>
+                    <td><input id="telefonoCelular" type="text" style="width: 500px;"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td><label for="correo">Correo Electrónico</label></td>
+                    <td><input id="correo" type="text" style="width: 500px;"></td>
+                </tr>
+                <br>
+                <tr>
+                    <td><label for="paginaWeb">Página Web</label></td>
+                    <td><input id="paginaWeb" type="text" style="width: 500px;"></td>
+                </tr>
+                <br>
+                <br>
+            </table>   
+        </div>
+
+        
+        
+        <div class="botones">
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaB'">Siguiente</button>
+        </div>
+
+
+    </div>
+
+    <div class="definiciones">
+        <h1>Definiciones</h1>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Definición 1</mat-list-item>
+            <mat-list-item role="listitem">Definición 2</mat-list-item>
+            <mat-list-item role="listitem">Definición 3</mat-list-item>
+        </mat-list>
+    </div>
+
+</div>

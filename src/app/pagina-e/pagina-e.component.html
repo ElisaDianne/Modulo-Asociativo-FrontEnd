@@ -1,1 +1,184 @@
-<p>pagina-e works!</p>
+<style>
+    .spacer {
+        margin-left: 5%;
+    }
+
+    .main {
+        flex-direction: row;
+        padding-top: 2%;
+        display: flex;
+        min-height: 80%;
+    }
+
+    .contenido {
+        float: left;
+        width: 62.5%;
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        padding: 1%;
+    }
+
+    .definiciones {
+        float: right;
+        width: 25%;
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        padding: 1%;
+
+    }
+
+    mat-form-field {
+        margin-left: 1%;
+    }
+
+    mat-label {
+        margin-left: 1%;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        margin: 1%;
+    }
+
+    .botones {
+        float: right;
+        flex-direction: row;
+        display: flex;
+
+    }
+
+    .example-full-width {
+        padding-top: 1%;
+    }
+</style>
+
+<mat-toolbar color="primary">
+    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    <div class="spacer"></div>
+
+    <span>E. DATOS DE LOS SOCIOS ACTIVOS DE LA ORGANIZACIÓN</span>
+</mat-toolbar>
+<div class="main" role="main">
+    <div class="contenido">
+        <div>
+            <h3>1. DATOS DE LOS SOCIOS ACTIVOS DE LA ORGANIZACIÓN</h3>
+            <form class="example-form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Número de cédula del socio</mat-label>
+                    <input matInput placeholder="Numero de cedula" value="" type="text">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Nacimiento</mat-label>
+                    <input matInput id="Fecha" type="date">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombres y Apellidos del Socio</mat-label>
+                    <input matInput placeholder="Nombre y Apellido" value="" type="text">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Sexo</mat-label>
+                    <select matNativeControl required>
+                        <option value="0">Masculino</option>
+                        <option value="1">Femenino</option>
+                    </select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Esta registrado como productora AFC?</mat-label>
+                    <select matNativeControl required>
+                        <option value="0">Si</option>
+                        <option value="1">No</option>
+                    </select>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="primary">Agregar</button>
+            </form>
+        </div>
+
+        <div>
+            <table style="width:100%">
+                <tr>
+                    <th>Número de Cédula del socio</th>
+                    <th>Nombres y Apellidos</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Sexo</th>
+                    <th>Esta registrado como productora AFC?</th>
+                    <th></th>
+
+                </tr>
+                <tr>
+                    <td>1798765432</td>
+                    <td>Juan Paúl Perez Oviedo</td>
+                    <td>20-11-1996</td>
+                    <td>M</td>
+                    <td>SI</td>
+                    <td>
+                        <button mat-raised-button color="warn">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1801234567</td>
+                    <td>Flor Maria de la Torre</td>
+                    <td>11-06-1992</td>
+                    <td>F</td>
+                    <td>NO</td>
+                    <td>
+                        <button mat-raised-button color="warn">Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <form class="example-form">
+                <h3>2. NÚMERO DE SOCIOS</h3>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Número Socios Iniciales</mat-label>
+                    <input matInput placeholder="" value="" type="text">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Número Socios Actuales</mat-label>
+                    <input matInput placeholder="" value="" type="text">
+                </mat-form-field>
+
+            </form>
+
+        </div>
+        <div class="botones">
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaD'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaF'">Siguiente</button>
+        </div>
+
+
+    </div>
+
+    <div class="definiciones">
+        <h1>Definiciones</h1>
+        <mat-list role="list">
+            <mat-list-item role="listitem">definición 1</mat-list-item>
+            <mat-list-item role="listitem">definición 2</mat-list-item>
+            <mat-list-item role="listitem">definición 3</mat-list-item>
+        </mat-list>
+    </div>
+
+</div>
