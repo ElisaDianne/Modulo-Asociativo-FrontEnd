@@ -23,6 +23,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import { PaginaLComponent } from './pagina-l/pagina-l.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +45,8 @@ import { MatListModule } from '@angular/material/list';
     PaginaIComponent,
     PaginaJComponent,
     PaginaKComponent,
+
+    PaginaLComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +60,14 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatTableModule,
     MatListModule,
+    FlexLayoutModule,    
+    MatCheckboxModule,    
+    FormsModule,
+    MatIconModule,
+    MatSliderModule,
+    MatExpansionModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
