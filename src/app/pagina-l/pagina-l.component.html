@@ -1,20 +1,105 @@
-<form>
-    <div class="principal">
-      <div class="Contenido">
-        <h2 style="padding-left:15px ; text-align: left;background-color: #5d87fa; color: antiquewhite;">L. DATOS DEL ENCUESTADO</h2>
-        <textarea class="observaciones"></textarea>
-        <div class="botones">
-            <button style="background-color: rgba(253, 53, 53, 0.733);">Anterior</button>
-            <button style="background-color: rgba(80, 196, 13, 0.733);">Siguiente</button>
-        </div>        
+<mat-toolbar color="primary">
+  <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+  <div class="spacer"></div>
+
+  <span>L. OBSERVACIONES</span>
+</mat-toolbar>
+
+<div class="main" role="main">
+  <div class="contenido">
+      <h3>Describa las observaciones que crea pertinente: </h3>
+    <textarea class="observaciones"></textarea>
+    
+      
+      
+      <div class="botones">
+          <button mat-raised-button color="warn" [routerLink]="'/PaginaK'">Anterior</button>
+          <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  >Finalizar</button>
       </div>
-      <div class="Definiciones">
-        <h3>Definiciones</h3>
-        <textarea class="def" readonly="readonly"> Definiciones</textarea>
-      </div>
-    </div>
-</form>  
+
+
+  </div>
+
+  <div class="definiciones">
+      <h1>Definiciones</h1>
+      <mat-list role="list">
+          <mat-list-item role="listitem">Definición 1</mat-list-item>
+          <mat-list-item role="listitem">Definición 2</mat-list-item>
+          <mat-list-item role="listitem">Definición 3</mat-list-item>
+      </mat-list>
+  </div>
+
+</div>
+
 <style>
+  .spacer {
+        margin-left: 5%;
+    }
+
+    .main {
+        flex-direction: row;
+        padding-top: 2%;
+        display: flex;
+        min-height: 80%;
+    }
+
+    .contenido {
+        float: left;
+        width: 62.5%;
+        
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        padding: 1%;
+    }
+
+    .definiciones {
+        float: right;
+        width: 25%;
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        padding: 1%;
+
+    }
+
+    mat-form-field {
+        margin-left: 1%;
+    }
+
+    mat-label {
+        margin-left: 1%;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        margin: 1%;
+    }
+
+    .botones {
+        float: right;
+        flex-direction: row;
+        display: flex;
+
+    }
+
+    .example-full-width {
+        padding-top: 1%;
+    }
 div.principal{
   width: 90%;
   padding: 10px;  
