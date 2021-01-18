@@ -1,1 +1,158 @@
-<p>pagina-g works!</p>
+
+<style>
+  .spacer {
+    margin-left: 5%;
+  }
+
+  .main {
+    flex-direction: row;
+    padding-top: 2%;
+    display: flex;
+    min-height: 80%;
+  }
+
+  .contenido {
+    float: left;
+    width: 62.5%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    padding: 1%;
+  }
+
+  .definiciones {
+    float: right;
+    width: 25%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    padding: 1%;
+
+  }
+
+  mat-form-field {
+    margin-left: 1%;
+  }
+
+  mat-label {
+    margin-left: 1%;
+
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  button {
+    margin: 1%;
+  }
+
+  .botones {
+    float: right;
+    flex-direction: row;
+    display: flex;
+
+  }
+
+  .example-full-width {
+    padding-top: 1%;
+  }
+</style>
+
+
+
+<mat-toolbar color="primary">
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlex="20">
+      <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    </div>
+
+    <div fxFlex="80">
+      <span>G.ACTIVIDADES AGROPECUARIAS DE LA ASOCIACIÓN</span>
+    </div>
+  </div>
+</mat-toolbar>
+<div>
+  <div class="main" role="main">
+    <div class="contenido">
+      <form class="example-form">
+        <h3>1. Seleccione las Principales actividades agroproductivas que realiza la organización</h3>
+        <mat-form-field>
+          <mat-select [formControl]="ActAgro" multiple>
+            <mat-select-trigger>
+              {{ActAgro.value ? ActAgro.value[0] : ''}}
+              <span *ngIf="ActAgro.value?.length > 1">
+                (+{{ActAgro.value.length - 1}} {{ActAgro.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option>Agrícola</mat-option>
+            <mat-option>Pecuaria</mat-option>
+            <mat-option>Silvicultura</mat-option>
+            <mat-option>Recolección</mat-option>
+            <mat-option>Apicultura</mat-option>
+            <mat-option>Agroforestal</mat-option>
+            <mat-option>Fungicultura</mat-option>
+            <mat-option>Servicios de Comercialización</mat-option>
+            <mat-option>Servicios de Transporte</mat-option>
+            <mat-option>Servicios de Acopio</mat-option>
+            <mat-option>Servicios de Turismo</mat-option>
+            <mat-option>Productos Procesados</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <h3>2. Tipo de la producción asociativa</h3>
+
+
+        <div fxLayout="row" fxLayoutAlign=" center" >
+          <div fxFlex="50">
+            <mat-form-field>
+              <mat-select [disabled]="disableSelect.value" multiple>
+                <mat-option>Convencional</mat-option>
+                <mat-option>Orgánica</mat-option>
+                <mat-option>Agroecológica</mat-option>
+                <mat-option>En transición</mat-option>
+                <mat-option>Convencional</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxFlex="25">
+            <mat-checkbox [formControl]="disableSelect">Otro</mat-checkbox>
+          </div>
+          <div fxFlex="25">
+            <mat-form-field >
+              <mat-label>Tipo de Producción</mat-label>
+              <input matInput type="text" placeholder="Otro">
+              <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+
+      <div class="botones">
+        <button mat-raised-button color="warn">Anterior</button>
+        <button mat-raised-button color="primary">Siguiente</button>
+      </div>
+    </div>
+
+    <div class="definiciones">
+      <h1>Definiciones</h1>
+      <mat-list role="list">
+        <mat-list-item role="listitem">definición 1</mat-list-item>
+        <mat-list-item role="listitem">definición 2</mat-list-item>
+        <mat-list-item role="listitem">definición 3</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

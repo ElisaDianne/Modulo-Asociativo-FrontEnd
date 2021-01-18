@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaDComponent } from './pagina-d/pagina-d.component';
 import { PaginaEComponent } from './pagina-e/pagina-e.component';
+import { PaginaFComponent } from './pagina-f/pagina-f.component';
+import { PaginaGComponent } from './pagina-g/pagina-g.component';
 import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaKComponent } from './pagina-k/pagina-k.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
@@ -16,6 +19,8 @@ const routes: Routes = [
   {path: "PaginaB", component: PaginaBComponent },
   { path: "PaginaD", component: PaginaDComponent },
   { path: "PaginaE", component: PaginaEComponent },
+  { path: "PaginaF", component: PaginaFComponent },
+  { path: "PaginaG", component: PaginaGComponent },
   { path: "PaginaH", component: PaginaHComponent },
   { path: "PaginaK", component: PaginaKComponent },
   { path: "PaginaI", component: PaginaIComponent },
@@ -23,6 +28,7 @@ const routes: Routes = [
   { path: "PaginaL", component: PaginaLComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
+
 
 
 ];
