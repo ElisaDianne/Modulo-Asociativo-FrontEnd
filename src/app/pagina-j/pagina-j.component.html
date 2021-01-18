@@ -1,35 +1,119 @@
-<form>
-    <div class="principal">
-    <div class="Contenido">
-    <h2 style="padding-left:15px ; text-align: left;background-color: #5d87fa; color: antiquewhite;">J. DATOS  DEL ENCUESTADOR </h2>
-    <h3>1. Datos del Encuestador</h3>
-    <div style=" float: left;">
-        <label for="Nombre">Nombre del ecnuestador</label>
-        <input id="Nombre" type="text"><br><br><br>
-        <label for="Cedula">Número de cédula</label>     
-        <input id="Cedula" type="text"> <br><br><br>             
-        <label for="Fecha">Fecha del levantamiento</label>
-        <input id="Fecha" type="date"><br><br><br> 
-        <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
-        <input type="file" style="padding-left: 1cm;"><br><br>
-        <label style="padding-left: 3cm;">Firma del Encuestador</label>
+<mat-toolbar color="primary">
+    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    <div class="spacer"></div>
+
+    <span>J. DATOS DEL ENCUESTADOR</span>
+</mat-toolbar>
+
+<div class="main" role="main">
+    <div class="contenido">
+        
+        <h3>1. Datos del Encuestador</h3>
+        <div style=" float: left;">
+            <label for="Nombre">Nombre del ecnuestador</label>
+            <input id="Nombre" type="text"><br><br><br>
+            <label for="Cedula">Número de cédula</label>     
+            <input id="Cedula" type="text"> <br><br><br>             
+            <label for="Fecha">Fecha del levantamiento</label>
+            <input id="Fecha" type="date"><br><br><br> 
+            <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
+            <input type="file" style="padding-left: 1cm;"><br><br>
+            <label style="padding-left: 3cm;">Firma del Encuestador</label>
+        </div>
+        <div style="text-align: center;">
+            <input type="checkbox">
+            <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC. Además acepto conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
+        </div>
+        
+        
+        <div class="botones">
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaK'">Siguiente</button>
+        </div>
+
+
     </div>
-    <div style="text-align: center;">
-        <input type="checkbox">
-        <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC. Además acepto conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
+
+    <div class="definiciones">
+        <h1>Definiciones</h1>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Definición 1</mat-list-item>
+            <mat-list-item role="listitem">Definición 2</mat-list-item>
+            <mat-list-item role="listitem">Definición 3</mat-list-item>
+        </mat-list>
     </div>
-    <div class="botones">
-        <button style="background-color: rgba(253, 53, 53, 0.733);">Anterior</button>
-        <button style="background-color: rgba(80, 196, 13, 0.733);">Siguiente</button>
-    </div>
-    </div>    
-    <div class="Definiciones">
-    <h3>Definiciones</h3>
-    <textarea class="def"></textarea>
-    </div>
-</div>  
-</form>
+
+</div>
+
 <style>
+    .spacer {
+        margin-left: 5%;
+    }
+
+    .main {
+        flex-direction: row;
+        padding-top: 2%;
+        display: flex;
+        min-height: 80%;
+    }
+
+    .contenido {
+        float: left;
+        width: 62.5%;
+        
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        padding: 1%;
+    }
+
+    .definiciones {
+        float: right;
+        width: 25%;
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        padding: 1%;
+
+    }
+
+    mat-form-field {
+        margin-left: 1%;
+    }
+
+    mat-label {
+        margin-left: 1%;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        margin: 1%;
+    }
+
+    .botones {
+        float: right;
+        flex-direction: row;
+        display: flex;
+
+    }
+
+    .example-full-width {
+        padding-top: 1%;
+    }
 div.principal{
 width: 90%;
 padding: 10px;  

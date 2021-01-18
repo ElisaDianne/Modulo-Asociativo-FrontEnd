@@ -86,12 +86,13 @@
                     <td><input type="radio" id="ROEPS" name="tipoRegistro" value="ROEPS">ROEPS</td>
                 </tr>
                 <br>
-                <tr>
-                    <td><label for="numRegistro">Número</label>
-                    <input id="numRegistro" type="text"></td>
-                </tr>
+                
                 <br>
             </table>
+            <div align="center">
+                <td><label for="numRegistro">Número   </label>
+                    <input id="numRegistro" type="text"></td>
+            </div>
             <br><br>
                 <h3>2. ENTIDAD O INSTITUCIÓN QUE OTORGÓ LA PERSONERÍA JURÍDICA</h3>
             <table>
@@ -101,22 +102,24 @@
                     <td><input type="radio" id="MIES" name="tipoInstitucion" value="MIES">MIES</td>
                 </tr>
                 <br>
-                <tr>
-                    <td><input type="radio" id="Otro" name="tipoInstitucion" value="Otro">Otro</td>
-                    <td><label for="telefonoFijo">Especifique</label></td>
-                    <td><input id="telefonoFijo" type="text"></td>
-                </tr>
+            </table> 
+            <div align="center">
+                <label for="telefonoFijo">Especifique:   </label><br>
+                <input type="radio" id="Otro" name="tipoInstitucion" value="Otro">Otro
+                
+                <input id="telefonoFijo" type="text">
+            </div>   
                 <br>
                 
                 <br>
-            </table>   
+               
         </div>
 
         
         
         <div class="botones">
-            <button mat-raised-button color="warn">Anterior</button>
-            <button mat-raised-button color="primary">Siguiente</button>
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaA'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaC'">Siguiente</button>
         </div>
 
 
