@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import { PaginaLComponent } from './pagina-l/pagina-l.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { MatListModule } from '@angular/material/list';
     PaginaIComponent,
     PaginaJComponent,
     PaginaKComponent,
+    PaginaLComponent,
+
   ],
   imports: [
     BrowserModule,
