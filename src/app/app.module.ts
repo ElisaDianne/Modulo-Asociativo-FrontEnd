@@ -14,7 +14,6 @@ import { PaginaGComponent } from './pagina-g/pagina-g.component';
 import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
-import { PaginaKComponent } from './pagina-k/pagina-k.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,11 +24,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,8 +43,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     PaginaHComponent,
     PaginaIComponent,
     PaginaJComponent,
-    PaginaKComponent,
-
     PaginaLComponent,
   ],
   imports: [
@@ -60,14 +57,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatSelectModule,
     MatTableModule,
     MatListModule,
-    FlexLayoutModule,    
-    MatCheckboxModule,    
+    FlexLayoutModule,
+    MatCheckboxModule,
     FormsModule,
     MatIconModule,
     MatSliderModule,
     MatExpansionModule,
     ReactiveFormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent],

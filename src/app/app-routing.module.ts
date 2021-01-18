@@ -9,30 +9,25 @@ import { PaginaEComponent } from './pagina-e/pagina-e.component';
 import { PaginaFComponent } from './pagina-f/pagina-f.component';
 import { PaginaGComponent } from './pagina-g/pagina-g.component';
 import { PaginaHComponent } from './pagina-h/pagina-h.component';
-import { PaginaKComponent } from './pagina-k/pagina-k.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
-  {path: "PaginaA", component: PaginaAComponent },
-  {path: "PaginaB", component: PaginaBComponent },
-  {path: "PaginaC", component: PaginaCComponent },
-  { path: "PaginaD", component: PaginaDComponent },
-  { path: "PaginaE", component: PaginaEComponent },
-  { path: "PaginaF", component: PaginaFComponent },
-  { path: "PaginaG", component: PaginaGComponent },
-  { path: "PaginaH", component: PaginaHComponent },
-  { path: "PaginaK", component: PaginaKComponent },
-  { path: "PaginaI", component: PaginaIComponent },
-  { path: "PaginaJ", component: PaginaJComponent },
-  { path: "PaginaL", component: PaginaLComponent },
+  { path: 'PaginaA', component: PaginaAComponent },
+  { path: 'PaginaB', component: PaginaBComponent },
+  { path: 'PaginaC', component: PaginaCComponent },
+  { path: 'PaginaD', component: PaginaDComponent },
+  { path: 'PaginaE', component: PaginaEComponent },
+  { path: 'PaginaF', component: PaginaFComponent },
+  { path: 'PaginaG', component: PaginaGComponent },
+  { path: 'PaginaH', component: PaginaHComponent },
+  { path: 'PaginaI', component: PaginaIComponent },
+  { path: 'PaginaJ', component: PaginaJComponent },
+  { path: 'PaginaL', component: PaginaLComponent },
   // otherwise redirect to home
-  { path: '**', redirectTo: '' }
-
-
-
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
