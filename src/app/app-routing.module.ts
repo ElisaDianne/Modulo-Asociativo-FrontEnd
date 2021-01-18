@@ -7,7 +7,7 @@ import { PaginaCComponent } from './pagina-c/pagina-c.component';
 const routes: Routes = [
   {path: "PaginaA", component: PaginaAComponent },
   {path: "PaginaB", component: PaginaBComponent },
-  {path: "PaginaC", component: PaginaCComponent},
+  {path: 'paginac', component: PaginaCComponent},
 ];
 
 
