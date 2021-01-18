@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-pagina-f',
   templateUrl: './pagina-f.component.html',
   styleUrls: ['./pagina-f.component.scss']
 })
-export class PaginaFComponent implements OnInit {
-
+export class PaginaFComponent {
+  ActAgro = new FormControl();
+  disableSelect = new FormControl();
+  value = 'Otro';
   constructor() { }
 
-  ngOnInit(): void {
+  formatLabel(value: number) {
+    if (value >= 100) {
+      return Math.round(value / 100) + ' Mujeres';
+    }
+    return value;
   }
 
 }
