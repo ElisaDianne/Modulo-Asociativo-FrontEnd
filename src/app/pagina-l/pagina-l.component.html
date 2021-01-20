@@ -1,0 +1,133 @@
+<mat-toolbar color="primary">
+  <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+  <div class="spacer"></div>
+
+  <span>L. OBSERVACIONES</span>
+</mat-toolbar>
+
+<div class="main" role="main">
+  <div class="contenido">
+      <h3>Describa las observaciones que crea pertinente: </h3>
+    <textarea class="observaciones"></textarea>
+    
+      
+      
+      <div class="botones">
+          <button mat-raised-button color="warn" [routerLink]="'/PaginaK'">Anterior</button>
+          <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  >Finalizar</button>
+      </div>
+
+
+  </div>
+
+  <div class="definiciones">
+      <h1>Definiciones</h1>
+      <mat-list role="list">
+          <mat-list-item role="listitem">Definición 1</mat-list-item>
+          <mat-list-item role="listitem">Definición 2</mat-list-item>
+          <mat-list-item role="listitem">Definición 3</mat-list-item>
+      </mat-list>
+  </div>
+
+</div>
+
+<style>
+  .spacer {
+        margin-left: 5%;
+    }
+
+    .main {
+        flex-direction: row;
+        padding-top: 2%;
+        display: flex;
+        min-height: 80%;
+    }
+
+    .contenido {
+        float: left;
+        width: 62.5%;
+        
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        padding: 1%;
+    }
+
+    .definiciones {
+        float: right;
+        width: 25%;
+        border: 1px solid gray;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        padding: 1%;
+
+    }
+
+    mat-form-field {
+        margin-left: 1%;
+    }
+
+    mat-label {
+        margin-left: 1%;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        margin: 1%;
+    }
+
+    .botones {
+        float: right;
+        flex-direction: row;
+        display: flex;
+
+    }
+
+    .example-full-width {
+        padding-top: 1%;
+    }
+div.principal{
+  width: 90%;
+  padding: 10px;  
+  overflow: hidden;
+} 
+div.Contenido{
+  border: 1px solid #5d87fa;
+  width: 60%;
+  height: 16.5cm;
+  float: left;
+}
+div.Definiciones{
+  border: 1px solid #5d87fa;
+  overflow: hidden;  
+}
+textarea.def{
+  margin: 0 1rem ;
+  height: 15cm;
+  width:90%;
+}
+textarea.observaciones{
+  margin: 1rem ;
+  height: 60%;
+  width:90%;
+}
+.botones {
+  margin-top: 2cm;
+    float: right;
+    flex-direction: row;   
+}
+</style>

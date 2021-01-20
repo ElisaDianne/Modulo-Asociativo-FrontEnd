@@ -1,1 +1,196 @@
-<p>pagina-f works!</p>
+<style>
+  .spacer {
+    margin-left: 5%;
+  }
+
+  .main {
+    flex-direction: row;
+    padding-top: 2%;
+    display: flex;
+    min-height: 80%;
+  }
+
+  .contenido {
+    float: left;
+    width: 62.5%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    padding: 1%;
+  }
+
+  .definiciones {
+    float: right;
+    width: 25%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    padding: 1%;
+
+  }
+
+  mat-form-field {
+    margin-left: 1%;
+  }
+
+  mat-label {
+    margin-left: 1%;
+
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  button {
+    margin: 1%;
+  }
+
+  .botones {
+    float: right;
+    flex-direction: row;
+    display: flex;
+
+  }
+
+  .example-full-width {
+    padding-top: 1%;
+  }
+</style>
+
+
+
+<mat-toolbar color="primary">
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlex="20">
+      <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    </div>
+
+    <div fxFlex="80">
+      <span>F. GESTIÓN Y PARTICIPACIÓN SOCIO ORGANIZATIVA</span>
+    </div>
+  </div>
+</mat-toolbar>
+<div>
+  <div class="main" role="main">
+    <div class="contenido">
+      <form class="example-form">
+        <h2>1. De los miembros de la Directiva</h2>
+        <mat-accordion multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mujeres
+              </mat-panel-title>
+              <mat-panel-description>
+                Mujeres que formen parte de la organización
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <h3>Número de mujeres qué ocupan un cargo directivo actualmente</h3>
+            <mat-slider
+              thumbLabel
+              [displayWith]="formatLabel"
+              tickInterval="1"
+              min="1"
+              max="100">
+            </mat-slider>
+          <h3>Cargos ocupados por mujeres</h3>
+
+          <div fxLayout="row" fxLayoutAlign="start center" >
+            <div fxFlex="50">
+              <mat-form-field>
+                <mat-select multiple>
+                  <mat-option>Presidenta</mat-option>
+                  <mat-option>Vicepresidenta</mat-option>
+                  <mat-option>Administradora</mat-option>
+                  <mat-option>Tesorera</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div fxFlex="25">
+              <mat-form-field >
+                <mat-label>Otro</mat-label>
+                <input matInput type="text" placeholder="Cargo">
+                <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+          </mat-expansion-panel>
+
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Jovenes
+              </mat-panel-title>
+              <mat-panel-description>
+                Jovenes con edad entre 18 - 29 años
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <h3>Número de jóvenes que ocupan un cargo directivo actualmente</h3>
+            <mat-slider
+              thumbLabel
+              [displayWith]="formatLabel"
+              tickInterval="1"
+              min="1"
+              max="100">
+            </mat-slider>
+          <h3>Casos ocupados por los jóvenes</h3>
+
+          <div fxLayout="row" fxLayoutAlign="start center" >
+            <div fxFlex="50">
+              <mat-form-field>
+                <mat-select multiple>
+                  <mat-option>Presidente</mat-option>
+                  <mat-option>Vicepresidente</mat-option>
+                  <mat-option>Administrador</mat-option>
+                  <mat-option>Tesorero</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div fxFlex="25">
+              <mat-form-field >
+                <mat-label>Otro</mat-label>
+                <input matInput type="text" placeholder="Cargo">
+                <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </form>
+
+      <div class="botones">
+        <button mat-raised-button color="warn" [routerLink]="'/PaginaE'">Anterior</button>
+        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaG'">Siguiente</button>
+      </div>
+    </div>
+
+    <div class="definiciones">
+      <h1>Definiciones</h1>
+      <mat-list role="list">
+        <mat-list-item role="listitem">definición 1</mat-list-item>
+        <mat-list-item role="listitem">definición 2</mat-list-item>
+        <mat-list-item role="listitem">definición 3</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
