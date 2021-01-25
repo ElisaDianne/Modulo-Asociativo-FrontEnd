@@ -1,154 +1,163 @@
-<mat-toolbar color="primary">
-    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
-    <div class="spacer"></div>
+    <mat-toolbar color="primary">
+        <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+        <div class="spacer"></div>
 
-    <span>J. DATOS DEL ENCUESTADOR</span>
-</mat-toolbar>
+        <span>J. DATOS DEL ENCUESTADOR</span>
+    </mat-toolbar>
 
-<div class="main" role="main">
-    <div class="contenido">
-        
-        <h3>1. Datos del Encuestador</h3>
-        <div style=" float: left;">
-            <label for="Nombre">Nombre del ecnuestador</label>
-            <input id="Nombre" type="text"><br><br><br>
-            <label for="Cedula">Número de cédula</label>     
-            <input id="Cedula" type="text"> <br><br><br>             
-            <label for="Fecha">Fecha del levantamiento</label>
-            <input id="Fecha" type="date"><br><br><br> 
-            <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
-            <input type="file" style="padding-left: 1cm;"><br><br>
-            <label style="padding-left: 3cm;">Firma del Encuestador</label>
-        </div>
-        <div style="text-align: center;">
-            <input type="checkbox">
-            <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC. Además acepto conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
-        </div>
-        
-        
-        <div class="botones">
-            <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaK'">Siguiente</button>
+    <div class="main" role="main">
+        <div class="contenido">
+            
+            <h3>1. Datos del Encuestador</h3>
+            <div style=" float: left;">
+                <label for="Nombre">Nombre del ecnuestador</label>
+                <input id="Nombre" type="text"><br><br><br>
+                <label for="Cedula">Número de cédula</label>     
+                <input id="Cedula" type="text"> <br><br><br>             
+                <label for="Fecha">Fecha del levantamiento</label>
+                <input id="Fecha" type="date"><br><br><br> 
+                <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
+                <canvas width="200" height="160"></canvas><br><br>
+                <label style="padding-left: 3cm;">Firma del Encuestador</label>
+            </div>
+            <div style="text-align: center;">
+                <input type="checkbox">
+                <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC. Además acepto conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
+            </div>
+            
+            
+            <div class="botones">
+                <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
+                <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaK'">Siguiente</button>
+            </div>
+
+
         </div>
 
+        <div class="definiciones">
+            <h1>Definiciones</h1>
+            <mat-list role="list">
+                <mat-list-item role="listitem">Definición 1</mat-list-item>
+                <mat-list-item role="listitem">Definición 2</mat-list-item>
+                <mat-list-item role="listitem">Definición 3</mat-list-item>
+            </mat-list>
+        </div>
 
     </div>
 
-    <div class="definiciones">
-        <h1>Definiciones</h1>
-        <mat-list role="list">
-            <mat-list-item role="listitem">Definición 1</mat-list-item>
-            <mat-list-item role="listitem">Definición 2</mat-list-item>
-            <mat-list-item role="listitem">Definición 3</mat-list-item>
-        </mat-list>
-    </div>
+    <style>
+        .spacer {
+            margin-left: 5%;
+        }
 
-</div>
+        .main {
+            flex-direction: row;
+            padding-top: 2%;
+            display: flex;
+            min-height: 80%;
+        }
 
-<style>
-    .spacer {
-        margin-left: 5%;
+        .contenido {
+            float: left;
+            width: 62.5%;
+            
+            border: 1px solid gray;
+            margin-left: 2.5%;
+            padding: 1%;
+        }
+
+        .definiciones {
+            float: right;
+            width: 25%;
+            border: 1px solid gray;
+            margin-left: 2.5%;
+            margin-right: 5%;
+            padding: 1%;
+
+        }
+        canvas {    
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;      
+            border: 2px solid #CCCCCC;
+            border-radius: 5px;
+            cursor: crosshair;
+        }
+        mat-form-field {
+            margin-left: 1%;
+        }
+
+        mat-label {
+            margin-left: 1%;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            margin: 1%;
+        }
+
+        .botones {
+            float: right;
+            flex-direction: row;
+            display: flex;
+
+        }
+
+        .example-full-width {
+            padding-top: 1%;
+        }
+    div.principal{
+    width: 90%;
+    padding: 10px;  
+    overflow: hidden;
+    } 
+    div.Contenido{
+    border: 1px solid #5d87fa;
+    width: 60%;
+    height: 16.5cm;
+    float: left;
     }
-
-    .main {
-        flex-direction: row;
-        padding-top: 2%;
-        display: flex;
-        min-height: 80%;
+    div.Definiciones{
+    border: 1px solid #5d87fa;
+    overflow: hidden;  
     }
-
-    .contenido {
-        float: left;
-        width: 62.5%;
-        
-        border: 1px solid gray;
-        margin-left: 2.5%;
-        padding: 1%;
+    label{
+    padding-left: 5px;
+    margin-right: 5px; 
     }
-
-    .definiciones {
-        float: right;
-        width: 25%;
-        border: 1px solid gray;
-        margin-left: 2.5%;
-        margin-right: 5%;
-        padding: 1%;
-
+    textarea.def{
+    margin: 0 1rem ;
+    height: 15cm;
+    width:90%;
     }
-
-    mat-form-field {
-        margin-left: 1%;
-    }
-
-    mat-label {
-        margin-left: 1%;
-
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th,
-    td {
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    button {
-        margin: 1%;
+    textarea.aceptacion{
+    width:7cm;
+    height: 10cm;
+    background-color: rgb(243, 240, 240);
+    text-justify: initial;
     }
 
     .botones {
+        margin-top: 2cm;
         float: right;
-        flex-direction: row;
-        display: flex;
-
+        flex-direction: row;     
     }
-
-    .example-full-width {
-        padding-top: 1%;
-    }
-div.principal{
-width: 90%;
-padding: 10px;  
-overflow: hidden;
-} 
-div.Contenido{
-border: 1px solid #5d87fa;
-width: 60%;
-height: 16.5cm;
-float: left;
-}
-div.Definiciones{
-border: 1px solid #5d87fa;
-overflow: hidden;  
-}
-label{
-padding-left: 5px;
-margin-right: 5px; 
-}
-textarea.def{
-margin: 0 1rem ;
-height: 15cm;
-width:90%;
-}
-textarea.aceptacion{
-width:7cm;
-height: 10cm;
-background-color: rgb(243, 240, 240);
-text-justify: initial;
-}
-
-.botones {
-    margin-top: 2cm;
-    float: right;
-    flex-direction: row;     
-}
-</style>
+    </style>
 
