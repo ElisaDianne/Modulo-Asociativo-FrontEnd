@@ -21,7 +21,9 @@
           <label for="Correo">Correo electronico</label>     
           <input id="Correo" type="text"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
-          <input id="Fecha" type="date">
+          <input id="Fecha" type="date"><br><br><br> <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
+          <canvas id="draw-canvas" width="200" height="160"></canvas><br><br>
+          <label style="padding-left: 4cm;">Firma del Encuestado</label>
         </div>
         <div style="text-align: center;">
           <input type="checkbox">
@@ -35,11 +37,6 @@
     </div>
     </div>
       
-     
-
-
-  
-
   <div class="definiciones">
       <h1>Definiciones</h1>
       <mat-list role="list">
@@ -50,8 +47,8 @@
   </div>
 
 </div>
-
 <style>
+
   .spacer {
         margin-left: 5%;
     }
@@ -81,7 +78,16 @@
         padding: 1%;
 
     }
-
+    canvas {    
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;      
+      border: 2px solid #CCCCCC;
+      border-radius: 5px;
+      cursor: crosshair;
+    }
     mat-form-field {
         margin-left: 1%;
     }
