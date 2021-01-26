@@ -28,7 +28,7 @@
             
             <div class="botones">
                 <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
-                <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaK'">Siguiente</button>
+                <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaL'">Siguiente</button>
             </div>
 
 
@@ -159,5 +159,46 @@
         float: right;
         flex-direction: row;     
     }
-    </style>
 
+    div.principal {
+        width: 90%;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    div.Contenido {
+        border: 1px solid #5d87fa;
+        width: 60%;
+        height: 16.5cm;
+        float: left;
+    }
+
+    div.Definiciones {
+        border: 1px solid #5d87fa;
+        overflow: hidden;
+    }
+
+    label {
+        padding-left: 5px;
+        margin-right: 5px;
+    }
+
+    textarea.def {
+        margin: 0 1rem;
+        height: 15cm;
+        width: 90%;
+    }
+
+    textarea.aceptacion {
+        width: 7cm;
+        height: 10cm;
+        background-color: rgb(243, 240, 240);
+        text-justify: initial;
+    }
+
+    .botones {
+        margin-top: 2cm;
+        float: right;
+        flex-direction: row;
+    }
+</style>

@@ -158,16 +158,19 @@
             <form class="example-form">
                 <mat-form-field appearance="fill">
                     <mat-label></mat-label>
-                    <select matNativeControl>
+                    <select matNativeControl required>
                         <option value="0">Si</option>
                         <option value="1">No</option>
                     </select>
                 </mat-form-field>
 
-                <mat-form-field class="example-full-width">
+                <mat-form-field appearance="fill">
                     <mat-label>Especifique</mat-label>
-                    <input matInput placeholder="Nombre de la certificación" value="" type="text">
+                    <select matNativeControl required>
+                        <option value="0">Cargar de catálogo</option>
+                    </select>
                 </mat-form-field>
+
 
             </form>
         </div>
@@ -178,7 +181,7 @@
             <form class="example-form">
                 <mat-form-field appearance="fill">
                     <mat-label></mat-label>
-                    <select matNativeControl>
+                    <select matNativeControl required>
                         <option value="0">Producto Primario</option>
                         <option value="1">Producto Elaborado o Procesado</option>
                         <option value="2">Producto Semiprocesado</option>
@@ -196,7 +199,7 @@
             <form class="example-form">
                 <mat-form-field appearance="fill">
                     <mat-label></mat-label>
-                    <select matNativeControl>
+                    <select matNativeControl required>
                         <option value="0">Venta en Finca</option>
                         <option value="1">Punto de Venta</option>
                         <option value="2">Compra Pública</option>
@@ -224,7 +227,8 @@
         </div>
         <div class="botones">
             <button mat-raised-button color="warn" [routerLink]="'/PaginaG'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;" [routerLink]="'/PaginaI'">Siguiente</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+                [routerLink]="'/PaginaI'">Siguiente</button>
         </div>
 
 
