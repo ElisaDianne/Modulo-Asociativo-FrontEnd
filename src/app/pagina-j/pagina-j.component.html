@@ -7,28 +7,30 @@
 
 <div class="main" role="main">
     <div class="contenido">
-        
+
         <h3>1. Datos del Encuestador</h3>
         <div style=" float: left;">
             <label for="Nombre">Nombre del ecnuestador</label>
             <input id="Nombre" type="text"><br><br><br>
-            <label for="Cedula">Número de cédula</label>     
-            <input id="Cedula" type="text"> <br><br><br>             
+            <label for="Cedula">Número de cédula</label>
+            <input id="Cedula" type="text"> <br><br><br>
             <label for="Fecha">Fecha del levantamiento</label>
-            <input id="Fecha" type="date"><br><br><br> 
-            <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
+            <input id="Fecha" type="date"><br><br><br>
+            <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>
             <input type="file" style="padding-left: 1cm;"><br><br>
             <label style="padding-left: 3cm;">Firma del Encuestador</label>
         </div>
         <div style="text-align: center;">
             <input type="checkbox">
-            <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC. Además acepto conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
+            <textarea readonly="readonly"
+                class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC. Además acepto conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
         </div>
-        
-        
+
+
         <div class="botones">
             <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaK'">Siguiente</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+                [routerLink]="'/PaginaL'">Siguiente</button>
         </div>
 
 
@@ -60,7 +62,7 @@
     .contenido {
         float: left;
         width: 62.5%;
-        
+
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -114,41 +116,46 @@
     .example-full-width {
         padding-top: 1%;
     }
-div.principal{
-width: 90%;
-padding: 10px;  
-overflow: hidden;
-} 
-div.Contenido{
-border: 1px solid #5d87fa;
-width: 60%;
-height: 16.5cm;
-float: left;
-}
-div.Definiciones{
-border: 1px solid #5d87fa;
-overflow: hidden;  
-}
-label{
-padding-left: 5px;
-margin-right: 5px; 
-}
-textarea.def{
-margin: 0 1rem ;
-height: 15cm;
-width:90%;
-}
-textarea.aceptacion{
-width:7cm;
-height: 10cm;
-background-color: rgb(243, 240, 240);
-text-justify: initial;
-}
 
-.botones {
-    margin-top: 2cm;
-    float: right;
-    flex-direction: row;     
-}
+    div.principal {
+        width: 90%;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    div.Contenido {
+        border: 1px solid #5d87fa;
+        width: 60%;
+        height: 16.5cm;
+        float: left;
+    }
+
+    div.Definiciones {
+        border: 1px solid #5d87fa;
+        overflow: hidden;
+    }
+
+    label {
+        padding-left: 5px;
+        margin-right: 5px;
+    }
+
+    textarea.def {
+        margin: 0 1rem;
+        height: 15cm;
+        width: 90%;
+    }
+
+    textarea.aceptacion {
+        width: 7cm;
+        height: 10cm;
+        background-color: rgb(243, 240, 240);
+        text-justify: initial;
+    }
+
+    .botones {
+        margin-top: 2cm;
+        float: right;
+        flex-direction: row;
+    }
 </style>
-
