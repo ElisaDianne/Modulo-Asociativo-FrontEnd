@@ -6,25 +6,26 @@
 </mat-toolbar>
 
 
+
 <div class="main" role="main">
   <div class="contenido">
-      <div>
-        <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
+    <div>
+      <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
 
-          <table>
-              <tr>
-                  <td><label for="nombre">Nombre del Encuestador</label></td>
-                  <td><input id="nombre" type="text"></td>
-                  <td><label for="cedula">Número de cédula</label></td>
-                  <td><input id="cedula" type="text"></td>
+      <table>
+        <tr>
+          <td><label for="nombre">Nombre del Encuestador</label></td>
+          <td><input id="nombre" type="text"></td>
+          <td><label for="cedula">Número de cédula</label></td>
+          <td><input id="cedula" type="text"></td>
 
-              </tr>
-              <br>
+        </tr>
+        <br>
 
 
 
-          </table>
-          <!-- <label for="Cedula">Número de cédula</label>          <input id="Cedula" type="text"> <br><br><br>
+      </table>
+      <!-- <label for="Cedula">Número de cédula</label>          <input id="Cedula" type="text"> <br><br><br>
           <label for="Nombre">Nombre completo</label>
           <input id="Nombre" type="text"><br><br><br>
           <label for="Celular">Celular</label>
@@ -35,43 +36,67 @@
           <input id="Correo" type="mail"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
           <input id="Fecha" type="date"><br><br><br> -->
-          <mat-toolbar color="primary" class="fondoBajo">
-            <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
-            <div class="spacer"></div>
+          <div class="in-flex">
 
-            <span style="text-align: center;">ACUERDO DE CONFIDENCIALIDAD Y LEVANTAMIENTO DE INFORMACIÓN</span>
-          </mat-toolbar>
-          <br>
-          <br>
-          <br>
-          <div style="text-align: center!important;">
-          <input type="checkbox">
+              <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
 
-          <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC
+              <mat-toolbar color="primary" class="fondoBajo">
+                <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
+                <div class="spacer"></div>
+
+                <span style="text-align: center;">ACUERDO DE CONFIDENCIALIDAD Y ENTREGA DE INFORMACIÓN</span>
+              </mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <div style="text-align: center!important;">
+        <input type="checkbox">
+
+        <textarea readonly="readonly" class="aceptacion">Acepto que la información LEVANTADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC
 
 Además aceptó conocer que los datos LEVANTADOS para la obtención del Sello de la Agricultura Familiar Campesina son de carácter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.
 
             </textarea>
-        </div>
-        <br>
-        <br>
-        <div class="firma" >
+      </div>
+      <br>
+      <br>
+      <div class="firma">
 
 
-          <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>
+        <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>
 
 
 
-          <canvas id="draw-canvas" width="200" height="160" class="firmao" style="padding-right: 50px;"></canvas><br>
+        <canvas id="draw-canvas" width="200" height="160" class="firmao" style="padding-right: 50px;"></canvas><br>
 
-          <label ><strong style="text-align: center;">____________________________________________________
+        <label><strong style="text-align: center; ">____________________________________________________
             <br>
 
-          </strong>                              </label>
-          <label for="firmaEncues" class="firma__Encuestado">Firma del Encuestado</label>
-          <mat-form-field appearance="fill" class="fill_apparence">
-            <mat-label >Fecha del la Encuesta</mat-label>
-            <input matInput id="Fecha" type="date">
+          </strong> </label>
+        <label for="firmaEncues" class="firma__Encuestado">Firma del Encuestado</label>
+        <mat-form-field appearance="fill" class="fill_apparence">
+          <mat-label>Fecha del la Encuesta</mat-label>
+          <input matInput id="Fecha" type="date">
         </mat-form-field>
 
 
@@ -79,128 +104,173 @@ Además aceptó conocer que los datos LEVANTADOS para la obtención del Sello de
 
 
 
-        </div>
-
-
-
       </div>
 
-      <div class="botones">
-        <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
-        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaL'">Siguiente</button>
-    </div>
+
+
     </div>
 
+    <div class="botones">
+      <button mat-raised-button color="warn" [routerLink]="'/PaginaI'">Anterior</button>
+      <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+        [routerLink]="'/PaginaL'">Siguiente</button>
+    </div>
+  </div>
+
   <div class="definiciones">
-      <h1>Definiciones</h1>
-      <mat-list role="list">
-          <mat-list-item role="listitem">Definición 1</mat-list-item>
-          <mat-list-item role="listitem">Definición 2</mat-list-item>
-          <mat-list-item role="listitem">Definición 3</mat-list-item>
-      </mat-list>
+    <h1>Definiciones</h1>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Definición 1</mat-list-item>
+      <mat-list-item role="listitem">Definición 2</mat-list-item>
+      <mat-list-item role="listitem">Definición 3</mat-list-item>
+    </mat-list>
   </div>
 
 </div>
 <style>
+  .fondoBajo {
+    width: 103.5%;
+    display: flex;
+
+    margin-left: -20px;
+    padding-right: 40px;
+    min-width: 100px;
+  }
+  .in-flex{
+            flex:1;
+            padding: 50px;
+            margin-left: -50px;
+            padding-right: 40px;
+            width: 100%;
+
+
+        }
+        .in-flex:first-child{
+            flex:2;
+            padding: 1px;
+        }
+        .in-flex div {
+            padding:25px;
+
+
+        }
+
   .spacer {
-      margin-left: 5%;
+    margin-left: 5%;
   }
 
   .main {
-      flex-direction: row;
-      padding-top: 2%;
-      display: flex;
-      min-height: 80%;
+    flex-direction: row;
+    padding-top: 2%;
+    display: flex;
+    min-height: 80%;
   }
 
   .contenido {
-      float: left;
-      width: 62.5%;
+    float: left;
+    width: 62.5%;
 
-      border: 1px solid gray;
-      margin-left: 2.5%;
-      padding: 1%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    padding: 1%;
   }
 
   .definiciones {
-      float: right;
-      width: 25%;
-      border: 1px solid gray;
-      margin-left: 2.5%;
-      margin-right: 5%;
-      padding: 1%;
+    float: right;
+    width: 25%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    padding: 1%;
 
   }
-  textarea.aceptacion{
-   width: 1120px;
 
-  height: 135px;
-  resize: none;
-  background-color: rgb(243, 240, 240);
-  border: 2px solid black;
+  textarea.aceptacion {
+    width: 90%;
+    height: 135px;
+    resize: none;
+    background-color: rgb(243, 240, 240);
+    border: 2px solid black;
 
-}
+  }
+
+  .Acuerdo__Confidencialidad {
+    width: 90%;
+    display: inline-block;
+  }
+
 
   mat-form-field {
-      margin-left: 1%;
+    margin-left: 1%;
   }
 
   mat-label {
-      margin-left: 1%;
+    margin-left: 1%;
 
   }
 
   table {
-      border-collapse: collapse;
-      width: 100%;
+    border-collapse: collapse;
+    width: 90%;
   }
 
   th,
   td {
-      text-align: left;
-      padding: 8px;
+    text-align: left;
+    padding: 8px;
   }
 
   tr:nth-child(even) {
-      background-color: #f2f2f2;
+    background-color: #f2f2f2;
   }
 
   button {
-      margin: 1%;
+    margin: 1%;
   }
 
   .botones {
-      float: right;
-      flex-direction: row;
-      display: flex;
+    float: right;
+    flex-direction: row;
+    display: flex;
 
   }
 
   .example-full-width {
-      padding-top: 1%;
+    padding-top: 1%;
   }
-  .firma{
+
+  .firma {
     margin-left: 14px;
-      display: left;
-      justify-content: center;
+    display: left;
+    justify-content: center;
   }
-  .fill_apparence{
+
+  .fill_apparence {
     margin-left: 256px;
     padding-left: 26px;
   }
-  .firma__Encuestado{
+
+  .firma__Encuestado {
     margin-left: 93px;
+
   }
+
   canvas {
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: 45px;
-      margin-right: 125px;
-      display: block;
-      border: 2px solid #CCCCCC;
-      border-radius: 5px;
-      cursor: crosshair;
-    }
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 45px;
+    margin-right: 125px;
+    margin-top: 1cm;
+    display: block;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    cursor: crosshair;
+  }
+
+  div label strong {
+    margin-bottom: -20px;
+  }
+
 </style>
 <!-- <style>
 
