@@ -85,7 +85,7 @@
   <div class="main" role="main">
     <div class="contenido">
       <form class="example-form">
-        <h2>1. De los miembros de la Directiva</h2>
+        <h2>De los miembros de la Directiva</h2>
         <mat-accordion multi>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -97,38 +97,34 @@
                 <mat-icon>account_circle</mat-icon>
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <h3>Número de mujeres qué ocupan un cargo directivo actualmente</h3>
-            <mat-slider
-              thumbLabel
-              [displayWith]="formatLabel"
-              tickInterval="1"
-              min="1"
-              max="100">
+            <h3>1. ¿Cuántas mujeres ocupan un cargo directivo actualmente?</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="100">
             </mat-slider>
-          <h3>Cargos ocupados por mujeres</h3>
+            <h3>2. ¿Qué cargos ocupan las mujeres?</h3>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="50">
+                <mat-form-field>
+                  <mat-select multiple>
+                    <mat-option>Presidenta</mat-option>
+                    <mat-option>Vicepresidenta</mat-option>
+                    <mat-option>Administradora</mat-option>
+                    <mat-option>Tesorera</mat-option>
+                    <mat-option>Secretaria</mat-option>
+                    <mat-option>Comisiones</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
 
-          <div fxLayout="row" fxLayoutAlign="start center" >
-            <div fxFlex="50">
-              <mat-form-field>
-                <mat-select multiple>
-                  <mat-option>Presidenta</mat-option>
-                  <mat-option>Vicepresidenta</mat-option>
-                  <mat-option>Administradora</mat-option>
-                  <mat-option>Tesorera</mat-option>
-                </mat-select>
-              </mat-form-field>
+              <div fxFlex="25">
+                <mat-form-field>
+                  <mat-label>Otro</mat-label>
+                  <input matInput type="text" placeholder="Cargo">
+                  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
             </div>
-
-            <div fxFlex="25">
-              <mat-form-field >
-                <mat-label>Otro</mat-label>
-                <input matInput type="text" placeholder="Cargo">
-                <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
-              </mat-form-field>
-            </div>
-          </div>
           </mat-expansion-panel>
 
 
@@ -142,45 +138,44 @@
                 <mat-icon>account_circle</mat-icon>
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <h3>Número de jóvenes que ocupan un cargo directivo actualmente</h3>
-            <mat-slider
-              thumbLabel
-              [displayWith]="formatLabel"
-              tickInterval="1"
-              min="1"
-              max="100">
+            <h3>3. ¿Cuántos jovenes ocupan un cargo directivo actualmente?</h3>
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="100">
             </mat-slider>
-          <h3>Casos ocupados por los jóvenes</h3>
+            <h3>4. ¿Qué cargos ocupan los jóvenes?</h3>
 
-          <div fxLayout="row" fxLayoutAlign="start center" >
-            <div fxFlex="50">
-              <mat-form-field>
-                <mat-select multiple>
-                  <mat-option>Presidente</mat-option>
-                  <mat-option>Vicepresidente</mat-option>
-                  <mat-option>Administrador</mat-option>
-                  <mat-option>Tesorero</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="50">
+                <mat-form-field>
+                  <mat-select multiple>
+                    <mat-option>Presidente</mat-option>
+                    <mat-option>Vicepresidente</mat-option>
+                    <mat-option>Administrador</mat-option>
+                    <mat-option>Tesorero</mat-option>
+                    <mat-option>Secretario</mat-option>
+                    <mat-option>Comisiones</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
 
-            <div fxFlex="25">
-              <mat-form-field >
-                <mat-label>Otro</mat-label>
-                <input matInput type="text" placeholder="Cargo">
-                <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
-              </mat-form-field>
+              <div fxFlex="25">
+                <mat-form-field>
+                  <mat-label>Otro</mat-label>
+                  <input matInput type="text" placeholder="Cargo">
+                  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
             </div>
-          </div>
           </mat-expansion-panel>
         </mat-accordion>
+
       </form>
 
       <div class="botones">
         <button mat-raised-button color="warn" [routerLink]="'/PaginaE'">Anterior</button>
-        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaG'">Siguiente</button>
+        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+          [routerLink]="'/PaginaG'">Siguiente</button>
       </div>
     </div>
 
