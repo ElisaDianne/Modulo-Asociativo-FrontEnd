@@ -100,19 +100,11 @@
             <form class="example-form">
                 <h3>2. ENTIDAD O INSTITUCIÓN QUE OTORGÓ LA PERSONERÍA JURÍDICA</h3>
                 <br>
-                <td>MAG</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
-                <td>SEPS</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
-                <td>MIES</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
-                <td>Otro (Especifique)</td>
-                <td><input type="radio" name="superficie"></td>
-                <td></td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Especifique:</mat-label>
-                    <input matInput placeholder="Otro" value="" type="text">
-                </mat-form-field>
+                <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">MAG</td>
+                <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">SEPS</td>
+                <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">MIES</td>
+                <td><input type="radio" name="superficie" onclick="otro.disabled=false"/>Otro (Especifique)</td>
+                <td><input type="text" name="otro" disabled="disabled"/></td>
             </form>
         </div>
         <div class="botones">

@@ -50,7 +50,7 @@
                             <select matNativeControl required>
                                 <option value="0">Femenino</option>
                                 <option value="1">Masculino</option>
-                                <option value="2">Otros</option>
+                                <option value="2">Otro</option>
                             </select>
                         </mat-form-field></td>
                         <td><label for="estadocivil">ESTADO CIVIL</label></td>
@@ -68,28 +68,28 @@
                     <br>
                     <tr>
                         <td><label for="instruccion">AUTOIDENTIFICACIÓN ÉTNICA</label></td>
-                        <td>Indígena<input type="radio" name="superficie">
-                        <label>Blanco</label><input type="radio" name="superficie">
-                        <label>Mestizo</label><input type="radio" name="superficie">
-                        <label>Montubio</label><input type="radio" name="superficie">
-                        <label>Afroecuatoriano</label><input type="radio" name="superficie">
-                        <label>Otra Etnia(Especifique)</label><input type="radio" name="superficie"></td>
+                        <td>Indígena<input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label>Blanco</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label>Mestizo</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label>Montubio</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label>Afroecuatoriano</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label>Otra Etnia(Especifique)</label><input type="radio" name="superficie" onclick="otraetnia.disabled=false"></td>
 
                         <td><label for="otraetnia">Especifique:</label>
-                        <input id="otraetnia" type="text"></td>
+                        <input id="otraetnia" type="text" disabled="disabled"></td>
                         
                     </tr>
                     <br><br>
                     <tr>
                         <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
-                        <td>Primaria<input type="radio" name="superficie">
-                        <label>Secundaria</label><input type="radio" name="superficie">
-                        <label>Superior</label><input type="radio" name="superficie">
-                        <label>Postgrado</label><input type="radio" name="superficie">
-                        <label>Ninguna</label><input type="radio" name="superficie"></td>
+                        <td>Primaria<input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Secundaria</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Superior</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Postgrado</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Ninguna</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=true"></td>
 
                         <td><label for="añosinstruccion">¿Cuantos años en el nivel <br> de instrucción seleccionado?</label>
-                        <input id="añosinstruccion" type="text"></td>
+                        <input id="añosinstruccion" type="text" disabled="disabled"></td>
                     </tr>
                     <br><br>
         
