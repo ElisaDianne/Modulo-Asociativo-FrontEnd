@@ -1,6 +1,7 @@
 <style>
     .spacer {
         margin-left: 5%;
+
     }
 
     .main {
@@ -29,7 +30,7 @@
     }
 
     mat-form-field {
-        margin-left: 1%;
+        margin-left: 20%;      
     }
 
     mat-label {
@@ -64,15 +65,18 @@
     }
 
     .example-full-width {
-        padding-top: 1%;
+       
+        padding-left: 20%;
+        
     }
+    
 </style>
 
-<mat-toolbar color="primary">
+<mat-toolbar  color="primary">
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
-    <span>D. DATOS DEL LUGAR O PREDIO DONDE FUNCIONA LA ORGANIZACIÓN</span>
+    <span> B. DATOS DEL LUGAR O PREDIO DONDE FUNCIONA LA ORGANIZACIÓN</span>
 </mat-toolbar>
 <div class="main" role="main">
     <div class="contenido">
@@ -80,12 +84,7 @@
             <h3>1. DIRECCIÓN DE LA ORGANIZACIÓN</h3>
             <form class="example-form">
                 <mat-form-field appearance="fill">
-                    <mat-label>Dirección</mat-label>
-                    <input matInput placeholder="Dirección" value="" type="text">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Provincia</mat-label>
+                    <mat-label>Provincia Matriz</mat-label>
                     <select matNativeControl required>
                         <option value="0">Bolívar</option>
                         <option value="1">Cañar</option>
@@ -115,18 +114,26 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Cantón</mat-label>
+                    <mat-label>Dirección</mat-label>
+                    <input matInput placeholder="Dirección Matríz" value="" type="text">
+                </mat-form-field>
+
+                
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Cantón Matriz</mat-label>
                     <input matInput placeholder="Cantón" value="" type="text">
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Parroquia</mat-label>
-                    <input matInput placeholder="Parroquia" value="" type="text">
-                </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Sector</mat-label>
                     <input matInput placeholder="Sector" value="" type="text">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Parroquia Matriz</mat-label>
+                    <input matInput placeholder="Parroquia" value="" type="text">
                 </mat-form-field>
                 <br>
             </form>
@@ -134,16 +141,33 @@
         <br>
         <div>
             <form class="example-form">
-                <h3>2. COORDENADAS UTM</h3>
+                <h3>2. LA ORGANIZACIÓN DISPONE DE SEDE PROPIA?</h3>
+
+                <td>No</td>
+                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
+                <td>Si (Agregar Superficie)</td>
+                <td><input type="radio" name="superficie"></td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Superficie (ha) o (m2)</mat-label>
+                    <input matInput placeholder="Superficie" value="" type="text">
+                </mat-form-field>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form class="example-form">
+                <h3>3. COORDENADAS UTM(GPS)</h3>
 
                 <mat-form-field class="fill">
                     <mat-label>X</mat-label>
                     <input matInput placeholder="Coordenadas X" value="" type="text">
                 </mat-form-field>
+                <br>
                 <mat-form-field class="fill">
                     <mat-label>Y</mat-label>
                     <input matInput placeholder="Coordenadas Y" value="" type="text">
                 </mat-form-field>
+                <br>
                 <mat-form-field class="fill">
                     <mat-label>Z</mat-label>
                     <input matInput placeholder="Coordenadas Z" value="" type="text">
@@ -179,26 +203,18 @@
         <br>
         <div>
             <form class="example-form">
-                <h3>3. ACCESO DE LA ORGANIZACIÓN A UNA SEDE PROPIA</h3>
+                <h3>4. CÓDIGO CASTRAL</h3>
 
                 <mat-form-field style="width:50%">
                     <mat-label>Código Catastral</mat-label>
                     <input matInput placeholder="Código catastral" value="" type="text">
                 </mat-form-field>
                 <br>
-                <td>No</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
-                <td>Si (Agregar Superficie)</td>
-                <td><input type="radio" name="superficie"></td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Superficie</mat-label>
-                    <input matInput placeholder="Superficie" value="" type="text">
-                </mat-form-field>
             </form>
         </div>
         <div class="botones">
-            <button mat-raised-button color="warn" [routerLink]="'/PaginaC'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaE'">Siguiente</button>
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaA'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaC'">Siguiente</button>
         </div>
 
 

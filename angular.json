@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "Modulo-Asociativo-FrontEnd"
+  "defaultProject": "Modulo-Asociativo-FrontEnd",
+  "cli": {
+    "analytics": "9516cedf-76f5-480e-acc8-6228202977cc"
+  }
 }
