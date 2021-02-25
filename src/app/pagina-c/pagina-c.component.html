@@ -8,18 +8,40 @@
 <div class="main" role="main">
     <div class="contenido">
         <div>
-            <h3>1. DATOS DEL REPRESENTANTE LEGAL</h3>
+            <h3>1. DATOS DEL REPRESENTANTE LEGAL DE LA ORGANIZACIÓN</h3>
             <table>
                     <tr>
-                        <td><label for="cedula">NÚMERO DE CEDULA</label></td>
+                        <td><label for="cedula">NÚMERO DE CÉDULA</label></td>
                         <td><input id="cedula" type="text"></td>
-                        <td><label for="nombre">NOMBRES Y APELLIDOS</label></td>
+                        <td><label for="nombre">NOMBRE COMPLETO</label></td>
                         <td><input id="cedula" type="text"></td>
                     </tr>
                     <br>
                     <tr>
+                        <td><label for="correo">CORREO ELECTRÓNICO</label></td>
+                        <td><input id="correo" type="text"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="telefono">TELÉFONO FIJO</label></td>
+                        <td><input id="telefono" type="text"></td>
+                        <td><label for="celular">TELÉFONO CELULAR</label></td>
+                        <td><input id="celular" type="text"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        
+                        <td><label for="registrocomo">USTED SE REGISTRA COMO:</label> </td>
+                        <td><input id="registrocomo" type="text"></td>
+                    </tr>    
+                    <tr>
                         <td><label for="fecha">FECHA DE NACIMIENTO</label></td>
                         <td><input id="Fecha" type="date"></td>
+                        <td><label for="edad">EDAD</label> </td>
+                        <td><input id="edad" type="text"><label>años</label></td>
+
                     </tr>
                     <br>
                     <tr>
@@ -31,50 +53,53 @@
                                 <option value="2">Otros</option>
                             </select>
                         </mat-form-field></td>
-                        <td>AUTOIDENTIFICACIÓN ETNICA</td>
-                        <td><mat-form-field appearance="fill">
-                                <select matNativeControl required>
-                                    <option value="0">Indigena</option>
-                                    <option value="1">Blanco</option>
-                                    <option value="2">Mestizo</option>
-                                    <option value="3">Montubio</option>
-                                    <option value="4">Afroecuatoriano</option>
-                                    <option value="5">Otra etnia</option>
-                                </select>
-                            </mat-form-field></td>
-                    </tr>
-        
-                    <tr>
-                        <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
-                        <td><mat-form-field appearance="fill">
+                        <td><label for="estadocivil">ESTADO CIVIL</label></td>
+                        <td><mat-form-field appearance=fill>
                             <select matNativeControl required>
-                                <option value="0">Primaria</option>
-                                <option value="1">Secundaria</option>
-                                <option value="2">Superior</option>
-                                <option value="3">Posgrado</option>
-                                <option value="4">Ninguna</option>
+                                <option value="0">Soltero(a)</option>
+                                <option value="1">Casado(a)</option>
+                                <option value="2">Unión Libre</option>
+                                <option value="3">Viudo(a)</option>
+                                <option value="4">Divorciado(a)</option>
                             </select>
                         </mat-form-field></td>
                     </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="instruccion">AUTOIDENTIFICACIÓN ÉTNICA</label></td>
+                        <td>Indígena<input type="radio" name="superficie">
+                        <label>Blanco</label><input type="radio" name="superficie">
+                        <label>Mestizo</label><input type="radio" name="superficie">
+                        <label>Montubio</label><input type="radio" name="superficie">
+                        <label>Afroecuatoriano</label><input type="radio" name="superficie">
+                        <label>Otra Etnia(Especifique)</label><input type="radio" name="superficie"></td>
+
+                        <td><label for="otraetnia">Especifique:</label>
+                        <input id="otraetnia" type="text"></td>
+                        
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
+                        <td>Primaria<input type="radio" name="superficie">
+                        <label>Secundaria</label><input type="radio" name="superficie">
+                        <label>Superior</label><input type="radio" name="superficie">
+                        <label>Postgrado</label><input type="radio" name="superficie">
+                        <label>Ninguna</label><input type="radio" name="superficie"></td>
+
+                        <td><label for="añosinstruccion">¿Cuantos años en el nivel <br> de instrucción seleccionado?</label>
+                        <input id="añosinstruccion" type="text"></td>
+                    </tr>
+                    <br><br>
         
                     <tr>
-                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN<br>DE LA REPRESENTACIÓN</label></td>
+                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN</label></td>
                         <td><input id="fechaDesignacion" type="date"></td>
-                        <td><label for="fechaRepresentacion">FECHA DE FINALIZACIÓN<br>DE LA REPRESENTACIÓN</label></td>
+                        <td><label for="fechaRepresentacion">FECHA DE FINALIZACIÓN</label></td>
                         <td><input id="fechaRepresentacion" type="date"></td>
                     </tr>
-                    <br>
-                    <tr>
-                        <td><label for="telefono">TELÉFONO FIJO</label></td>
-                        <td><input id="telefono" type="text"></td>
-                        <td><label for="celular">TELÉFONO CELULAR</label></td>
-                        <td><input id="celular" type="text"></td>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><label for="correo">CORREO ELECTRÓNICO</label></td>
-                        <td><input id="correo" type="text"></td>
-                    </tr>         
+                        
             </table>
         </div>
 
