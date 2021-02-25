@@ -106,7 +106,7 @@
 
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Unidades</mat-label>
+                    <mat-label>Unidade de medida</mat-label>
                     <select matNativeControl required>
                         <option value="0">Litros</option>
                         <option value="1">Quintales</option>
@@ -117,16 +117,18 @@
                 </mat-form-field>
 
                 <button mat-raised-button color="primary">Agregar</button>
+                <br/>
+                <br/>
             </form>
         </div>
 
         <div>
             <table style="width:100%">
                 <tr>
-                    <th>Número de cédula del socio</th>
+                    <th>Número de cédula de los socios</th>
                     <th>Producto</th>
                     <th>Cantidad anual</th>
-                    <th>Unidad</th>
+                    <th>Unidad de medida</th>
                     <th></th>
 
                 </tr>
@@ -150,7 +152,8 @@
                 </tr>
             </table>
         </div>
-        <br>
+        <br/>
+        <br/>
         <div>
             <h3>2. ¿Estos productos cuentan con algún tipo de certificación?</h3>
 
@@ -158,15 +161,15 @@
                 <mat-form-field appearance="fill">
                     <mat-label></mat-label>
                     <select matNativeControl required>
-                        <option value="0">Si</option>
-                        <option value="1">No</option>
+                        <option value="0" onclick="cargar.disabled=true">Si</option>
+                        <option value="1" onclick="cargar.disabled=false">No</option>
                     </select>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Especifique</mat-label>
                     <select matNativeControl required>
-                        <option value="0">Cargar de catálogo</option>
+                        <option value="0" id="cargar" disabled="disabled">Cargar de catálogo</option>
                     </select>
                 </mat-form-field>
 
