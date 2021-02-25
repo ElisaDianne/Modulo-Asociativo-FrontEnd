@@ -16,9 +16,9 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'PaginaA', component: PaginaAComponent },
-  { path: 'PaginaB', component: PaginaDComponent },
-  { path: 'PaginaC', component: PaginaBComponent },
-  { path: 'PaginaD', component: PaginaCComponent },
+  { path: 'PaginaB', component: PaginaBComponent },
+  { path: 'PaginaC', component: PaginaCComponent },
+  { path: 'PaginaD', component: PaginaDComponent },
   { path: 'PaginaE', component: PaginaEComponent },
   { path: 'PaginaF', component: PaginaFComponent },
   { path: 'PaginaG', component: PaginaGComponent },

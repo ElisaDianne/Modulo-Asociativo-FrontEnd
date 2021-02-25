@@ -1,7 +1,108 @@
+<mat-toolbar color="primary">
+    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    <div class="spacer"></div>
+
+    <span>D.DATOS DEL REPRESENTANTE LEGAL </span>
+</mat-toolbar>
+
+<div class="main" role="main">
+    <div class="contenido">
+        <div>
+            <h3>1. DATOS DEL REPRESENTANTE LEGAL</h3>
+            <table>
+                    <tr>
+                        <td><label for="cedula">NÚMERO DE CEDULA</label></td>
+                        <td><input id="cedula" type="text"></td>
+                        <td><label for="nombre">NOMBRES Y APELLIDOS</label></td>
+                        <td><input id="cedula" type="text"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="fecha">FECHA DE NACIMIENTO</label></td>
+                        <td><input id="Fecha" type="date"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="genero">GÉNERO</label></td>
+                        <td><mat-form-field appearance="fill">
+                            <select matNativeControl required>
+                                <option value="0">Femenino</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Otros</option>
+                            </select>
+                        </mat-form-field></td>
+                        <td>AUTOIDENTIFICACIÓN ETNICA</td>
+                        <td><mat-form-field appearance="fill">
+                                <select matNativeControl required>
+                                    <option value="0">Indigena</option>
+                                    <option value="1">Blanco</option>
+                                    <option value="2">Mestizo</option>
+                                    <option value="3">Montubio</option>
+                                    <option value="4">Afroecuatoriano</option>
+                                    <option value="5">Otra etnia</option>
+                                </select>
+                            </mat-form-field></td>
+                    </tr>
+        
+                    <tr>
+                        <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
+                        <td><mat-form-field appearance="fill">
+                            <select matNativeControl required>
+                                <option value="0">Primaria</option>
+                                <option value="1">Secundaria</option>
+                                <option value="2">Superior</option>
+                                <option value="3">Posgrado</option>
+                                <option value="4">Ninguna</option>
+                            </select>
+                        </mat-form-field></td>
+                    </tr>
+        
+                    <tr>
+                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN<br>DE LA REPRESENTACIÓN</label></td>
+                        <td><input id="fechaDesignacion" type="date"></td>
+                        <td><label for="fechaRepresentacion">FECHA DE FINALIZACIÓN<br>DE LA REPRESENTACIÓN</label></td>
+                        <td><input id="fechaRepresentacion" type="date"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="telefono">TELÉFONO FIJO</label></td>
+                        <td><input id="telefono" type="text"></td>
+                        <td><label for="celular">TELÉFONO CELULAR</label></td>
+                        <td><input id="celular" type="text"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="correo">CORREO ELECTRÓNICO</label></td>
+                        <td><input id="correo" type="text"></td>
+                    </tr>         
+            </table>
+        </div>
+
+        
+        
+        <div class="botones">
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaC'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;" [routerLink]="'/PaginaE'">Siguiente</button>
+        </div>
+
+
+    </div>
+
+    <div class="definiciones">
+        <h1>Definiciones</h1>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Definición 1</mat-list-item>
+            <mat-list-item role="listitem">Definición 2</mat-list-item>
+            <mat-list-item role="listitem">Definición 3</mat-list-item>
+        </mat-list>
+    </div>
+
+</div>
+
 <style>
+
     .spacer {
         margin-left: 5%;
-
     }
 
     .main {
@@ -14,6 +115,7 @@
     .contenido {
         float: left;
         width: 62.5%;
+        
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -30,7 +132,7 @@
     }
 
     mat-form-field {
-        margin-left: 20%;      
+        margin-left: 1%;
     }
 
     mat-label {
@@ -65,168 +167,44 @@
     }
 
     .example-full-width {
-       
-        padding-left: 20%;
-        
+        padding-top: 1%;
     }
-    
+
+div.principal{
+width: 90%;
+padding: 10px;  
+overflow: hidden;
+} 
+div.Contenido{
+border: 1px solid #5d87fa;
+width: 60%;
+height: 16.47cm;
+float: left;
+}
+div.Definiciones{
+border: 1px solid #5d87fa;
+overflow: hidden;  
+}
+label{
+padding-left: 5px;
+margin-right: 5px; 
+}
+textarea.def{
+margin: 0 1rem ;
+height: 15cm;
+width:90%;
+}
+textarea.aceptacion{
+width:7cm;
+height: 10cm;
+background-color: rgb(243, 240, 240);
+text-justify: initial;
+}
+
+.botones {
+    margin-top: 1cm;
+    margin-right: 1cm;
+    float: right;
+    flex-direction: row;     
+}
 </style>
-
-<mat-toolbar  color="primary">
-    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
-    <div class="spacer"></div>
-
-    <span> B. DATOS DE UBICACIÓN DE MATRIZ</span>
-</mat-toolbar>
-<div class="main" role="main">
-    <div class="contenido">
-        <div>
-            <h3>1. DIRECCIÓN DE LA ORGANIZACIÓN</h3>
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label>Provincia Matriz</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Bolívar</option>
-                        <option value="1">Cañar</option>
-                        <option value="2">Carchi</option>
-                        <option value="3">Chimborazo</option>
-                        <option value="4">Cotopaxi</option>
-                        <option value="5">El Oro</option>
-                        <option value="6">Esmeraldas</option>
-                        <option value="7">Galápagos</option>
-                        <option value="8">Guayas</option>
-                        <option value="9">Imbabura</option>
-                        <option value="10">Loja</option>
-                        <option value="11">Los Ríos</option>
-                        <option value="12">Manabí</option>
-                        <option value="13">Morona Santiago</option>
-                        <option value="14">Napo</option>
-                        <option value="15">Orellana</option>
-                        <option value="16">Pastaza</option>
-                        <option value="17">Pichincha</option>
-                        <option value="18">Santa Elena</option>
-                        <option value="19">Santo Domingo de los Tsáchilas</option>
-                        <option value="20">Sucumbíos</option>
-                        <option value="21">Tungurahua</option>
-                        <option value="22">Zamora Chinchipe</option>
-                        <option value="23">Azuay </option>
-                    </select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Dirección</mat-label>
-                    <input matInput placeholder="Dirección Matríz" value="" type="text">
-                </mat-form-field>
-
-                
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Cantón Matriz</mat-label>
-                    <input matInput placeholder="Cantón" value="" type="text">
-                </mat-form-field>
-
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Sector</mat-label>
-                    <input matInput placeholder="Sector" value="" type="text">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Parroquia Matriz</mat-label>
-                    <input matInput placeholder="Parroquia" value="" type="text">
-                </mat-form-field>
-                <br>
-            </form>
-        </div>
-        <br>
-        <div>
-            <form class="example-form">
-                <h3>2. LA ORGANIZACIÓN DISPONE DE SEDE PROPIA?</h3>
-
-                <td>No</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
-                <td>Si (Agregar Superficie)</td>
-                <td><input type="radio" name="superficie"></td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Superficie (ha) o (m2)</mat-label>
-                    <input matInput placeholder="Superficie" value="" type="text">
-                </mat-form-field>
-            </form>
-        </div>
-        <br>
-        <div>
-            <form class="example-form">
-                <h3>3. COORDENADAS UTM(GPS)</h3>
-
-                <mat-form-field class="fill">
-                    <mat-label>X</mat-label>
-                    <input matInput placeholder="Coordenadas X" value="" type="text">
-                </mat-form-field>
-                <br>
-                <mat-form-field class="fill">
-                    <mat-label>Y</mat-label>
-                    <input matInput placeholder="Coordenadas Y" value="" type="text">
-                </mat-form-field>
-                <br>
-                <mat-form-field class="fill">
-                    <mat-label>Z</mat-label>
-                    <input matInput placeholder="Coordenadas Z" value="" type="text">
-                </mat-form-field>
-            </form>
-        </div>
-        <br>
-        <div>
-            <table style="width:80%">
-                <tr>
-                    <th>Hemisferio</th>
-                    <td>N</td>
-                    <td><input type="radio" name="hemisferio"></td>
-                    <td>S</td>
-                    <td><input type="radio" name="hemisferio"></td>
-
-                </tr>
-                <tr>
-                    <th rowspan="2">Zona</th>
-                    <td>15</td>
-                    <td><input type="radio" name="zona"></td>
-                    <td>16</td>
-                    <td><input type="radio" name="zona"></td>
-                </tr>
-                <tr>
-                    <td>17</td>
-                    <td><input type="radio" name="zona"></td>
-                    <td>18</td>
-                    <td><input type="radio" name="zona"></td>
-                </tr>
-            </table>
-        </div>
-        <br>
-        <div>
-            <form class="example-form">
-                <h3>4. CÓDIGO CATASTRAL</h3>
-
-                <mat-form-field style="width:50%">
-                    <mat-label>Código Catastral</mat-label>
-                    <input matInput placeholder="Código catastral" value="" type="text">
-                </mat-form-field>
-                <br>
-            </form>
-        </div>
-        <div class="botones">
-            <button mat-raised-button color="warn" [routerLink]="'/PaginaA'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaC'">Siguiente</button>
-        </div>
-
-
-    </div>
-
-    <div class="definiciones">
-        <h1>Definiciones</h1>
-        <mat-list role="list">
-            <mat-list-item role="listitem">definición 1</mat-list-item>
-            <mat-list-item role="listitem">definición 2</mat-list-item>
-            <mat-list-item role="listitem">definición 3</mat-list-item>
-        </mat-list>
-    </div>
-
-</div>
