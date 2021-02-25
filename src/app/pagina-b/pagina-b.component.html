@@ -1,6 +1,7 @@
 <style>
     .spacer {
         margin-left: 5%;
+
     }
 
     .main {
@@ -13,7 +14,6 @@
     .contenido {
         float: left;
         width: 62.5%;
-        
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -30,7 +30,7 @@
     }
 
     mat-form-field {
-        margin-left: 1%;
+        margin-left: 20%;      
     }
 
     mat-label {
@@ -65,61 +65,156 @@
     }
 
     .example-full-width {
-        padding-top: 1%;
+       
+        padding-left: 20%;
+        
     }
+    
 </style>
-<mat-toolbar color="primary">
+
+<mat-toolbar  color="primary">
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
-    <span>C. DATOS JURÍDICOS DE LA ORGANIZACIÓN</span>
+    <span> B. DATOS DE UBICACIÓN DE MATRIZ</span>
 </mat-toolbar>
-
 <div class="main" role="main">
     <div class="contenido">
         <div>
-            <h3>1. NÚMERO DE REGISTRO, RESOLUCIÓN O ACUERDO DE LA OBTENCIÓN DE LA PERSONERÍA JURÍDICA DE LA ORGANIZACIÓN</h3>
-            <table>
-                <tr>
-                    <td><input type="radio" id="Decreto" name="tipoRegistro" value="Decreto">Decreto</td>
-                    <td><input type="radio" id="Resolucion" name="tipoRegistro" value="Resolucion">Resolución</td>
-                    <td><input type="radio" id="ROEPS" name="tipoRegistro" value="ROEPS">ROEPS</td>
-                </tr>
-                <br>
-                
-                <br>
-            </table>
-            <div align="center">
-                <td><label for="numRegistro">Número   </label>
-                    <input id="numRegistro" type="text"></td>
-            </div>
-            <br><br>
-                <h3>2. ENTIDAD O INSTITUCIÓN QUE OTORGÓ LA PERSONERÍA JURÍDICA</h3>
-            <table>
-                <tr>
-                    <td><input type="radio" id="MAG" name="tipoInstitucion" value="MAG">MAG</td>
-                    <td><input type="radio" id="SEPS" name="tipoInstitucion" value="SEPS">SEPS</td>
-                    <td><input type="radio" id="MIES" name="tipoInstitucion" value="MIES">MIES</td>
-                </tr>
-                <br>
-            </table> 
-            <div align="center">
-                <label for="telefonoFijo">Especifique:   </label><br>
-                <input type="radio" id="Otro" name="tipoInstitucion" value="Otro">Otro
-                
-                <input id="telefonoFijo" type="text">
-            </div>   
-                <br>
-                
-                <br>
-               
-        </div>
+            <h3>1. DIRECCIÓN DE LA ORGANIZACIÓN</h3>
+            <form class="example-form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Provincia Matriz</mat-label>
+                    <select matNativeControl required>
+                        <option value="0">Bolívar</option>
+                        <option value="1">Cañar</option>
+                        <option value="2">Carchi</option>
+                        <option value="3">Chimborazo</option>
+                        <option value="4">Cotopaxi</option>
+                        <option value="5">El Oro</option>
+                        <option value="6">Esmeraldas</option>
+                        <option value="7">Galápagos</option>
+                        <option value="8">Guayas</option>
+                        <option value="9">Imbabura</option>
+                        <option value="10">Loja</option>
+                        <option value="11">Los Ríos</option>
+                        <option value="12">Manabí</option>
+                        <option value="13">Morona Santiago</option>
+                        <option value="14">Napo</option>
+                        <option value="15">Orellana</option>
+                        <option value="16">Pastaza</option>
+                        <option value="17">Pichincha</option>
+                        <option value="18">Santa Elena</option>
+                        <option value="19">Santo Domingo de los Tsáchilas</option>
+                        <option value="20">Sucumbíos</option>
+                        <option value="21">Tungurahua</option>
+                        <option value="22">Zamora Chinchipe</option>
+                        <option value="23">Azuay </option>
+                    </select>
+                </mat-form-field>
 
-        
-        
+                <mat-form-field appearance="fill">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput placeholder="Dirección Matríz" value="" type="text">
+                </mat-form-field>
+
+                
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Cantón Matriz</mat-label>
+                    <input matInput placeholder="Cantón" value="" type="text">
+                </mat-form-field>
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Sector</mat-label>
+                    <input matInput placeholder="Sector" value="" type="text">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Parroquia Matriz</mat-label>
+                    <input matInput placeholder="Parroquia" value="" type="text">
+                </mat-form-field>
+                <br>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form class="example-form">
+                <h3>2. LA ORGANIZACIÓN DISPONE DE SEDE PROPIA?</h3>
+
+                <td>No</td>
+                <td style="padding-right: 50px;"><input type="radio" name="superficie"></td>
+                <td>Si (Agregar Superficie)</td>
+                <td><input type="radio" name="superficie"></td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Superficie (ha) o (m2)</mat-label>
+                    <input matInput placeholder="Superficie" value="" type="text">
+                </mat-form-field>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form class="example-form">
+                <h3>3. COORDENADAS UTM(GPS)</h3>
+
+                <mat-form-field class="fill">
+                    <mat-label>X</mat-label>
+                    <input matInput placeholder="Coordenadas X" value="" type="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="fill">
+                    <mat-label>Y</mat-label>
+                    <input matInput placeholder="Coordenadas Y" value="" type="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="fill">
+                    <mat-label>Z</mat-label>
+                    <input matInput placeholder="Coordenadas Z" value="" type="text">
+                </mat-form-field>
+            </form>
+        </div>
+        <br>
+        <div>
+            <table style="width:80%">
+                <tr>
+                    <th>Hemisferio</th>
+                    <td>N</td>
+                    <td><input type="radio" name="hemisferio"></td>
+                    <td>S</td>
+                    <td><input type="radio" name="hemisferio"></td>
+
+                </tr>
+                <tr>
+                    <th rowspan="2">Zona</th>
+                    <td>15</td>
+                    <td><input type="radio" name="zona"></td>
+                    <td>16</td>
+                    <td><input type="radio" name="zona"></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td><input type="radio" name="zona"></td>
+                    <td>18</td>
+                    <td><input type="radio" name="zona"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <form class="example-form">
+                <h3>4. CÓDIGO CATASTRAL</h3>
+
+                <mat-form-field style="width:50%">
+                    <mat-label>Código Catastral</mat-label>
+                    <input matInput placeholder="Código catastral" value="" type="text">
+                </mat-form-field>
+                <br>
+            </form>
+        </div>
         <div class="botones">
-            <button mat-raised-button color="warn" [routerLink]="'/PaginaB'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaD'">Siguiente</button>
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaA'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaC'">Siguiente</button>
         </div>
 
 
@@ -128,9 +223,9 @@
     <div class="definiciones">
         <h1>Definiciones</h1>
         <mat-list role="list">
-            <mat-list-item role="listitem">Definición 1</mat-list-item>
-            <mat-list-item role="listitem">Definición 2</mat-list-item>
-            <mat-list-item role="listitem">Definición 3</mat-list-item>
+            <mat-list-item role="listitem">definición 1</mat-list-item>
+            <mat-list-item role="listitem">definición 2</mat-list-item>
+            <mat-list-item role="listitem">definición 3</mat-list-item>
         </mat-list>
     </div>
 
