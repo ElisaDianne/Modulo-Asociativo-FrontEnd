@@ -28,10 +28,6 @@
 
   }
 
-  .separador{
-    margin-bottom: 2.5%;
-  }
-
   mat-form-field {
     margin-left: 1%;
   }
@@ -88,16 +84,30 @@
 <div>
   <div class="main" role="main">
     <div class="contenido">
-
       <form class="example-form">
-        <div class="separador">
-          <h3>1. De los miembros de la Directiva ¿Cuántas mujeres ocupan un cargo directivo actualmente?</h3>
-          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="100">
-          </mat-slider>
-        </div>
-        <div class="separador">
-          <h3>2. ¿Qué cargos ocupan las mujeres?</h3>
-          <div fxLayout="row" fxLayoutAlign="start center">
+        <h2>1. De los miembros de la Directiva</h2>
+        <mat-accordion multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mujeres
+              </mat-panel-title>
+              <mat-panel-description>
+                Mujeres que formen parte de la organización
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <h3>Número de mujeres qué ocupan un cargo directivo actualmente</h3>
+            <mat-slider
+              thumbLabel
+              [displayWith]="formatLabel"
+              tickInterval="1"
+              min="1"
+              max="100">
+            </mat-slider>
+          <h3>Cargos ocupados por mujeres</h3>
+
+          <div fxLayout="row" fxLayoutAlign="start center" >
             <div fxFlex="50">
               <mat-form-field>
                 <mat-select multiple>
@@ -105,14 +115,12 @@
                   <mat-option>Vicepresidenta</mat-option>
                   <mat-option>Administradora</mat-option>
                   <mat-option>Tesorera</mat-option>
-                  <mat-option>Secretaria</mat-option>
-                  <mat-option>Comisiones</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
 
             <div fxFlex="25">
-              <mat-form-field>
+              <mat-form-field >
                 <mat-label>Otro</mat-label>
                 <input matInput type="text" placeholder="Cargo">
                 <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -121,16 +129,30 @@
               </mat-form-field>
             </div>
           </div>
-        </div>
+          </mat-expansion-panel>
 
-        <div class="separador">
-          <h3>3. De los miembros de la Directiva ¿Cuántos jovenes ocupan un cargo directivo actualmente? (18 - 29 años)</h3>
-          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="100">
-          </mat-slider>
-        </div>
-        <div class="separador">
-          <h3>4. ¿Qué cargos ocupan los jóvenes? (18 - 29 años)</h3>
-          <div fxLayout="row" fxLayoutAlign="start center">
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Jovenes
+              </mat-panel-title>
+              <mat-panel-description>
+                Jovenes con edad entre 18 - 29 años
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <h3>Número de jóvenes que ocupan un cargo directivo actualmente</h3>
+            <mat-slider
+              thumbLabel
+              [displayWith]="formatLabel"
+              tickInterval="1"
+              min="1"
+              max="100">
+            </mat-slider>
+          <h3>Casos ocupados por los jóvenes</h3>
+
+          <div fxLayout="row" fxLayoutAlign="start center" >
             <div fxFlex="50">
               <mat-form-field>
                 <mat-select multiple>
@@ -138,14 +160,12 @@
                   <mat-option>Vicepresidente</mat-option>
                   <mat-option>Administrador</mat-option>
                   <mat-option>Tesorero</mat-option>
-                  <mat-option>Secretario</mat-option>
-                  <mat-option>Comisiones</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
 
             <div fxFlex="25">
-              <mat-form-field>
+              <mat-form-field >
                 <mat-label>Otro</mat-label>
                 <input matInput type="text" placeholder="Cargo">
                 <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -154,13 +174,13 @@
               </mat-form-field>
             </div>
           </div>
-        </div>
+          </mat-expansion-panel>
+        </mat-accordion>
       </form>
 
       <div class="botones">
         <button mat-raised-button color="warn" [routerLink]="'/PaginaE'">Anterior</button>
-        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
-          [routerLink]="'/PaginaG'">Siguiente</button>
+        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaG'">Siguiente</button>
       </div>
     </div>
 
