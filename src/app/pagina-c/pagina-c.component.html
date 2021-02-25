@@ -8,7 +8,7 @@
 <div class="main" role="main">
     <div class="contenido">
         <div>
-            <h3>1. DATOS DEL REPRESENTANTE LEGAL</h3>
+            <h3>1. DATOS DEL REPRESENTANTE LEGAL DE LA ORGANIZACIÓN</h3>
             <table>
                     <tr>
                         <td><label for="cedula">NÚMERO DE CEDULA</label></td>
@@ -18,6 +18,25 @@
                     </tr>
                     <br>
                     <tr>
+                        <td><label for="correo">CORREO ELECTRÓNICO</label></td>
+                        <td><input id="correo" type="text" size="40px"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="telefono">TELÉFONO FIJO</label></td>
+                        <td><input id="telefono" type="number"></td>
+                        <td><label for="celular">TELÉFONO CELULAR</label></td>
+                        <td><input id="celular" type="number"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        
+                        <td><label for="registrocomo">USTED SE REGISTRA COMO:</label> </td>
+                        <td><input id="registrocomo" type="text" size="40px"></td>
+                    </tr>    
+                    <tr>    
                         <td><label for="fecha">FECHA DE NACIMIENTO</label></td>
                         <td><input id="Fecha" type="date"></td>
                     </tr>
@@ -28,7 +47,17 @@
                             <select matNativeControl required>
                                 <option value="0">Femenino</option>
                                 <option value="1">Masculino</option>
-                                <option value="2">Otros</option>
+                                <option value="2">Otro</option>
+                            </select>
+                        </mat-form-field></td>
+                        <td><label for="estadocivil">ESTADO CIVIL</label></td>
+                        <td><mat-form-field appearance=fill>
+                            <select matNativeControl required>
+                                <option value="0">Soltero(a)</option>
+                                <option value="1">Casado(a)</option>
+                                <option value="2">Unión Libre</option>
+                                <option value="3">Viudo(a)</option>
+                                <option value="4">Divorciado(a)</option>
                             </select>
                         </mat-form-field></td>
                         <td>AUTOIDENTIFICACIÓN ETNICA</td>
@@ -43,38 +72,27 @@
                                 </select>
                             </mat-form-field></td>
                     </tr>
-        
+                    <br><br>
                     <tr>
                         <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
-                        <td><mat-form-field appearance="fill">
-                            <select matNativeControl required>
-                                <option value="0">Primaria</option>
-                                <option value="1">Secundaria</option>
-                                <option value="2">Superior</option>
-                                <option value="3">Posgrado</option>
-                                <option value="4">Ninguna</option>
-                            </select>
-                        </mat-form-field></td>
+                        <td>Primaria<input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Secundaria</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Superior</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                       <br> <label>Postgrado</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label>Ninguna</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=true"></td>
+
+                        <td><label for="añosinstruccion">¿Cuantos años en el nivel <br> de instrucción seleccionado?</label>
+                        <input id="añosinstruccion" type="text" disabled="disabled"></td>
                     </tr>
+                    <br><br>
         
                     <tr>
-                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN<br>DE LA REPRESENTACIÓN</label></td>
+                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN</label></td>
                         <td><input id="fechaDesignacion" type="date"></td>
-                        <td><label for="fechaRepresentacion">FECHA DE FINALIZACIÓN<br>DE LA REPRESENTACIÓN</label></td>
+                        <td><label for="fechaRepresentacion">FECHA DE FINALIZACIÓN</label></td>
                         <td><input id="fechaRepresentacion" type="date"></td>
                     </tr>
-                    <br>
-                    <tr>
-                        <td><label for="telefono">TELÉFONO FIJO</label></td>
-                        <td><input id="telefono" type="text"></td>
-                        <td><label for="celular">TELÉFONO CELULAR</label></td>
-                        <td><input id="celular" type="text"></td>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><label for="correo">CORREO ELECTRÓNICO</label></td>
-                        <td><input id="correo" type="text"></td>
-                    </tr>         
+                        
             </table>
         </div>
 
