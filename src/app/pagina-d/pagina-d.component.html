@@ -13,6 +13,7 @@
     .contenido {
         float: left;
         width: 62.5%;
+        
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -67,46 +68,60 @@
         padding-top: 1%;
     }
 </style>
-
 <mat-toolbar color="primary">
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
-    <span>D. DATOS JURIDICOS DE LA ORGANIZACIÓN</span>
+    <span>D. DATOS JURÍDICOS DE LA ORGANIZACIÓN</span>
 </mat-toolbar>
+
 <div class="main" role="main">
     <div class="contenido">
         <div>
-            <h3>1. LA PERSONERÍA JURÍDICA FUE ADQUIRIDA MEDIANTE ACUERDO O RESOLUCIÓN NÚMERO</h3>
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label>Decreto Nro.</mat-label>
-                    <input matInput placeholder="Decreto Nro." value="" type="text">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Resolución Nro.</mat-label>
-                    <input matInput placeholder="Resolución Nro." value="" type="text">
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>ROEPS Nro.</mat-label>
-                    <input matInput placeholder="ROEPS Nro." value="" type="text">
-                </mat-form-field>
+            <h3>1. NÚMERO DE REGISTRO, RESOLUCIÓN O ACUERDO DE LA OBTENCIÓN DE LA PERSONERÍA JURÍDICA DE LA ORGANIZACIÓN</h3>
+            <table>
+                <tr>
+                    <td><input type="radio" id="Decreto" name="tipoRegistro" value="Decreto">Decreto</td>
+                    <td><input type="radio" id="Resolucion" name="tipoRegistro" value="Resolucion">Resolución</td>
+                    <td><input type="radio" id="ROEPS" name="tipoRegistro" value="ROEPS">ROEPS</td>
+                </tr>
                 <br>
-            </form>
-        </div>
-        <br>
-        <div>
-            <form class="example-form">
+                
+                <br>
+            </table>
+            <div align="center">
+                <td><label for="numRegistro">Número   </label>
+                    <input id="numRegistro" type="text"></td>
+            </div>
+            <br><br>
                 <h3>2. ENTIDAD O INSTITUCIÓN QUE OTORGÓ LA PERSONERÍA JURÍDICA</h3>
+            <table>
+                <tr>
+                    <td><input type="radio" id="MAG" name="tipoInstitucion" value="MAG">MAG</td>
+                    <td><input type="radio" id="SEPS" name="tipoInstitucion" value="SEPS">SEPS</td>
+                    <td><input type="radio" id="MIES" name="tipoInstitucion" value="MIES">MIES</td>
+                </tr>
                 <br>
+            </table> 
+            <div align="center">
+                <label for="telefonoFijo">Especifique:   </label><br>
+                <input type="radio" id="Otro" name="tipoInstitucion" value="Otro">Otro
+                
+                <input id="telefonoFijo" type="text">
+            </div>   
+                <br>
+
                 <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">MAG</td>
                 <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">SEPS</td>
                 <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">MIES</td>
                 <td><input type="radio" name="superficie" onclick="otro.disabled=false"/>Otro (Especifique)</td>
                 <td><input type="text" name="otro" disabled="disabled"/></td>
             </form>
+
         </div>
+
+        
+        
         <div class="botones">
             <button mat-raised-button color="warn" [routerLink]="'/PaginaC'">Anterior</button>
             <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaE'">Siguiente</button>
@@ -118,9 +133,9 @@
     <div class="definiciones">
         <h1>Definiciones</h1>
         <mat-list role="list">
-            <mat-list-item role="listitem">definición 1</mat-list-item>
-            <mat-list-item role="listitem">definición 2</mat-list-item>
-            <mat-list-item role="listitem">definición 3</mat-list-item>
+            <mat-list-item role="listitem">Definición 1</mat-list-item>
+            <mat-list-item role="listitem">Definición 2</mat-list-item>
+            <mat-list-item role="listitem">Definición 3</mat-list-item>
         </mat-list>
     </div>
 
