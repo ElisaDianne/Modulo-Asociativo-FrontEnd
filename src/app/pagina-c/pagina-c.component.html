@@ -2,7 +2,7 @@
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
-    <span>C.DATOS DEL REPRESENTANTE LEGAL </span>
+    <span>C. DATOS DEL REPRESENTANTE LEGAL </span>
 </mat-toolbar>
 
 <div class="main" role="main">
@@ -11,9 +11,9 @@
             <h3>1. DATOS DEL REPRESENTANTE LEGAL DE LA ORGANIZACIÓN</h3>
             <table>
                     <tr>
-                        <td><label for="cedula">NÚMERO DE CEDULA</label></td>
+                        <td><label for="cedula">CÉDULA</label></td>
                         <td><input id="cedula" type="text"></td>
-                        <td><label for="nombre">NOMBRES Y APELLIDOS</label></td>
+                        <td><label for="nombre">NOMBRE COMPLETO</label></td>
                         <td><input id="cedula" type="text"></td>
                     </tr>
                     <br>
@@ -39,6 +39,8 @@
                     <tr>    
                         <td><label for="fecha">FECHA DE NACIMIENTO</label></td>
                         <td><input id="Fecha" type="date"></td>
+                        <td><label for="edad">EDAD</label><input id="edad" type="number" size="50000px"><label>años</label></td>
+
                     </tr>
                     <br>
                     <tr>
@@ -60,26 +62,30 @@
                                 <option value="4">Divorciado(a)</option>
                             </select>
                         </mat-form-field></td>
-                        <td>AUTOIDENTIFICACIÓN ETNICA</td>
-                        <td><mat-form-field appearance="fill">
-                                <select matNativeControl required>
-                                    <option value="0">Indigena</option>
-                                    <option value="1">Blanco</option>
-                                    <option value="2">Mestizo</option>
-                                    <option value="3">Montubio</option>
-                                    <option value="4">Afroecuatoriano</option>
-                                    <option value="5">Otra etnia</option>
-                                </select>
-                            </mat-form-field></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="instruccion">AUTOIDENTIFICACIÓN ÉTNICA</label></td>
+                        <td>Indígena<input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label><br>Blanco</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label><br>Mestizo</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label><br>Montubio</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label><br>Afroecuatoriano</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
+                        <label><br>Otra Etnia(Especifique)</label><input type="radio" name="superficie" onclick="otraetnia.disabled=false"></td>
+
+                        <td><label for="otraetnia">Especifique:</label>
+                        <input id="otraetnia" type="text" disabled="disabled"></td>
+                        
                     </tr>
                     <br><br>
                     <tr>
                         <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
                         <td>Primaria<input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                        <label>Secundaria</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                        <label>Superior</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                       <br> <label>Postgrado</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                        <label>Ninguna</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=true"></td>
+                        <label><br>Secundaria</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label><br>Superior</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label><br>Postgrado</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
+                        <label><br>Ninguna</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=true"></td>
 
                         <td><label for="añosinstruccion">¿Cuantos años en el nivel <br> de instrucción seleccionado?</label>
                         <input id="añosinstruccion" type="text" disabled="disabled"></td>
