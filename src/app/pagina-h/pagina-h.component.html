@@ -180,18 +180,15 @@
         <div>
             <h3>3. ¿La principal forma de comercialización de los productos es?</h3>
 
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Producto Primario</option>
-                        <option value="1">Producto Elaborado o Procesado</option>
-                        <option value="2">Producto Semiprocesado</option>
-
-                    </select>
-                </mat-form-field>
-
-            </form>
+            <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec.disabled=false">Sí</td>
+            <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec.disabled=true">No</td>
+           
+            <mat-form-field appearance="fill">
+                <mat-label>Especifique</mat-label>
+                <select matNativeControl required id="espec" disabled>
+                    <option value="0" id="cargar" >Cargar de catálogo</option>
+                </select>
+            </mat-form-field> 
 
         </div>
         <br>
