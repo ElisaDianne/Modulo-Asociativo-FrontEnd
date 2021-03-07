@@ -193,34 +193,30 @@
         <br>
         <div>
             <h3>4. ¿Cuáles son los principales mercados en el que se comercializa los productos de la organización?</h3>
-
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                    <select matNativeControl required id="id_categoria">
-                        <option value="0">Venta en Finca</option>
-                        <option value="1">Agroturismo</option>
-                        <option value="2">Feria</option>
-                        <option value="3">Canasta</option>
-                        <option value="4">Tienda Campesina</option>
-                        <option value="5">Punto de Venta</option>
-                        <option value="6">HORECA</option>
-                        <option value="7">Abastecimiento Directo</option>
-                        <option value="8">Intermediarios</option>
-                        <option value="9">Supermercados</option>
-                        <option value="10">Compra Pública</option>
-                        <option value="11">Exportación</option>
-                        <option value="12">Otros</option>
-                    </select>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <mat-label>Especifique</mat-label>
-                    <input matInput id="id_input" placeholder="" value="" type="text">
-                </mat-form-field>
-
-
-            </form>
+ 
+            <mat-form-field appearance="fill">
+                <mat-label>Escoja una opción</mat-label>
+                <mat-select >
+                  <mat-option value="1" onclick="espec2.disabled=true">Venta en Finca</mat-option>
+                  <mat-option value="2" onclick="espec2.disabled=true">Agroturismo</mat-option>
+                  <mat-option value="3" onclick="espec2.disabled=true">Feria</mat-option>
+                  <mat-option value="4" onclick="espec2.disabled=true">Canasta</mat-option>
+                  <mat-option value="5" onclick="espec2.disabled=true">Tienda Campesina</mat-option>
+                  <mat-option value="6" onclick="espec2.disabled=true">Punto de Venta</mat-option>
+                  <mat-option value="7" onclick="espec2.disabled=true">HORECA</mat-option>
+                  <mat-option value="8" onclick="espec2.disabled=true">Abastecimiento Directo</mat-option>
+                  <mat-option value="9" onclick="espec2.disabled=true">Intermediarios</mat-option>
+                  <mat-option value="10" onclick="espec2.disabled=true">Supermercados</mat-option>
+                  <mat-option value="11" onclick="espec2.disabled=true">Compra Pública</mat-option>
+                  <mat-option value="12" onclick="espec2.disabled=true">Exportación</mat-option>
+                  <mat-option value="13" onclick="espec2.disabled=false">Otros</mat-option>
+                </mat-select>
+            </mat-form-field>
+              
+            <mat-form-field class="example-full-width">
+                <mat-label>Especifique</mat-label>
+                    <input matInput id="espec2" placeholder="" value="" type="text" disabled>
+            </mat-form-field>
 
         </div>
         <div class="botones">
