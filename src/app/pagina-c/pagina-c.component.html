@@ -14,7 +14,7 @@
                         <td><label for="cedula">NÚMERO DE CÉDULA</label></td>
                         <td><input id="cedula" type="number"></td>
                         <td><label for="nombre">NOMBRE COMPLETO</label></td>
-                        <td><input id="cedula" type="text"></td>
+                        <td><input id="cedula" type="number"></td>
                     </tr>
                     <br>
                     <tr>
@@ -31,65 +31,87 @@
                     </tr>
                     <br>
                     <br>
-                    <tr>
-                        
-                        <td><label for="registrocomo">USTED SE REGISTRA COMO:</label> </td>
-                        <td><input id="registrocomo" type="text" size="40px"></td>
-                    </tr>    
-                    <tr>    
-                        <td><label for="fecha">FECHA DE NACIMIENTO</label></td>
-                        <td><input id="Fecha" type="date"></td>
-                        <label for="edad">EDAD</label><input id="edad" type="number" size="50000px"><label>años</label>
-                        
-
-                    </tr>
-                    <br>
-                    <tr>
+                     <tr>
                         <td><label for="genero">GÉNERO</label></td>
-                        <td><mat-form-field appearance="fill">
-                            <select matNativeControl required>
-                                <option value="0">Femenino</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Otro</option>
-                            </select>
-                        </mat-form-field></td>
+                        <td>        
+                            <mat-form-field appearance="fill">
+                                <mat-label>Escoja una opción</mat-label>
+                                <mat-select >
+                                  <mat-option value="1" onclick="ogenero.disabled=true">Femenino</mat-option>
+                                  <mat-option value="2" onclick="ogenero.disabled=true">Masculino</mat-option>
+                                  <mat-option value="3" onclick="ogenero.disabled=false">Otro</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Especifique</mat-label>
+                                    <input matInput id="ogenero" placeholder="" value="" type="text" disabled>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                        <tr>
                         <td><label for="estadocivil">ESTADO CIVIL</label></td>
-                        <td><mat-form-field appearance=fill>
-                            <select matNativeControl required>
-                                <option value="0">Soltero(a)</option>
-                                <option value="1">Casado(a)</option>
-                                <option value="2">Unión Libre</option>
-                                <option value="3">Viudo(a)</option>
-                                <option value="4">Divorciado(a)</option>
-                            </select>
+                        <td><mat-form-field appearance="fill">
+                            <mat-label>Escoja una opción</mat-label>
+                            <mat-select >
+                              <mat-option value="1" >Soltero(a)</mat-option>
+                              <mat-option value="2" >Casad(a)</mat-option>
+                              <mat-option value="3" >Unión Libre</mat-option>
+                              <mat-option value="4" >Viudo(a)</mat-option>
+                              <mat-option value="5" >Divorciado(a)</mat-option>
+                            </mat-select>
                         </mat-form-field></td>
                     </tr>
                     <br>
                     <br>
                     <tr>
                         <td><label for="instruccion">AUTOIDENTIFICACIÓN ÉTNICA</label></td>
-                        <td>Indígena<input type="radio" name="superficie" onclick="otraetnia.disabled=true">
-                        <label>Blanco</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
-                        <label>Mestizo</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
-                        <label>Montubio</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
-                        <label>Afroecuatoriano</label><input type="radio" name="superficie" onclick="otraetnia.disabled=true">
-                        <label>Otra Etnia(Especifique)</label><input type="radio" name="superficie" onclick="otraetnia.disabled=false"></td>
-
-                        <td><label for="otraetnia">Especifique:</label>
-                        <input id="otraetnia" type="text" disabled="disabled"></td>
+                        <td>        
+                            <mat-form-field appearance="fill">
+                                <mat-label>Escoja una opción</mat-label>
+                                <mat-select >
+                                  <mat-option value="1" onclick="oetnia.disabled=true">Indigena</mat-option>
+                                  <mat-option value="2" onclick="oetnia.disabled=true">Blanco</mat-option>
+                                  <mat-option value="3" onclick="oetnia.disabled=true">Mestizo</mat-option>
+                                  <mat-option value="4" onclick="oetnia.disabled=true">Montubio</mat-option>
+                                  <mat-option value="5" onclick="oetnia.disabled=true">Afroecuatoriano</mat-option>
+                                  <mat-option value="5" onclick="oetnia.disabled=false">Otro</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Especifique</mat-label>
+                                    <input matInput id="oetnia" placeholder="" value="" type="text" disabled>
+                            </mat-form-field>
+                        </td>
                         
                     </tr>
                     <br><br>
-                    <tr>
-                        <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
-                        <td>Primaria<input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                        <label>Secundaria</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                        <label>Superior</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                       <br> <label>Postgrado</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=false">
-                        <label>Ninguna</label><input type="radio" name="superficie" onclick="añosinstruccion.disabled=true"></td>
-
-                        <td><label for="añosinstruccion">¿Cuantos años en el nivel <br> de instrucción seleccionado?</label>
-                        <input id="añosinstruccion" type="text" disabled="disabled"></td>
+                     <tr>
+                       <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
+                <td>        
+            <mat-form-field appearance="fill">
+                <mat-label>Escoja una opción</mat-label>
+                <mat-select >
+                  <mat-option value="1" onclick="iformal.disabled=false">Primaria</mat-option>
+                  <mat-option value="2" onclick="iformal.disabled=false">Secundaria</mat-option>
+                  <mat-option value="3" onclick="iformal.disabled=false">Superior</mat-option>
+                  <mat-option value="4" onclick="iformal.disabled=false">Postgrado</mat-option>
+                  <mat-option value="5" onclick="iformal.disabled=true">Ninguno</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </td>
+        <td><label for="instruccion">¿Cuántos años curso en el nivel<br>de instrucción seleccionado?</label></td>
+        <td>
+            <mat-form-field class="example-full-width">
+                <mat-label>Años</mat-label>
+                    <input matInput id="iformal" placeholder="" value="" type="text" disabled>
+            </mat-form-field>
+        </td>
                     </tr>
                     <br><br>
         
