@@ -78,20 +78,23 @@
     <div class="contenido">
         <div>
             <h3>1. LA PERSONERÍA JURÍDICA FUE ADQUIRIDA MEDIANTE ACUERDO O RESOLUCIÓN NÚMERO</h3>
-            <form class="example-form">
+           <form class="example-form">
+                <td>
                 <mat-form-field appearance="fill">
-                    <mat-label>Decreto Nro.</mat-label>
-                    <input matInput placeholder="Decreto Nro." value="" type="text">
+                    <mat-label>Escoja una opción</mat-label>
+                    <mat-select >
+                      <mat-option value="1" >Decreton Nro. </mat-option>
+                      <mat-option value="2" >Resolución Nro.</mat-option>
+                      <mat-option value="3" >ROEPS Nro.</mat-option>
+                    </mat-select>
                 </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Resolución Nro.</mat-label>
-                    <input matInput placeholder="Resolución Nro." value="" type="text">
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Ingresar número</mat-label>
+                        <input matInput  placeholder="" value="" type="text" >
                 </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>ROEPS Nro.</mat-label>
-                    <input matInput placeholder="ROEPS Nro." value="" type="text">
-                </mat-form-field>
+            </td>
                 <br>
             </form>
         </div>
@@ -100,11 +103,23 @@
             <form class="example-form">
                 <h3>2. ENTIDAD O INSTITUCIÓN QUE OTORGÓ LA PERSONERÍA JURÍDICA</h3>
                 <br>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">MAG</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">SEPS</td>
-                <td style="padding-right: 50px;"><input type="radio" name="superficie" onclick="otro.disabled=true">MIES</td>
-                <td><input type="radio" name="superficie" onclick="otro.disabled=false"/>Otro (Especifique)</td>
-                <td><input type="text" name="otro" disabled="disabled"/></td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Escoja una opción</mat-label>
+                        <mat-select >
+                          <mat-option value="1" onclick="entidad.disabled=true">MAG</mat-option>
+                          <mat-option value="2" onclick="entidad.disabled=true">SEPS</mat-option>
+                          <mat-option value="3" onclick="entidad.disabled=true">MIES</mat-option>
+                          <mat-option value="4" onclick="entidad.disabled=false">Otro</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Especifique</mat-label>
+                            <input matInput id="entidad" placeholder="" value="" type="text" disabled>
+                    </mat-form-field>
+                </td>
             </form>
         </div>
         <div class="botones">
