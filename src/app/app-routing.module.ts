@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,7 +12,9 @@ import { PaginaGComponent } from './pagina-g/pagina-g.component';
 import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
+import {PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
+
 import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -25,6 +28,7 @@ const routes: Routes = [
   { path: 'PaginaH', component: PaginaHComponent },
   { path: 'PaginaI', component: PaginaIComponent },
   { path: 'PaginaJ', component: PaginaJComponent },
+  {path:'PaginaK',component:PaginaKComponent},
   { path: 'PaginaL', component: PaginaLComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
