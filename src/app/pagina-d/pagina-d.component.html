@@ -1,4 +1,180 @@
+<mat-toolbar color="primary">
+    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+    <div class="spacer"></div>
+
+    <span>D. DATOS DEL REPRESENTANTE LEGAL </span>
+</mat-toolbar>
+
+<div class="main" role="main">
+    <div class="contenido">
+        <div>
+            <h3>1. DATOS DEL REPRESENTANTE LEGAL DE LA ORGANIZACIÓN</h3>
+            <table>
+                    <tr>
+                        <td><label for="cedula">CÉDULA:</label></td>
+                        <td><input id="cedula" type="text"></td>
+                    <tr>
+                        <td><label for="nombre">NOMBRES COMPLETOS:</label></td>
+                        <td><input id="nombrecompleto" type="text" size="40px"></td>
+                        <tr>
+                    
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="correo">CORREO ELECTRÓNICO:</label></td>
+                        <td><input id="correo" type="text" size="40px"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="telefono">TELÉFONO FIJO:</label></td>
+                        <td><input id="telefono" type="text"></td>
+                        <td><label for="celular">TELÉFONO CELULAR:</label></td>
+                        <td><input id="celular" type="text"></td>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        
+                        <td><label for="registrocomo">USTED SE REGISTRA COMO:</label> </td>
+                        <td>  <mat-form-field appearance="fill">
+                            <mat-label>Especifique</mat-label>
+                            <select matNativeControl required>
+                                <option value="0" id="registro" disabled="disabled">Cargar de catálogo</option>
+                            </select>
+                        </mat-form-field></td>
+                    </tr>    
+                    <tr>    
+                        <td><label for="fecha">FECHA DE NACIMIENTO:</label></td>
+                        <td><input id="Fecha" type="date"></td>
+                        Edad:
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Años</mat-label>
+                                <input matInput id="edad" placeholder="" value="" type="numer">
+                        </mat-form-field>
+
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="genero">GÉNERO:</label></td>
+                        <td>        
+                            <mat-form-field appearance="fill">
+                                <mat-label>Escoja una opción</mat-label>
+                                <mat-select >
+                                  <mat-option value="1" onclick="ogenero.disabled=true">Femenino</mat-option>
+                                  <mat-option value="2" onclick="ogenero.disabled=true">Masculino</mat-option>
+                                  <mat-option value="3" onclick="ogenero.disabled=false">Otros</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Especifique</mat-label>
+                                    <input matInput id="ogenero" placeholder="" value="" type="text" disabled>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td><label for="estadocivil">ESTADO CIVIL:</label></td>
+                        <td><mat-form-field appearance="fill">
+                            <mat-label>Escoja una opción</mat-label>
+                            <mat-select >
+                              <mat-option value="1" >Soltero(a)</mat-option>
+                              <mat-option value="2" >Casad(a)</mat-option>
+                              <mat-option value="3" >Unión Libre</mat-option>
+                              <mat-option value="4" >Viudo(a)</mat-option>
+                              <mat-option value="5" >Divorciado(a)</mat-option>
+                            </mat-select>
+                        </mat-form-field></td>
+                    </tr>
+
+                    <br>
+                    <br>
+                    <tr>
+                        <td><label for="instruccion">AUTOIDENTIFICACIÓN ÉTNICA:</label></td>
+                        <td>        
+                            <mat-form-field appearance="fill">
+                                <mat-label>Escoja una opción</mat-label>
+                                <mat-select >
+                                  <mat-option value="1" onclick="oetnia.disabled=true">Indigena</mat-option>
+                                  <mat-option value="2" onclick="oetnia.disabled=true">Blanco</mat-option>
+                                  <mat-option value="3" onclick="oetnia.disabled=true">Mestizo</mat-option>
+                                  <mat-option value="4" onclick="oetnia.disabled=true">Montubio</mat-option>
+                                  <mat-option value="5" onclick="oetnia.disabled=true">Afroecuatoriano</mat-option>
+                                  <mat-option value="5" onclick="oetnia.disabled=false">Otra etnia</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Especifique</mat-label>
+                                    <input matInput id="oetnia" placeholder="" value="" type="text" disabled>
+                            </mat-form-field>
+                        </td>
+                        
+                    </tr>
+                    <br><br>
+                    <tr>
+            <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
+                <td>        
+            <mat-form-field appearance="fill">
+                <mat-label>Escoja una opción</mat-label>
+                <mat-select >
+                  <mat-option value="1" onclick="iformal.disabled=false">Primaria</mat-option>
+                  <mat-option value="2" onclick="iformal.disabled=false">Secundaria</mat-option>
+                  <mat-option value="3" onclick="iformal.disabled=false">Superior</mat-option>
+                  <mat-option value="4" onclick="iformal.disabled=false">Postgrado</mat-option>
+                  <mat-option value="5" onclick="iformal.disabled=true">Ninguna</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </td>
+        <td><label for="instruccion">¿Cuántos años curso en el nivel<br>de instrucción seleccionado?</label></td>
+        <td>
+            <mat-form-field class="example-full-width">
+                <mat-label>Años</mat-label>
+                    <input matInput id="iformal" placeholder="" value="" type="text" disabled>
+            </mat-form-field>
+        </td>
+                    </tr>
+                    <br><br>
+                    
+        
+                    <tr>
+                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN:</label></td>
+                        <td><input id="fechaDesignacion" type="date"></td>
+                        <td><label for="fechaRepresentacion">FECHA DE TERMINACIÓN:</label></td>
+                        <td><input id="fechaRepresentacion" type="date"></td>
+                    </tr>
+                        
+            </table>
+        </div>
+
+        
+        
+        <div class="botones">
+            <button mat-raised-button color="warn" [routerLink]="'/PaginaB'">Anterior</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;" [routerLink]="'/PaginaD'">Siguiente</button>
+        </div>
+
+
+    </div>
+
+    <div class="definiciones">
+        <h1>Definiciones</h1>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Definición 1</mat-list-item>
+            <mat-list-item role="listitem">Definición 2</mat-list-item>
+            <mat-list-item role="listitem">Definición 3</mat-list-item>
+        </mat-list>
+    </div>
+
+</div>
+
 <style>
+
     .spacer {
         margin-left: 5%;
     }
@@ -13,6 +189,7 @@
     .contenido {
         float: left;
         width: 62.5%;
+        
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -66,77 +243,42 @@
     .example-full-width {
         padding-top: 1%;
     }
+
+div.principal{
+width: 90%;
+padding: 10px;  
+overflow: hidden;
+} 
+div.Contenido{
+border: 1px solid #5d87fa;
+width: 60%;
+height: 16.47cm;
+float: left;
+}
+div.Definiciones{
+border: 1px solid #5d87fa;
+overflow: hidden;  
+}
+label{
+padding-left: 5px;
+margin-right: 5px; 
+}
+textarea.def{
+margin: 0 1rem ;
+height: 15cm;
+width:90%;
+}
+textarea.aceptacion{
+width:7cm;
+height: 10cm;
+background-color: rgb(243, 240, 240);
+text-justify: initial;
+}
+
+.botones {
+    margin-top: 1cm;
+    margin-right: 1cm;
+    float: right;
+    flex-direction: row;     
+}
 </style>
-
-<mat-toolbar color="primary">
-    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
-    <div class="spacer"></div>
-
-    <span>D. DATOS JURIDICOS DE LA ORGANIZACIÓN</span>
-</mat-toolbar>
-<div class="main" role="main">
-    <div class="contenido">
-        <div>
-            <h3>1. LA PERSONERÍA JURÍDICA FUE ADQUIRIDA MEDIANTE ACUERDO O RESOLUCIÓN NÚMERO</h3>
-           <form class="example-form">
-                <td>
-                <mat-form-field appearance="fill">
-                    <mat-label>Escoja una opción</mat-label>
-                    <mat-select >
-                      <mat-option value="1" >Decreton Nro. </mat-option>
-                      <mat-option value="2" >Resolución Nro.</mat-option>
-                      <mat-option value="3" >ROEPS Nro.</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Ingresar número</mat-label>
-                        <input matInput  placeholder="" value="" type="text" >
-                </mat-form-field>
-            </td>
-                <br>
-            </form>
-        </div>
-        <br>
-        <div>
-            <form class="example-form">
-                <h3>2. ENTIDAD O INSTITUCIÓN QUE OTORGÓ LA PERSONERÍA JURÍDICA</h3>
-                <br>
-                <td>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Escoja una opción</mat-label>
-                        <mat-select >
-                          <mat-option value="1" onclick="entidad.disabled=true">MAG</mat-option>
-                          <mat-option value="2" onclick="entidad.disabled=true">SEPS</mat-option>
-                          <mat-option value="3" onclick="entidad.disabled=true">MIES</mat-option>
-                          <mat-option value="4" onclick="entidad.disabled=false">Otro</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </td>
-                <td>
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Especifique</mat-label>
-                            <input matInput id="entidad" placeholder="" value="" type="text" disabled>
-                    </mat-form-field>
-                </td>
-            </form>
-        </div>
-        <div class="botones">
-            <button mat-raised-button color="warn" [routerLink]="'/PaginaC'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaE'">Siguiente</button>
-        </div>
-
-
-    </div>
-
-    <div class="definiciones">
-        <h1>Definiciones</h1>
-        <mat-list role="list">
-            <mat-list-item role="listitem">definición 1</mat-list-item>
-            <mat-list-item role="listitem">definición 2</mat-list-item>
-            <mat-list-item role="listitem">definición 3</mat-list-item>
-        </mat-list>
-    </div>
-
-</div>
