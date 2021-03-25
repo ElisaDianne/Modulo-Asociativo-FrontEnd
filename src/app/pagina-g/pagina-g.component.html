@@ -87,6 +87,32 @@
     <div class="contenido">
       <form class="example-form">
 
+        <h3>1. Seleccione las Principales actividades agroproductivas que realiza la organización</h3>
+        <mat-form-field>
+          <mat-select [formControl]="ActAgro" multiple>
+            <mat-select-trigger>
+              {{ActAgro.value ? ActAgro.value[0] : ''}}
+              <span *ngIf="ActAgro.value?.length > 1">
+                (+{{ActAgro.value.length - 1}} {{ActAgro.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option>Agrícola</mat-option>
+            <mat-option>Pecuaria</mat-option>
+            <mat-option>Silvicultura</mat-option>
+            <mat-option>Recolección</mat-option>
+            <mat-option>Apicultura</mat-option>
+            <mat-option>Agroforestal</mat-option>
+            <mat-option>Fungicultura</mat-option>
+            <mat-option>Servicios de Comercialización</mat-option>
+            <mat-option>Servicios de Transporte</mat-option>
+            <mat-option>Servicios de Acopio</mat-option>
+            <mat-option>Servicios de Turismo</mat-option>
+            <mat-option>Productos Procesados</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <h3>2. Tipo de la producción asociativa</h3>
+
         <h3>1. Seleccione las dos principales actividades agroproductivas que realiza la organización</h3>
         <div fxLayout="row" fxLayoutAlign=" center" >
           <div fxFlex="50">
@@ -118,6 +144,7 @@
                 <mat-option>Orgánica</mat-option>
                 <mat-option>Agroecológica</mat-option>
                 <mat-option>En transición</mat-option>
+                <mat-option>Convencional</mat-option>
               </mat-select>
             </mat-form-field>
           </div>

@@ -5,10 +5,10 @@
   <span>I. DATOS DEL ENCUESTADO</span>
 </mat-toolbar>
 
-
 <div class="main" role="main">
   <div class="contenido">
       <div>
+
         <p>1. ¿Qué socios/as proveen productos agropecuarios a la organización? (productos  y  cantidad annual) </p>
         <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
 
@@ -85,15 +85,17 @@
       </div>
 
           <!-- <label for="Cedula">Número de cédula</label>          <input id="Cedula" type="text"> <br><br><br>
+
           <label for="Nombre">Nombre completo</label>
           <input id="Nombre" type="text"><br><br><br>
-          <label for="Celular">Celular</label>
+          <label for="Celular">Celular</label>     
           <input id="Celular" type="text"> <br><br><br>
           <label for="Telefono">Telefono fijo</label>
           <input id="Telefono" type="text"><br><br><br>
-          <label for="Correo">Correo electronico</label>
-          <input id="Correo" type="mail"> <br><br><br>
+          <label for="Correo">Correo electronico</label>     
+          <input id="Correo" type="text"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
+
           <input id="Fecha" type="date"><br><br><br> -->
 
 
@@ -101,14 +103,15 @@
         <br>
         <br>
 
+
       </div>
 
       <div class="botones">
-          <button mat-raised-button color="warn" [routerLink]="'/PaginaH'">Anterior</button>
-          <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaJ'">Siguiente</button>
-      </div>
+        <button mat-raised-button color="warn" [routerLink]="'/PaginaH'">Anterior</button>
+        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaJ'">Siguiente</button>
     </div>
-
+    </div>
+      
   <div class="definiciones">
       <h1>Definiciones</h1>
       <mat-list role="list">
@@ -120,6 +123,7 @@
 
 </div>
 <style>
+
   .spacer {
       margin-left: 5%;
   }
@@ -224,6 +228,7 @@
 </style>
 <!-- <style>
 
+
   .spacer {
         margin-left: 5%;
     }
@@ -238,10 +243,10 @@
     .contenido {
         float: left;
         width: 62.5%;
-
+        
         border: 1px solid gray;
         margin-left: 2.5%;
-        padding: auto;
+        padding: 1%;
     }
 
     .definiciones {
@@ -252,14 +257,13 @@
         margin-right: 5%;
         padding: 1%;
 
-
     }
-    canvas {
+    canvas {    
       padding-left: 0;
       padding-right: 0;
       margin-left: auto;
       margin-right: auto;
-      display: block;
+      display: block;      
       border: 2px solid #CCCCCC;
       border-radius: 5px;
       cursor: crosshair;
@@ -296,7 +300,7 @@
         float: right;
         flex-direction: row;
         display: flex;
-        margin-top: 400px;
+
     }
 
     .example-full-width {
@@ -304,9 +308,9 @@
     }
 div.principal{
   width: 90%;
-  padding: 10px;
+  padding: 10px;  
   overflow: hidden;
-}
+} 
 div.Contenido{
   border: 1px solid #5d87fa;
   width: 60%;
@@ -315,11 +319,11 @@ div.Contenido{
 }
 div.Definiciones{
   border: 1px solid #5d87fa;
-  overflow: hidden;
+  overflow: hidden;  
 }
 label{
   padding-left: 1cm;
-  margin-right: 1cm;
+  margin-right: 1cm; 
 }
 textarea.def{
   margin: 0 1rem ;
@@ -327,32 +331,15 @@ textarea.def{
   width:90%;
 }
 textarea.aceptacion{
-  width: 1120px;
-  height: 105px;
+  width:7cm;
+height: 10cm;
   background-color: rgb(243, 240, 240);
-  border: 2px solid black;
-
+  text-justify: initial;
 }
 
 .botones {
   margin-top: 2cm;
-  float: right;
-  flex-direction: row;
+    float: right;
+    flex-direction: row;   
 }
-
-.fondoBajo{
-  width: 1200px;
-  height: 14px;
-
-  margin: auto;
-  padding: auto;
-  height: inherit;
-  display: flex;
-
-
-}
-.firma{
-  display: left;
-}
-
-</style> -->
+</style>

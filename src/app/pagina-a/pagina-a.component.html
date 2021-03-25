@@ -11,15 +11,12 @@
     }
 
     .contenido {
-
         float: left;
         width: 62.5%;
-
-
+        
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
-
     }
 
     .definiciones {
@@ -38,10 +35,10 @@
 
     mat-label {
         margin-left: 1%;
+
     }
 
     table {
-       
         border-collapse: collapse;
         width: 100%;
     }
@@ -54,8 +51,6 @@
 
     tr:nth-child(even) {
         background-color: #f2f2f2;
-        flex-direction: row;
-        display: flex;
     }
 
     button {
@@ -72,10 +67,6 @@
     .example-full-width {
         padding-top: 1%;
     }
-    input{
-        margin-right:200px;
-        width: 65%;
-    }
 </style>
 <mat-toolbar color="primary">
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
@@ -83,17 +74,18 @@
 
     <span>A. DATOS DE LA ORGANIZACIÓN</span>
 </mat-toolbar>
-<!--<div class="enunciado" style=" padding:30px 3% 0px ;">
+<div class="enunciado" style=" padding:30px 3% 0px ;">
     <h3> Los datos que le solicitan en este formulario son estrictamente confidenciales y en ninguna circunstancia
     pueden ser usados con un objeto diferente al procesamiento estadístico por parte del MAG. </h3>
-</div>-->
+</div>
 <div class="main" role="main">
     <div class="contenido">
         <div>
             
             <table>
                 <tr>
-                    <td><label for="tipoSociedad">Tipo de Sociedad</label></td>
+
+                <td><label for="tipoSociedad">Tipo de Sociedad</label></td>
                     <td><input id="tipoSociedad" type="text"></td>
                 </tr>
                 <br>
@@ -105,10 +97,12 @@
                 <tr>
                     <td><label for="identificacion">Identificacion</label></td>
                     <td><input id="identificacion" type="text"></td>
+
                 </tr>
                 <br>
                 <tr>
                     <td><label for="razonSocial">Razón Social</label></td>
+
                     <td><input id="razonSocial" type="text"></td>
                     <td>(Nombre Completo)</td>
                 </tr>
@@ -143,11 +137,12 @@
                 <tr>
                     <td><label for="correo">Correo electrónico de la Organización</label></td>
                     <td><input id="correo" type="text"></td>
+
                 </tr>
                 <br>
                 <tr>
                     <td><label for="paginaWeb">Página Web</label></td>
-                    <td><input id="paginaWeb" type="text"></td>
+                    <td><input id="paginaWeb" type="text" style="width: 500px;"></td>
                 </tr>
                 <br>
                 <br>
