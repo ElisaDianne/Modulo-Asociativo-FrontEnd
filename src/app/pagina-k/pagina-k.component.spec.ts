@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {MatTableModule} from '@angular/material/table';
-import { PaginaHComponent } from './pagina-h.component';
 
-describe('PaginaHComponent', () => {
-  let component: PaginaHComponent;
-  let fixture: ComponentFixture<PaginaHComponent>;
+import { PaginaKComponent } from './pagina-k.component';
+
+describe('PaginaKComponent', () => {
+  let component: PaginaKComponent;
+  let fixture: ComponentFixture<PaginaKComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginaHComponent ]
+      declarations: [ PaginaKComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PaginaHComponent);
+    fixture = TestBed.createComponent(PaginaKComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -40,11 +40,12 @@
     table {
         border-collapse: collapse;
         width: 100%;
+        margin-right: 2%;
     }
 
     th,
     td {
-        text-align: left;
+        text-align: center;
         padding: 8px;
     }
 
@@ -76,38 +77,37 @@
 <div class="main" role="main">
     <div class="contenido">
         <div>
-            <h3>1. Indique los/as socios/as que proveen productos agropecuarios a la organización, productos y cantidad
-                anual</h3>
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label>Número de cédula del socio</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">1801234567</option>
-                        <option value="1">2011345678</option>
-                        <option value="2">1701234567</option>
-                        <option value="3">1798765432</option>
-                    </select>
-                </mat-form-field>
+
+            <h3>1. ¿Qué productos agropecuarios comercializa la organización? (productos  y cantidad anual) </h3>
+            <form class="example-form" >
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Producto</mat-label>
+                    <mat-label>Actividad agropecuaria</mat-label>
                     <select matNativeControl required>
-                        <option value="0">Tomate</option>
-                        <option value="1">Patata</option>
-                        <option value="2">Cebolla paiteña</option>
-                        <option value="3">Manzana</option>
+                        <option value="0">Agrícola</option>
+                        <option value="1">Pecuaria</option>
+                        <option value="2">Silvicultura</option>
+                        <option value="3">Recolección</option>
+                        <option value="4">Apicultura</option>
+                        <option value="5">Agroforestal</option>
+                        <option value="6">Fungicultura</option>
                     </select>
                 </mat-form-field>
-
-
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Rubro</mat-label>
+                    <select matNativeControl required>
+                        <option value="0"></option>
+                    </select>
+                </mat-form-field>
+                <br/>
                 <mat-form-field class="example-full-width">
                     <mat-label>Cantidad Anual</mat-label>
                     <input matInput placeholder="500" value="0" type="number">
                 </mat-form-field>
 
-
                 <mat-form-field appearance="fill">
-                    <mat-label>Unidades</mat-label>
+                    <mat-label>Unidad de medida*</mat-label>
                     <select matNativeControl required>
                         <option value="0">Kilogramos</option>
                         <option value="1">Libras</option>
@@ -116,115 +116,102 @@
                         <option value="4">Litros</option>
                     </select>
                 </mat-form-field>
+                <br/>
+                <br/>
+                <h5>&nbsp;&nbsp;&nbsp;&nbsp;¿Cuenta con algún tipo de certificación?</h5>
+                <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=false">Sí</td>
+                <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=true">No</td>
+           
+                <mat-form-field appearance="fill">
+                    <mat-label>Tipo de certificaciones y sellos</mat-label>
+                    <select matNativeControl required id="espec1" disabled>
+                        <option value="0" id="cargar" >Cargar de catálogo</option>
+                    </select>
+                </mat-form-field> 
+                <br/>
+                <br/>
+                <mat-form-field appearance="fill">
+                    <mat-label>Principales Mercados</mat-label>
+                    <select matNativeControl required>
+                      <option value="1">Venta en Finca</option>
+                      <option value="2">Agroturismo</option>
+                      <option value="3">Feria</option>
+                      <option value="4">Canasta</option>
+                      <option value="5">Tienda Campesina</option>
+                      <option value="6">Punto de Venta</option>
+                      <option value="7">HORECA</option>
+                      <option value="8">Abastecimiento Directo</option>
+                      <option value="9">Supermercados</option>
+                      <option value="10">Intermediarios</option>
+                      </select>
+                </mat-form-field>
 
-                <button mat-raised-button color="primary">Agregar</button>
+                <mat-form-field appearance="fill">
+                    <mat-label>Tipo de Producto</mat-label>
+                    <select matNativeControl required>
+                      <option value="1">Primario</option>
+                      <option value="2">Semiprocesado</option>
+                      <option value="3">Elaborado o procesado</option>
+                      </select>
+                </mat-form-field>
+                <br/>
+                <div align="center">
+                    <button mat-raised-button color="primary">Agregar</button>
+                </div>
+                <br/>
+                <br/>
             </form>
         </div>
-
+        <br/> 
         <div>
-            <table style="width:100%">
+            <table >
                 <tr>
-                    <th>Número de Cédula del socio</th>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Unidad</th>
+
+                    <th>Actividad agropecuaria</th>
+                    <th>Rubro</th>
+                    <th>Cantidad anual</th>
+                    <th>Unidad de medida</th>
+                    <th>¿Cuenta con certificación?</th>
+                    <th>Tipo de certificación y sellos</th>
+                    <th>Principales mercados</th>
+                    <th>Tipo de producto</th>
+
                     <th></th>
 
                 </tr>
                 <tr>
-                    <td>1798765432</td>
-                    <td>Tomate</td>
+                    <td>Pecuaria</td>
+                    <td>Rubro</td>
                     <td>300</td>
-                    <td>Toneladas</td>
+                    <td>Litros</td>
+                    <td>No</td>
+                    <td>N.A.</td>
+                    <td>Feria</td>
+                    <td>Procesado</td>
                     <td>
                         <button mat-raised-button color="warn">Eliminar</button>
                     </td>
                 </tr>
                 <tr>
-                    <td>1801234567</td>
-                    <td>Manzana</td>
-                    <td>50</td>
-                    <td>Kilogramos</td>
+                    <td>Agrícola</td>
+                    <td>Rubro</td>
+                    <td>10</td>
+                    <td>Libras</td>
+                    <td>Si</td>
+                    <td>Tipo de certificación</td>
+                    <td>Canasta</td>
+                    <td>Primario</td>
                     <td>
                         <button mat-raised-button color="warn">Eliminar</button>
                     </td>
                 </tr>
             </table>
         </div>
-        <br>
-        <div>
-            <h3>2. Tienen los productos alguna certificación agropecuaria</h3>
 
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Si</option>
-                        <option value="1">No</option>
-                    </select>
-                </mat-form-field>
+        <br/> 
+        <br/> 
+        <br/> 
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Especifique</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Cargar de catálogo</option>
-                    </select>
-                </mat-form-field>
-
-
-            </form>
-        </div>
-        <br>
-        <div>
-            <h3>3. Indique la principal forma de comercialización de los productos asociativos</h3>
-
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Producto Primario</option>
-                        <option value="1">Producto Elaborado o Procesado</option>
-                        <option value="2">Producto Semiprocesado</option>
-
-                    </select>
-                </mat-form-field>
-
-            </form>
-
-        </div>
-        <br>
-        <div>
-            <h3>4. Indique los principales mercados en el que se comercializa los productos de la organización</h3>
-
-            <form class="example-form">
-                <mat-form-field appearance="fill">
-                    <mat-label></mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Venta en Finca</option>
-                        <option value="1">Punto de Venta</option>
-                        <option value="2">Compra Pública</option>
-                        <option value="3">Agroturismo</option>
-                        <option value="4">HORECA</option>
-                        <option value="5">Exportación</option>
-                        <option value="6">Feria</option>
-                        <option value="7">Abastecimiento Directo</option>
-                        <option value="8">Canasta</option>
-                        <option value="9">Tienda Campesina</option>
-                        <option value="10">Intermediarios</option>
-                        <option value="11">Supermercados</option>
-                        <option value="12">Otros</option>
-                    </select>
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width">
-                    <mat-label>Especifique</mat-label>
-                    <input matInput placeholder="" value="" type="text">
-                </mat-form-field>
-
-
-            </form>
-
-        </div>
         <div class="botones">
             <button mat-raised-button color="warn" [routerLink]="'/PaginaG'">Anterior</button>
             <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"

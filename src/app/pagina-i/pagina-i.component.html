@@ -8,10 +8,84 @@
 <div class="main" role="main">
   <div class="contenido">
       <div>
-        <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3>
-        <div style=" float: left;">
-          <label for="Cedula">Número de cédula</label>     
-          <input id="Cedula" type="text"> <br><br><br>
+
+        <p>1. ¿Qué socios/as proveen productos agropecuarios a la organización? (productos  y  cantidad annual) </p>
+        <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
+
+          <table>
+              <tr>
+                  <td><label for="cedula">Número de cédula</label></td>
+                  <td><input id="cedula" type="text"></td>
+                  <td><label for="Actividades">Actividades Agropecuarias</label></td>
+                  <td><input id="nombre" type="text"></td>
+              </tr>
+              <br>
+              <tr>
+                  <td><label for="Celular">Rubro</label></td>
+                  <td><input id="Fecha" type="text"></td>
+                  <td><label for="TelefonoFijo">Actividad Anual</label></td>
+                  <td><input type="text"></td>
+              </tr>
+              <br>
+              <tr>
+                  <td><label for="Unidad">Unidad Media </label></td>
+                  <td><input type="email"></td>
+                  <td><label for="Correo Electronico">Tipo de certificaciones y sellos </label></td>
+                  <td><input type="email"></td>
+
+              </tr>
+
+
+
+
+
+
+          </table>
+          <div>
+            <h3>Cuenta con algún tipo de certificación</h3>
+
+            <form class="example-form">
+                <mat-form-field appearance="fill">
+                    <mat-label></mat-label>
+                    <select matNativeControl required>
+                        <option value="0">Si</option>
+                        <option value="1">No</option>
+                    </select>
+                </mat-form-field>
+
+
+
+
+            </form>
+        </div>
+        <div>
+          <h3>Principales Mercados</h3>
+
+          <form class="example-form">
+              <mat-form-field appearance="fill">
+                  <mat-label></mat-label>
+                  <select matNativeControl required>
+                      <option value="0">Venta Finca</option>
+                      <option value="1">Agroturismo</option>
+                      <option value="2">Feria</option>
+                      <option value="3">Canasta</option>
+                      <option value="4">Tienda Campesina</option>
+                      <option value="5">Punto de Venta</option>
+                      <option value="6">Horeca</option>
+                      <option value="7">Abastacemiento Directo</option>
+                      <option value="8">Supermercados</option>
+                      <option value="9">Intermediarios</option>
+                  </select>
+              </mat-form-field>
+
+
+
+
+          </form>
+      </div>
+
+          <!-- <label for="Cedula">Número de cédula</label>          <input id="Cedula" type="text"> <br><br><br>
+
           <label for="Nombre">Nombre completo</label>
           <input id="Nombre" type="text"><br><br><br>
           <label for="Celular">Celular</label>     
@@ -21,14 +95,15 @@
           <label for="Correo">Correo electronico</label>     
           <input id="Correo" type="text"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
-          <input id="Fecha" type="date"><br><br><br> <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>  
-          <canvas id="draw-canvas" width="200" height="160"></canvas><br><br>
-          <label style="padding-left: 4cm;">Firma del Encuestado</label>
-        </div>
-        <div style="text-align: center;">
-          <input type="checkbox">
-          <textarea readonly="readonly" class="aceptacion">Acepto que la información PROPORCIONADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC.Además acepto conocer que los datos PROPORCIONADOS para la obtención del Sello de la Agricultura Familiar Campesina son de caracter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.</textarea>
-        </div>
+
+          <input id="Fecha" type="date"><br><br><br> -->
+
+
+
+        <br>
+        <br>
+
+
       </div>
 
       <div class="botones">
@@ -48,6 +123,111 @@
 
 </div>
 <style>
+
+  .spacer {
+      margin-left: 5%;
+  }
+
+  .main {
+      flex-direction: row;
+      padding-top: 2%;
+      display: flex;
+      min-height: 80%;
+  }
+
+  .contenido {
+      float: left;
+      width: 62.5%;
+
+      border: 1px solid gray;
+      margin-left: 2.5%;
+      padding: 1%;
+  }
+
+  .definiciones {
+      float: right;
+      width: 25%;
+      border: 1px solid gray;
+      margin-left: 2.5%;
+      margin-right: 5%;
+      padding: 1%;
+
+  }
+  textarea.aceptacion{
+   width: 90%;
+
+  height: 135px;
+  resize: none;
+  background-color: rgb(243, 240, 240);
+  border: 2px solid black;
+
+}
+
+  mat-form-field {
+      margin-left: 1%;
+  }
+
+  mat-label {
+      margin-left: 1%;
+
+  }
+
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  th,
+  td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {
+      background-color: #f2f2f2;
+  }
+
+  button {
+      margin: 1%;
+  }
+
+  .botones {
+      float: right;
+      padding-top: 120px;
+      margin-top: 120px;
+      flex-direction: row;
+      display: flex;
+
+  }
+
+  .example-full-width {
+      padding-top: 1%;
+  }
+  .firma{
+    margin-left: 14px;
+      display: left;
+      justify-content: center;
+  }
+  .fill_apparence{
+    margin-left: 256px;
+    padding-left: 26px;
+  }
+  .firma__Encuestado{
+    margin-left: 93px;
+  }
+  canvas {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 45px;
+      margin-right: 125px;
+      display: block;
+      border: 2px solid #CCCCCC;
+      border-radius: 5px;
+      cursor: crosshair;
+    }
+</style>
+<!-- <style>
+
 
   .spacer {
         margin-left: 5%;
