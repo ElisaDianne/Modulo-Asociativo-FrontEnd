@@ -2,7 +2,7 @@
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
-    <span>C.DATOS DEL REPRESENTANTE LEGAL </span>
+    <span>C. DATOS DE UBICACIÓN DEL CENTRO DE ACOPIO </span>
 </mat-toolbar>
 
 <div class="main" role="main">
@@ -11,115 +11,264 @@
             <h3>1. DATOS DEL REPRESENTANTE LEGAL DE LA ORGANIZACIÓN</h3>
             <table>
                     <tr>
-                        <td><label for="cedula">NÚMERO DE CÉDULA</label></td>
-                        <td><input id="cedula" type="number"></td>
-                        <td><label for="nombre">NOMBRE COMPLETO</label></td>
-                        <td><input id="cedula" type="number"></td>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><label for="correo">CORREO ELECTRÓNICO</label></td>
-                        <td><input id="correo" type="text" size="40px"></td>
-                    </tr>
-                    <br>
-                    <br>
-                    <tr>
-                        <td><label for="telefono">TELÉFONO FIJO</label></td>
-                        <td><input id="telefono" type="number"></td>
-                        <td><label for="celular">TELÉFONO CELULAR</label></td>
-                        <td><input id="celular" type="number"></td>
-                    </tr>
-                    <br>
-                    <br>
-                     <tr>
-                        <td><label for="genero">GÉNERO</label></td>
-                        <td>        
-                            <mat-form-field appearance="fill">
-                                <mat-label>Escoja una opción</mat-label>
-                                <mat-select >
-                                  <mat-option value="1" onclick="ogenero.disabled=true">Femenino</mat-option>
-                                  <mat-option value="2" onclick="ogenero.disabled=true">Masculino</mat-option>
-                                  <mat-option value="3" onclick="ogenero.disabled=false">Otro</mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        </td>
-                        
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <mat-label>Especifique</mat-label>
-                                    <input matInput id="ogenero" placeholder="" value="" type="text" disabled>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                        <tr>
-                        <td><label for="estadocivil">ESTADO CIVIL</label></td>
-                        <td><mat-form-field appearance="fill">
-                            <mat-label>Escoja una opción</mat-label>
+                        <td><mat-label>1. La organización dispone de centro de acopio?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                          <mat-label>Seleccione una Opción</mat-label>
                             <mat-select >
-                              <mat-option value="1" >Soltero(a)</mat-option>
-                              <mat-option value="2" >Casad(a)</mat-option>
-                              <mat-option value="3" >Unión Libre</mat-option>
-                              <mat-option value="4" >Viudo(a)</mat-option>
-                              <mat-option value="5" >Divorciado(a)</mat-option>
+                              <mat-option value="1" onclick="dispone.disabled=false">Si</mat-option>
+                              <mat-option value="2" onclick="dispone.disabled=true">No</mat-option>
                             </mat-select>
-                        </mat-form-field></td>
-                    </tr>
-                    <br>
-                    <br>
-                    <tr>
-                        <td><label for="instruccion">AUTOIDENTIFICACIÓN ÉTNICA</label></td>
-                        <td>        
-                            <mat-form-field appearance="fill">
-                                <mat-label>Escoja una opción</mat-label>
-                                <mat-select >
-                                  <mat-option value="1" onclick="oetnia.disabled=true">Indigena</mat-option>
-                                  <mat-option value="2" onclick="oetnia.disabled=true">Blanco</mat-option>
-                                  <mat-option value="3" onclick="oetnia.disabled=true">Mestizo</mat-option>
-                                  <mat-option value="4" onclick="oetnia.disabled=true">Montubio</mat-option>
-                                  <mat-option value="5" onclick="oetnia.disabled=true">Afroecuatoriano</mat-option>
-                                  <mat-option value="5" onclick="oetnia.disabled=false">Otro</mat-option>
-                                </mat-select>
-                            </mat-form-field>
+                        </mat-form-field>
+                        <td>
+                            <mat-label>Superficie (ha) o (m2)</mat-label>
                         </td>
-                        
                         <td>
                             <mat-form-field class="example-full-width">
                                 <mat-label>Especifique</mat-label>
-                                    <input matInput id="oetnia" placeholder="" value="" type="text" disabled>
+                                    <input matInput id="dispone" placeholder="" value="" type="text" disabled>
                             </mat-form-field>
                         </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>2. Cuántos centros de acopio dispone la organización?</mat-label></td>
+                        
+                        <td>
+                            <mat-label>Número de Centros de Acopio:</mat-label>
+                        </td>
+                        <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>N°</mat-label>
+                                <input matInput id="cantCentros" placeholder="" value="" type="number">
+                        </mat-form-field>
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>3. Qué servicios básicos dispone el centro de acopio?</mat-label></td>
+                        <td colspan="3">
+                            <input type="checkbox" id="agua" name="ser.basicos1">
+                            <label for="agua">Agua</label>
+                            <br>
+                            <input type="checkbox" id="luz" name="ser.basicos2">
+                            <label for="luz">Luz</label>
+                            <br>
+                            <input type="checkbox" id="tconvencional" name="ser.basicos3">
+                            <label for="tconvencional">Teléfono Convencional</label>
+                            <br>
+                            <input type="checkbox" id="tcelular" name="ser.basicos4">
+                            <label for="tcelular">Teléfono Celular</label>
+                            <br>
+                            <input type="checkbox" id="internet" name="ser.basicos5">
+                            <label for="internet">Internet</label>
+                            <br>
+                            <input type="checkbox" id="rbasura" name="ser.basicos6">
+                            <label for="rbasura">Recolección de Basura</label>
+                        </td>
+                       
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>4. De dónde proviene el agua que recibe la infraestructura?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Red Pública</mat-option>
+                                <mat-option value="2" >Pozo</mat-option>
+                                <mat-option value="3" >Río</mat-option>
+                                <mat-option value="4" >Vertiente</mat-option>
+                                <mat-option value="5" >Acequia</mat-option>
+                                <mat-option value="6" >Canal</mat-option>
+                                <mat-option value="7" >Carro Repartidor</mat-option>
+                                <mat-option value="8" >Aguas Lluvia</mat-option>
+                                <mat-option value="9" >Albarrada</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                    </tr>
+                    <br><br>    
+                    <tr>    
+                        <td><mat-label>5. El servicio de luz (energía) eléctrica de la infraestructa de la infraestructura proviene principalmente de?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Red Pública</mat-option>
+                                <mat-option value="2" >Panel Solar</mat-option>
+                                <mat-option value="3" >Generador de Luz</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>6. Principalmente, Cómo se elimina la basura de la infraestructura?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Carro Recolector</mat-option>
+                                <mat-option value="2" >La arrojan</mat-option>
+                                <mat-option value="3" >La queman</mat-option>
+                                <mat-option value="4" >La entierran</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>7. El material predominante del techo o cubierta de la infraestructura es?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Hormigón</mat-option>
+                                <mat-option value="2" >Asbesto</mat-option>
+                                <mat-option value="3" >Zinc</mat-option>
+                                <mat-option value="4" >Teja</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>8. El material predominante de las paredes de la infraestructura es de?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Hormigón</mat-option>
+                                <mat-option value="2" >Ladrillo</mat-option>
+                                <mat-option value="3" >Bloque</mat-option>
+                                <mat-option value="4" >Adobe</mat-option>
+                                <mat-option value="5" >Tapia</mat-option>
+                                <mat-option value="6" >Madera</mat-option>
+                                <mat-option value="7" >Caña Revestida</mat-option>
+                                <mat-option value="8" >Behareque</mat-option>
+                                <mat-option value="9" >Caña no Revestida</mat-option>
+                              </mat-select>
+                            </mat-form-field>
                         
                     </tr>
                     <br><br>
-                     <tr>
-                       <td><label for="instruccion">INSTRUCCIÓN FORMAL</label></td>
-                <td>        
-            <mat-form-field appearance="fill">
-                <mat-label>Escoja una opción</mat-label>
-                <mat-select >
-                  <mat-option value="1" onclick="iformal.disabled=false">Primaria</mat-option>
-                  <mat-option value="2" onclick="iformal.disabled=false">Secundaria</mat-option>
-                  <mat-option value="3" onclick="iformal.disabled=false">Superior</mat-option>
-                  <mat-option value="4" onclick="iformal.disabled=false">Postgrado</mat-option>
-                  <mat-option value="5" onclick="iformal.disabled=true">Ninguno</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </td>
-        <td><label for="instruccion">¿Cuántos años curso en el nivel<br>de instrucción seleccionado?</label></td>
-        <td>
-            <mat-form-field class="example-full-width">
-                <mat-label>Años</mat-label>
-                    <input matInput id="iformal" placeholder="" value="" type="text" disabled>
-            </mat-form-field>
-        </td>
+                    <tr>
+                        <td><mat-label>9. El material predominante del piso de la infraestructura es de?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Duela</mat-option>
+                                <mat-option value="2" >Parquet</mat-option>
+                                <mat-option value="3" >Tablón</mat-option>
+                                <mat-option value="4" >Piso Flotante</mat-option>
+                                <mat-option value="5" >Tabla sin Tratar</mat-option>
+                                <mat-option value="6" >Cerámica</mat-option>
+                                <mat-option value="7" >Baldosa</mat-option>
+                                <mat-option value="8" >Vinil</mat-option>
+                                <mat-option value="9" >Mármol</mat-option>
+                                <mat-option value="10" >Ladrillo</mat-option>
+                                <mat-option value="11" >Cemento</mat-option>
+                                <mat-option value="12" >Caña</mat-option>
+                                <mat-option value="13" >Tierra</mat-option>
+                              </mat-select>
+                            </mat-form-field>
                     </tr>
                     <br><br>
-        
                     <tr>
-                        <td><label for="fechaDesignacion">FECHA DE DESIGNACIÓN</label></td>
-                        <td><input id="fechaDesignacion" type="date"></td>
-                        <td><label for="fechaRepresentacion">FECHA DE FINALIZACIÓN</label></td>
-                        <td><input id="fechaRepresentacion" type="date"></td>
+                        <td><mat-label>10. El servicio higiénico de la infaestructura es?</mat-label></td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seleccione una Opción</mat-label>
+                              <mat-select >
+                                <mat-option value="1" >Red Pública</mat-option>
+                                <mat-option value="2" >Pozo Séptico</mat-option>
+                                <mat-option value="3" >Pozo Ciego</mat-option>
+                                <mat-option value="4" >Descarga Directa al Mar</mat-option>
+                                <mat-option value="5" >Descarga Directa al Río</mat-option>
+                                <mat-option value="6" >Descarga Directa al Lago</mat-option>
+                                <mat-option value="7" >Descarga Directa a la Quebrada</mat-option>
+                                <mat-option value="8" >Letrina</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>11. Cuántos espacios internos dispone la infraestructura?</mat-label></td>
+                        <td colspan="3">
+                            <input type="checkbox" id="interno1" name="interno" >
+                            <label for="interno1">Postcosecha</label>
+                            <br>
+                            <input type="checkbox" id="interno2" name="interno" >
+                            <label for="interno2">Acopio</label>
+                            <br>
+                            <input type="checkbox" id="interno3" name="interno" >
+                            <label for="interno3">Almacenamiento</label>
+                            <br>
+                            <input type="checkbox" id="interno4" name="interno" >
+                            <label for="interno4">Valor Agregado</label>
+                            <br>
+                            <input type="checkbox" id="interno5" name="interno" >
+                            <label for="interno5">Procesamiento</label>
+                            <br>
+                            <input type="checkbox" id="interno6" name="interno" >
+                            <label for="interno6">Administrativo</label>
+                            <br>
+                            <input type="checkbox" id="interno7" name="interno" >
+                            <label for="interno7">Sala de Reuniones</label>
+                            <br>
+                            <input type="checkbox" id="interno8" name="interno" onclick="otro.disabled=false">
+                            <label for="interno8">Otros</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<mat-label>Especifique:</mat-label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="otro" disabled>
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td><mat-label>12. Qué tipo de equipamiento dispone la infraestructura?</mat-label></td>
+                        <td colspan="3">
+                            <input type="checkbox" id="despulpador" name="equipamiento">
+                            <label for="despulpador">Despulgador</label>
+                            <br>
+                            <input type="checkbox" id="extractor" name="equipamiento">
+                            <label for="extractor">Extractor</label>
+                            <br>
+                            <input type="checkbox" id="secador" name="equipamiento">
+                            <label for="secador">Secador</label>
+                            <br>
+                            <input type="checkbox" id="trilladora" name="equipamiento">
+                            <label for="trilladora">Trilladora</label>
+                            <br>
+                            <input type="checkbox" id="bandejasecado" name="equipamiento">
+                            <label for="bandejasecado">Bandeja de Secado</label>
+                            <br>
+                            <input type="checkbox" id="procesador" name="equipamiento">
+                            <label for="procesador">Procesador</label>
+                            <br>
+                            <input type="checkbox" id="lavadora" name="equipamiento">
+                            <label for="lavadora">Máquina Lavadora</label>
+                            <br>
+                            <input type="checkbox" id="separador" name="equipamiento">
+                            <label for="separador">Máquina Separadora de Semilla</label>
+                            <br>
+                            <input type="checkbox" id="tanques" name="equipamiento">
+                            <label for="tanques">Tanques de Fermentación</label>
+                            <br>
+                            <input type="checkbox" id="marmita" name="equipamiento">
+                            <label for="marmita">Marmita </label>
+                            <br>
+                            <input type="checkbox" id="ralladora" name="equipamiento">
+                            <label for="ralladora">Máquina Ralladora</label>
+                            <br>
+                            <input type="checkbox" id="balanza" name="equipamiento">
+                            <label for="despulpador">Balanza</label>
+                            <br>
+                            <input type="checkbox" id="enfriamiento" name="equipamiento">
+                            <label for="balanza">Máquina de Enfriamiento</label>
+                            <br>
+                            <input type="checkbox" id="empacadora" name="equipamiento">
+                            <label for="empacadora">Empacadora</label>
+                            <br>
+                            <input type="checkbox" id="cosedora" name="equipamiento">
+                            <label for="cosedora">Cosedora</label>
+                            <br>
+                            <input type="checkbox" id="cuartofrio" name="equipamiento">
+                            <label for="cuartofrio">Cuarto Frío</label>
+                            <br>
+                            <input type="checkbox" id="bandejalavado" name="equipamiento">
+                            <label for="bandejalavado">Bandeja de Lavado</label>
+                  
+                        </td>
+
                     </tr>
                         
             </table>
@@ -198,9 +347,7 @@
         padding: 8px;
     }
 
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
+   
 
     button {
         margin: 1%;
