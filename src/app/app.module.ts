@@ -13,6 +13,7 @@ import { PaginaFComponent } from './pagina-f/pagina-f.component';
 import { PaginaGComponent } from './pagina-g/pagina-g.component';
 import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
+import{PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -30,6 +31,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { from } from 'rxjs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +47,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PaginaIComponent,
     PaginaJComponent,
     PaginaLComponent,
+    PaginaKComponent,
   ],
   imports: [
     BrowserModule,

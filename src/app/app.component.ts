@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
@@ -8,6 +9,7 @@ import { PaginaFComponent } from './pagina-f/pagina-f.component';
 import { PaginaGComponent } from './pagina-g/pagina-g.component';
 import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
+import { PaginaKComponent } from './pagina-k/pagina-k.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 
 @Component({

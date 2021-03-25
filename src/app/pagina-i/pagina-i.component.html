@@ -9,31 +9,81 @@
 <div class="main" role="main">
   <div class="contenido">
       <div>
+        <p>1. ¿Qué socios/as proveen productos agropecuarios a la organización? (productos  y  cantidad annual) </p>
         <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
 
           <table>
               <tr>
                   <td><label for="cedula">Número de cédula</label></td>
                   <td><input id="cedula" type="text"></td>
-                  <td><label for="nombre">Nombre completo</label></td>
+                  <td><label for="Actividades">Actividades Agropecuarias</label></td>
                   <td><input id="nombre" type="text"></td>
               </tr>
               <br>
               <tr>
-                  <td><label for="Celular">Celular</label></td>
+                  <td><label for="Celular">Rubro</label></td>
                   <td><input id="Fecha" type="text"></td>
-                  <td><label for="TelefonoFijo">Teléfono fijo</label></td>
+                  <td><label for="TelefonoFijo">Actividad Anual</label></td>
                   <td><input type="text"></td>
               </tr>
               <br>
               <tr>
-                  <td><label for="Correo Electronico">Correo Eléctronico</label></td>
+                  <td><label for="Unidad">Unidad Media </label></td>
+                  <td><input type="email"></td>
+                  <td><label for="Correo Electronico">Tipo de certificaciones y sellos </label></td>
                   <td><input type="email"></td>
 
               </tr>
 
 
+
+
+
+
           </table>
+          <div>
+            <h3>Cuenta con algún tipo de certificación</h3>
+
+            <form class="example-form">
+                <mat-form-field appearance="fill">
+                    <mat-label></mat-label>
+                    <select matNativeControl required>
+                        <option value="0">Si</option>
+                        <option value="1">No</option>
+                    </select>
+                </mat-form-field>
+
+
+
+
+            </form>
+        </div>
+        <div>
+          <h3>Principales Mercados</h3>
+
+          <form class="example-form">
+              <mat-form-field appearance="fill">
+                  <mat-label></mat-label>
+                  <select matNativeControl required>
+                      <option value="0">Venta Finca</option>
+                      <option value="1">Agroturismo</option>
+                      <option value="2">Feria</option>
+                      <option value="3">Canasta</option>
+                      <option value="4">Tienda Campesina</option>
+                      <option value="5">Punto de Venta</option>
+                      <option value="6">Horeca</option>
+                      <option value="7">Abastacemiento Directo</option>
+                      <option value="8">Supermercados</option>
+                      <option value="9">Intermediarios</option>
+                  </select>
+              </mat-form-field>
+
+
+
+
+          </form>
+      </div>
+
           <!-- <label for="Cedula">Número de cédula</label>          <input id="Cedula" type="text"> <br><br><br>
           <label for="Nombre">Nombre completo</label>
           <input id="Nombre" type="text"><br><br><br>
@@ -45,53 +95,11 @@
           <input id="Correo" type="mail"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
           <input id="Fecha" type="date"><br><br><br> -->
-          <mat-toolbar color="primary" class="fondoBajo">
-            <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
-            <div class="spacer"></div>
 
-            <span style="text-align: center;">ACUERDO DE CONFIDENCIALIDAD Y ENTREGA DE INFORMACIÓN</span>
-          </mat-toolbar>
-          <br>
-          <br>
-          <br>
-          <div style="text-align: center!important;">
-          <input type="checkbox">
 
-          <textarea readonly="readonly" class="aceptacion">Acepto que la información PROPORCIONADA en el formulario de inscripción para el Sello de la Agricultura Familiar Campesina (AFC) es real y verdadera, que no ha sido manipulada, modificada, suplantada o adulterada total o parcialmente y que de comprobarse irregularidades en la verificación de esta información en campo, automáticamente quedará excluido del proceso de obtención del sello AFC
 
-Además acepto conocer que los datos PROPORCIONADOS para la obtención del Sello de la Agricultura Familiar Campesina son de carácter reservado y NO serán utilizados para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier objeto distinto a la de la obtención del Sello.
-
-            </textarea>
-        </div>
         <br>
         <br>
-        <div class="firma" >
-
-
-          <label for="firma">Para constancia, el encuestado firma el presente documento:</label><br><br>
-
-
-
-          <canvas id="draw-canvas" width="200" height="160" class="firmao" style="padding-right: 50px;"></canvas><br>
-
-          <label ><strong style="text-align: center;">____________________________________________________
-            <br>
-
-          </strong>                              </label>
-          <label for="firmaEncues" class="firma__Encuestado">Firma del Encuestado</label>
-          <mat-form-field appearance="fill" class="fill_apparence">
-            <mat-label >Fecha del la Encuesta</mat-label>
-            <input matInput id="Fecha" type="date">
-        </mat-form-field>
-
-
-
-
-
-
-        </div>
-
-
 
       </div>
 
@@ -181,6 +189,8 @@ Además acepto conocer que los datos PROPORCIONADOS para la obtención del Sello
 
   .botones {
       float: right;
+      padding-top: 120px;
+      margin-top: 120px;
       flex-direction: row;
       display: flex;
 
