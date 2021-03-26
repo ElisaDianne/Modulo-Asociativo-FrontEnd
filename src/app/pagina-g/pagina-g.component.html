@@ -121,18 +121,6 @@
               </mat-select>
             </mat-form-field>
           </div>
-          <div fxFlex="25">
-            <mat-checkbox [formControl]="disableSelect">Otro</mat-checkbox>
-          </div>
-          <div fxFlex="25">
-            <mat-form-field >
-              <mat-label>Tipo de Producción</mat-label>
-              <input matInput type="text" placeholder="Otro">
-              <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
         </div>
       </form>
 
