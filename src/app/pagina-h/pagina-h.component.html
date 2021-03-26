@@ -1,233 +1,232 @@
 <style>
-    .spacer {
-        margin-left: 5%;
-    }
 
-    .main {
-        flex-direction: row;
-        padding-top: 2%;
-        display: flex;
-        min-height: 80%;
-    }
+  .spacer {
+      margin-left: 5%;
+  }
 
-    .contenido {
-        float: left;
-        width: 62.5%;
-        border: 1px solid gray;
-        margin-left: 2.5%;
-        padding: 1%;
-    }
+  .main {
+      flex-direction: row;
+      padding-top: 2%;
+      display: flex;
+      min-height: 80%;
+  }
 
-    .definiciones {
-        float: right;
-        width: 25%;
-        border: 1px solid gray;
-        margin-left: 2.5%;
-        margin-right: 5%;
-        padding: 1%;
+  .contenido {
+      float: left;
+      width: 62.5%;
+      border: 1px solid gray;
+      margin-left: 2.5%;
+      padding: 1%;
+  }
 
-    }
+  .definiciones {
+      float: right;
+      width: 25%;
+      border: 1px solid gray;
+      margin-left: 2.5%;
+      margin-right: 5%;
+      padding: 1%;
 
-    mat-form-field {
-        margin-left: 1%;
-    }
+  }
 
-    mat-label {
-        margin-left: 1%;
+  mat-form-field {
+      margin-left: 1%;
+  }
 
-    }
+  mat-label {
+      margin-left: 1%;
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-right: 2%;
-    }
+  }
 
-    th,
-    td {
-        text-align: center;
-        padding: 8px;
-    }
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-right: 2%;
+  }
 
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
+  th,
+  td {
+      text-align: center;
+      padding: 8px;
+  }
 
-    button {
-        margin: 1%;
-    }
+  tr:nth-child(even) {
+      background-color: #f2f2f2;
+  }
 
-    .botones {
-        float: right;
-        flex-direction: row;
-        display: flex;
+  button {
+      margin: 1%;
+  }
 
-    }
+  .botones {
+      float: right;
+      flex-direction: row;
+      display: flex;
 
-    .example-full-width {
-        padding-top: 1%;
-    }
+  }
+
+  .example-full-width {
+      padding-top: 1%;
+  }
+
+    
 </style>
 <mat-toolbar color="primary">
-    <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
-    <div class="spacer"></div>
+  <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
+  <div class="spacer"></div>
 
-    <span>H. GESTIÓN DE LA COMERCIALIZACIÓN ASOCIATIVA</span>
+  <span>H. GESTIÓN DE LA COMERCIALIZACIÓN ASOCIATIVA</span>
 </mat-toolbar>
 <div class="main" role="main">
-    <div class="contenido">
-        <div>
 
-            <h3>1. ¿Qué productos agropecuarios comercializa la organización? (productos  y cantidad anual) </h3>
-            <form class="example-form" >
+  <div class="contenido">
+      <div>
+          <h3>1. ¿Qué productos agropecuarios comercializa la organización? (productos  y cantidad anual) </h3>
+          <form class="example-form" >
+              <mat-form-field appearance="fill">
+                  <mat-label>Actividad agropecuaria</mat-label>
+                  <select matNativeControl required>
+                      <option value="0">Agrícola</option>
+                      <option value="1">Pecuaria</option>
+                      <option value="2">Silvicultura</option>
+                      <option value="3">Recolección</option>
+                      <option value="4">Apicultura</option>
+                      <option value="5">Agroforestal</option>
+                      <option value="6">Fungicultura</option>
+                  </select>
+              </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Actividad agropecuaria</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Agrícola</option>
-                        <option value="1">Pecuaria</option>
-                        <option value="2">Silvicultura</option>
-                        <option value="3">Recolección</option>
-                        <option value="4">Apicultura</option>
-                        <option value="5">Agroforestal</option>
-                        <option value="6">Fungicultura</option>
+              <mat-form-field appearance="fill">
+                  <mat-label>Rubro</mat-label>
+                  <select matNativeControl required>
+                      <option value="0"></option>
+                  </select>
+              </mat-form-field>
+              <br/>
+              <mat-form-field class="example-full-width">
+                  <mat-label>Cantidad Anual</mat-label>
+                  <input matInput placeholder="500" value="0" type="number">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Unidad de medida*</mat-label>
+                  <select matNativeControl required>
+                      <option value="0">Litros</option>
+                      <option value="1">Quintales</option>
+                      <option value="2">Kilogramos</option>
+                      <option value="3">Libras</option>
+                      <option value="4">Toneladas</option>
+                  </select>
+              </mat-form-field>
+              <br/>
+              <br/>
+              <h5>&nbsp;&nbsp;&nbsp;&nbsp;¿Cuenta con algún tipo de certificación?</h5>
+              <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=false">Sí</td>
+              <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=true">No</td>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Tipo de certificaciones y sellos</mat-label>
+                  <select matNativeControl required id="espec1" disabled>
+                      <option value="0" id="cargar" >Cargar de catálogo</option>
+                  </select>
+              </mat-form-field>
+              <br/>
+              <br/>
+              <mat-form-field appearance="fill">
+                  <mat-label>Principales Mercados</mat-label>
+                  <select matNativeControl required>
+                    <option value="1">Venta en Finca</option>
+                    <option value="2">Agroturismo</option>
+                    <option value="3">Feria</option>
+                    <option value="4">Canasta</option>
+                    <option value="5">Tienda Campesina</option>
+                    <option value="6">Punto de Venta</option>
+                    <option value="7">HORECA</option>
+                    <option value="8">Abastecimiento Directo</option>
+                    <option value="9">Supermercados</option>
+                    <option value="10">Intermediarios</option>
                     </select>
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill">
-                    <mat-label>Rubro</mat-label>
-                    <select matNativeControl required>
-                        <option value="0"></option>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Tipo de Producto</mat-label>
+                  <select matNativeControl required>
+                    <option value="1">Primario</option>
+                    <option value="2">Semiprocesado</option>
+                    <option value="3">Elaborado o procesado</option>
                     </select>
-                </mat-form-field>
-                <br/>
-                <mat-form-field class="example-full-width">
-                    <mat-label>Cantidad Anual</mat-label>
-                    <input matInput placeholder="500" value="0" type="number">
-                </mat-form-field>
+              </mat-form-field>
+              <br/>
+              <div align="center">
+                  <button mat-raised-button color="primary">Agregar</button>
+              </div>
+              <br/>
+              <br/>
+          </form>
+      </div>
+      <br/>
+      <div>
+          <table >
+              <tr>
+                  <th>Actividad agropecuaria</th>
+                  <th>Rubro</th>
+                  <th>Cantidad anual</th>
+                  <th>Unidad de medida</th>
+                  <th>¿Cuenta con certificación?</th>
+                  <th>Tipo de certificación y sellos</th>
+                  <th>Principales mercados</th>
+                  <th>Tipo de producto</th>
+                  <th></th>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Unidad de medida*</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Kilogramos</option>
-                        <option value="1">Libras</option>
-                        <option value="2">Quintales</option>
-                        <option value="3">Toneladas</option>
-                        <option value="4">Litros</option>
-                    </select>
-                </mat-form-field>
-                <br/>
-                <br/>
-                <h5>&nbsp;&nbsp;&nbsp;&nbsp;¿Cuenta con algún tipo de certificación?</h5>
-                <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=false">Sí</td>
-                <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=true">No</td>
-           
-                <mat-form-field appearance="fill">
-                    <mat-label>Tipo de certificaciones y sellos</mat-label>
-                    <select matNativeControl required id="espec1" disabled>
-                        <option value="0" id="cargar" >Cargar de catálogo</option>
-                    </select>
-                </mat-form-field> 
-                <br/>
-                <br/>
-                <mat-form-field appearance="fill">
-                    <mat-label>Principales Mercados</mat-label>
-                    <select matNativeControl required>
-                      <option value="1">Venta en Finca</option>
-                      <option value="2">Agroturismo</option>
-                      <option value="3">Feria</option>
-                      <option value="4">Canasta</option>
-                      <option value="5">Tienda Campesina</option>
-                      <option value="6">Punto de Venta</option>
-                      <option value="7">HORECA</option>
-                      <option value="8">Abastecimiento Directo</option>
-                      <option value="9">Supermercados</option>
-                      <option value="10">Intermediarios</option>
-                      </select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Tipo de Producto</mat-label>
-                    <select matNativeControl required>
-                      <option value="1">Primario</option>
-                      <option value="2">Semiprocesado</option>
-                      <option value="3">Elaborado o procesado</option>
-                      </select>
-                </mat-form-field>
-                <br/>
-                <div align="center">
-                    <button mat-raised-button color="primary">Agregar</button>
-                </div>
-                <br/>
-                <br/>
-            </form>
-        </div>
-        <br/> 
-        <div>
-            <table >
-                <tr>
-
-                    <th>Actividad agropecuaria</th>
-                    <th>Rubro</th>
-                    <th>Cantidad anual</th>
-                    <th>Unidad de medida</th>
-                    <th>¿Cuenta con certificación?</th>
-                    <th>Tipo de certificación y sellos</th>
-                    <th>Principales mercados</th>
-                    <th>Tipo de producto</th>
-
-                    <th></th>
-
-                </tr>
-                <tr>
-                    <td>Pecuaria</td>
-                    <td>Rubro</td>
-                    <td>300</td>
-                    <td>Litros</td>
-                    <td>No</td>
-                    <td>N.A.</td>
-                    <td>Feria</td>
-                    <td>Procesado</td>
-                    <td>
-                        <button mat-raised-button color="warn">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Agrícola</td>
-                    <td>Rubro</td>
-                    <td>10</td>
-                    <td>Libras</td>
-                    <td>Si</td>
-                    <td>Tipo de certificación</td>
-                    <td>Canasta</td>
-                    <td>Primario</td>
-                    <td>
-                        <button mat-raised-button color="warn">Eliminar</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <br/> 
-        <br/> 
-        <br/> 
-
-        <div class="botones">
-            <button mat-raised-button color="warn" [routerLink]="'/PaginaG'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
-                [routerLink]="'/PaginaI'">Siguiente</button>
-        </div>
+              </tr>
+              <tr>
+                  <td>Pecuaria</td>
+                  <td>Rubro</td>
+                  <td>300</td>
+                  <td>Litros</td>
+                  <td>No</td>
+                  <td>N.A.</td>
+                  <td>Feria</td>
+                  <td>Procesado</td>
+                  <td>
+                      <button mat-raised-button color="warn">Eliminar</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Agrícola</td>
+                  <td>Rubro</td>
+                  <td>10</td>
+                  <td>Libras</td>
+                  <td>Si</td>
+                  <td>Tipo de certificación</td>
+                  <td>Canasta</td>
+                  <td>Primario</td>
+                  <td>
+                      <button mat-raised-button color="warn">Eliminar</button>
+                  </td>
+              </tr>
+          </table>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <div class="botones">
+          <button mat-raised-button color="warn" [routerLink]="'/PaginaG'">Anterior</button>
+          <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+              [routerLink]="'/PaginaI'">Siguiente</button>
+      </div>
 
 
-    </div>
+  </div>
 
-    <div class="definiciones">
-        <h1>Definiciones</h1>
-        <mat-list role="list">
-            <mat-list-item role="listitem">definición 1</mat-list-item>
-            <mat-list-item role="listitem">definición 2</mat-list-item>
-            <mat-list-item role="listitem">definición 3</mat-list-item>
-        </mat-list>
-    </div>
+  <div class="definiciones">
+      <h1>Definiciones</h1>
+      <mat-list role="list">
+          <mat-list-item role="listitem">definición 1</mat-list-item>
+          <mat-list-item role="listitem">definición 2</mat-list-item>
+          <mat-list-item role="listitem">definición 3</mat-list-item>
+      </mat-list>
+  </div>
 
 </div>
+
