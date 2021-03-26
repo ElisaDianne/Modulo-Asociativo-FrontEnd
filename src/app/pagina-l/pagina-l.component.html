@@ -7,10 +7,10 @@
 
 <div class="main" role="main">
   <div class="contenido">
-      <h3>Describa las observaciones que crea pertinente: </h3>
-    <textarea class="observaciones"></textarea><br><br>  
-    <label>Puede añadir documentos:</label><br><br>  
-    <input type="file" style="padding-left: 1cm;"><br><br>
+      <!-- <h3>Describa las observaciones que crea pertinente: </h3> -->
+    <textarea class="observaciones"></textarea><br><br>
+    <!-- <label>Puede añadir documentos:</label><br><br>
+    <input type="file" style="padding-left: 1cm;"><br><br> -->
       <div class="botones">
           <button mat-raised-button color="warn" [routerLink]="'/PaginaK'">Anterior</button>
           <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  >Finalizar</button>
@@ -45,7 +45,7 @@
     .contenido {
         float: left;
         width: 62.5%;
-        
+
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -101,9 +101,9 @@
     }
 div.principal{
   width: 90%;
-  padding: 10px;  
+  padding: 10px;
   overflow: hidden;
-} 
+}
 div.Contenido{
   border: 1px solid #5d87fa;
   width: 60%;
@@ -112,7 +112,7 @@ div.Contenido{
 }
 div.Definiciones{
   border: 1px solid #5d87fa;
-  overflow: hidden;  
+  overflow: hidden;
 }
 textarea.def{
   margin: 0 1rem ;
@@ -127,6 +127,6 @@ textarea.observaciones{
 .botones {
   margin-top: 2cm;
     float: right;
-    flex-direction: row;   
+    flex-direction: row;
 }
 </style>
