@@ -86,7 +86,7 @@
     <div class="contenido">
       <form class="example-form">
 
-        <h3>1. Seleccione las dos principales actividades agroproductivas que realiza la organización</h3>
+        <h3>1. Seleccione las <b>dos</b> principales actividades agroproductivas que realiza la organización</h3>
         <div fxLayout="row" fxLayoutAlign=" center" >
           <div fxFlex="50">
             <mat-form-field>
@@ -113,12 +113,12 @@
         <div fxLayout="row" fxLayoutAlign=" center" >
           <div fxFlex="50">
             <mat-form-field>
-              <mat-select [disabled]="disableSelect.value" multiple>
-                <mat-option>Convencional</mat-option>
-                <mat-option>Orgánica</mat-option>
-                <mat-option>Agroecológica</mat-option>
-                <mat-option>En transición</mat-option>
-              </mat-select>
+              <select matNativeControl required>
+                <option>Convencional</option>
+                <option>Orgánica</option>
+                <option>Agroecológica</option>
+                <option>En transición</option>
+              </select>
             </mat-form-field>
           </div>
         </div>
