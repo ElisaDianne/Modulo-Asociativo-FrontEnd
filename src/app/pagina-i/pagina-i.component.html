@@ -2,14 +2,14 @@
   <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
   <div class="spacer"></div>
 
-  <span>I. DATOS DEL ENCUESTADO</span>
+  <span>I. GESTIÓN DE LA COMERCIALIZACIÓN POR SOCIOS</span>
 </mat-toolbar>
 
 <div class="main" role="main">
   <div class="contenido">
       <div>
 
-        <p>1. ¿Qué socios/as proveen productos agropecuarios a la organización? (productos  y  cantidad annual) </p>
+        <p>1. ¿Qué socios/as proveen productos agropecuarios a la organización? (productos  y  cantidad anual) *litros, quintales, kilogramos, libras, toneladas  </p>
         <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
 
           <table>
@@ -30,10 +30,25 @@
               <tr>
                   <td><label for="Unidad">Unidad Media </label></td>
                   <td><input type="email"></td>
+
                   <td><label for="Correo Electronico">Tipo de certificaciones y sellos </label></td>
-                  <td><input type="email"></td>
+                  <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=false">Sí</td>
+              <td style="padding-right: 50px;"><input type="radio" name="certificacion" onclick="espec1.disabled=true">No</td>
+              <td>
+                <mat-form-field appearance="fill">
+                  <mat-label>Tipo de certificaciones y sellos</mat-label>
+                  <select matNativeControl required id="espec1" disabled>
+                      <option value="0" id="cargar" >Cargar de catálogo</option>
+                  </select>
+              </mat-form-field>
+
+              </td>
+
+
 
               </tr>
+
+
 
 
 
@@ -88,11 +103,11 @@
 
           <label for="Nombre">Nombre completo</label>
           <input id="Nombre" type="text"><br><br><br>
-          <label for="Celular">Celular</label>     
+          <label for="Celular">Celular</label>
           <input id="Celular" type="text"> <br><br><br>
           <label for="Telefono">Telefono fijo</label>
           <input id="Telefono" type="text"><br><br><br>
-          <label for="Correo">Correo electronico</label>     
+          <label for="Correo">Correo electronico</label>
           <input id="Correo" type="text"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
 
@@ -111,7 +126,7 @@
         <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaJ'">Siguiente</button>
     </div>
     </div>
-      
+
   <div class="definiciones">
       <h1>Definiciones</h1>
       <mat-list role="list">
@@ -243,7 +258,7 @@
     .contenido {
         float: left;
         width: 62.5%;
-        
+
         border: 1px solid gray;
         margin-left: 2.5%;
         padding: 1%;
@@ -258,12 +273,12 @@
         padding: 1%;
 
     }
-    canvas {    
+    canvas {
       padding-left: 0;
       padding-right: 0;
       margin-left: auto;
       margin-right: auto;
-      display: block;      
+      display: block;
       border: 2px solid #CCCCCC;
       border-radius: 5px;
       cursor: crosshair;
@@ -308,9 +323,9 @@
     }
 div.principal{
   width: 90%;
-  padding: 10px;  
+  padding: 10px;
   overflow: hidden;
-} 
+}
 div.Contenido{
   border: 1px solid #5d87fa;
   width: 60%;
@@ -319,11 +334,11 @@ div.Contenido{
 }
 div.Definiciones{
   border: 1px solid #5d87fa;
-  overflow: hidden;  
+  overflow: hidden;
 }
 label{
   padding-left: 1cm;
-  margin-right: 1cm; 
+  margin-right: 1cm;
 }
 textarea.def{
   margin: 0 1rem ;
@@ -340,7 +355,7 @@ height: 10cm;
 .botones {
   margin-top: 2cm;
     float: right;
-    flex-direction: row;   
+    flex-direction: row;
 }
 </style>
 -->
