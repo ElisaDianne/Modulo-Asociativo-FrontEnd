@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LOGINComponent } from './login/login.component';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaCComponent } from './pagina-c/pagina-c.component';
@@ -36,6 +37,7 @@ import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
+    LOGINComponent,
     PaginaAComponent,
     PaginaBComponent,
     PaginaCComponent,

@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { LOGINComponent } from './login/login.component';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaCComponent } from './pagina-c/pagina-c.component';
