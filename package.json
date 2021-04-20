@@ -25,6 +25,7 @@
     "angular-signature-pad": "0.0.14",
     "ng-multiselect-dropdown": "^0.2.14",
     "rxjs": "~6.6.0",
+    "ts-md5": "^1.2.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

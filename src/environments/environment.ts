@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  
+  credential_app: "", //cambiar por JSON  de las credenciales
+  api: "", 
+  version_date: +new Date("19/04/2021"), 
+  version: "V1.1",
+  production: true
+  
+  //production: false
 };
 
 /*
