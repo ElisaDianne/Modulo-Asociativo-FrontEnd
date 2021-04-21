@@ -35,6 +35,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 
 import { from } from 'rxjs';
+import { Login2Component } from './login2/login2.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { from } from 'rxjs';
     PaginaJComponent,
     PaginaLComponent,
     PaginaKComponent,
+    Login2Component,
   ],
   imports: [
     BrowserModule,

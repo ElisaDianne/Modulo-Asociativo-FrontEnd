@@ -1,12 +1,10 @@
 
-
-
 import { Component, OnInit } from '@angular/core';
 import { Md5 } from "ts-md5/dist/md5";
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, Validators,  FormControl } from '@angular/forms';
 import { LoginService } from './../servicios/login.service';
 import { Router } from '@angular/router';
-
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -14,21 +12,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LOGINComponent implements OnInit {
+  production = environment.production;
+  version = environment.version;
+  version_date = environment.version_date;
+  //formBuilder = any;
+  datosPer = [];
+  mitoken;
+  firstConnection = "";
+  statuslogin = false;
+  data_inicial;
+  mestado = 0;
+  formularioData = new FormGroup({
+    usupLogin: new FormControl("", [Validators.required]),
+    usupClave: new FormControl("", [Validators.required]),
+  });
 
   constructor(
     public srvApi: LoginService,
     //public loadinCtrl: LoadinController,
     private storage: Storage,
-    public navCtrl: NavController,
-    public alertController: AlertController,
-    private route: Router
+    //public navCtrl: NavController,
+    //public alertController: AlertController,
+    private route: Router,
+    
 
   ) {
    }
 
   ngOnInit(): void {
   }
-
+/*
   loginOnline(user, pass){
     this.srvApi.postLogin(user, pass).subscribe(
       (data) => {
@@ -50,16 +63,16 @@ export class LOGINComponent implements OnInit {
                 localStorage.setItem("dataUser", JSON.stringify(data));
                 this.storage.set("userDat", data);
                 
-                this.route.navigateByUrl('/home');
+                this.route.navigateByUrl('/LOGIN');
               } else {
-                this.presentAlert("Notiene asignado un sector disperso Contacte con el administrador");
+                //this.presentAlert("Notiene asignado un sector disperso Contacte con el administrador");
               }
             },
             (error) => {
               this.storage.set("status", false);
               console.log(error);
-              this.mensajeError = error;
-              this.presentAlert("¡Datos incorrectos debes validar brigada!");
+              //this.mensajeError = error;
+              //this.presentAlert("¡Datos incorrectos debes validar brigada!");
             }
           )
         }
@@ -71,22 +84,24 @@ export class LOGINComponent implements OnInit {
   async login() {
     var mpass = this.formularioData.value.usupClave;
     var muser =this.formularioData.value.usupLogin;
-    const loading = await this.loadingCtrl.create({
+    /*const loading = await this.loadingCtrl.create({
       message: "Cargando...",
       duration: 1500,
     });
+    
     await loading.present();
+    
     const user = muser;
     const pass = Md5.hashStr(mpass);
     if(this.mestado == 1){
       this.loginOnline(user, pass);
     } else {
       if (this.mestado == 0) {
-        this.presentAlert("¡Seleccionar una opción de ingreso!");
+        //this.presentAlert("¡Seleccionar una opción de ingreso!");
       }
     }
-    await loading.onDidDismiss();
+    //await loading.onDidDismiss();
   }
-
+*/
 
 }
