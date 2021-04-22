@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LOGINComponent } from './login/login.component';
+import {Login2Component } from './login2/login2.component';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaCComponent } from './pagina-c/pagina-c.component';
@@ -32,10 +33,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
-
-
 import { from } from 'rxjs';
-import { Login2Component } from './login2/login2.component';
 
 @NgModule({
   declarations: [
