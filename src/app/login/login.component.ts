@@ -29,7 +29,7 @@ export class LOGINComponent implements OnInit {
   constructor(
     public srvApi: LoginService,
     //public loadinCtrl: LoadinController,
-    private storage: Storage,
+    //private storage: Storage,
     //public navCtrl: NavController,
     //public alertController: AlertController,
     private router: Router,
@@ -49,20 +49,20 @@ export class LOGINComponent implements OnInit {
         var ejemJson = JSON.parse(atob(data["access_token"].split(".")[1])); //descifro el token
         //ingreso de varios perfiles de usuario
         if(ejemJson["authorities"].length > 0) {
-          this.storage.set("userid", ejemJson["per_id"]);
-          this.storage.set("ci", ejemJson["user_name"]);
+          //his.storage.set("userid", ejemJson["per_id"]);
+          //this.storage.set("ci", ejemJson["user_name"]);
           this.srvApi.getPerson(ejemJson["per_id"], this.mitoken).subscribe(
             (data) => {
               if (data["sectorDisperso"].length >0 ) { //cambiar
                 localStorage.setItem("dataUser", JSON.stringify(data)); //IMPORTANTE> eliminar localStorage cuando se finalice el proceso de guardado
-                this.storage.set("userDat", data);
+                //this.storage.set("userDat", data);
                 this.router.navigateByUrl('/PaginaA');
               } else {
                 //this.presentAlert("Notiene asignado un sector disperso Contacte con el administrador");
               }
             },
             (error) => {
-              this.storage.set("status", false);
+              //this.storage.set("status", false);
               console.log(error);
               //this.mensajeError = error;
               //this.presentAlert("¡Datos incorrectos debes validar brigada!");
