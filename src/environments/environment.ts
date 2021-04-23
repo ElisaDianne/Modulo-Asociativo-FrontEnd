@@ -4,13 +4,11 @@
 
 export const environment = {
   
-  credential_app: "da7effe6-aca4-4de1-9d9b-84e3d1773a73", 
-  api: "http://10.10.1.121:8080/servicio_seguridad-0.0.1/api/oauth/token", 
+  credential_app: "dXNyX3NpcnVzYWZjOjFuMWFwXzIwMTk=", 
+  api: "http://10.10.1.121:8080/servicio_seguridad-0.0.1/api/oauth/token/", 
   version_date: +new Date("19/04/2021"), 
   version: "V1.1",
   production: true
-  
-  //production: false
 };
 
 /*
