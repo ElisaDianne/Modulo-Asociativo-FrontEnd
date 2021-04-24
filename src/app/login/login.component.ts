@@ -65,7 +65,7 @@ export class LOGINComponent implements OnInit {
               //this.storage.set("status", false);
               console.log(error);
               //this.mensajeError = error;
-              //this.presentAlert("¡Datos incorrectos debes validar brigada!");
+              //Alert("¡Datos incorrectos debes validar brigada!");
             }
           )
         }

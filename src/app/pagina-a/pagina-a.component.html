@@ -1,82 +1,3 @@
-<style>
-  .spacer {
-      margin-left: 5%;
-  }
-
-  .main {
-      flex-direction: row;
-      padding-top: 2%;
-      display: flex;
-      min-height: 80%;
-  }
-
-  .contenido {
-
-      float: left;
-      width: 62.5%;
-
-
-      border: 1px solid gray;
-      margin-left: 2.5%;
-      padding: 1%;
-
-  }
-
-  .definiciones {
-      float: right;
-      width: 25%;
-      border: 1px solid gray;
-      margin-left: 2.5%;
-      margin-right: 5%;
-      padding: 1%;
-
-  }
-
-  mat-form-field {
-      margin-left: 1%;
-  }
-
-  mat-label {
-      margin-left: 1%;
-  }
-
-  table {
-
-      border-collapse: collapse;
-      width: 100%;
-  }
-
-  th,
-  td {
-      text-align: left;
-      padding: 8px;
-  }
-
-  tr:nth-child(even) {
-      background-color: #f2f2f2;
-      flex-direction: row;
-      display: flex;
-  }
-
-  button {
-      margin: 1%;
-  }
-
-  .botones {
-      float: right;
-      flex-direction: row;
-      display: flex;
-
-  }
-
-  .example-full-width {
-      padding-top: 1%;
-  }
-  input{
-      margin-right:200px;
-      width: 65%;
-  }
-</style>
 <mat-toolbar color="primary">
   <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
   <div class="spacer"></div>
@@ -93,21 +14,22 @@
       <div>
 
           <table>
-              <tr>
-                  <td><label for="tipoSociedad">Tipo de Sociedad:</label></td>
-                  <td><input id="tipoSociedad" type="text"></td>
-              </tr>
-              <br>
-              <tr>
-                  <td><label for="tipoIdentificacion">Tipo de Identificación:</label></td>
-                  <td><input id="tipoIdentificacion" type="text"></td>
-              </tr>
-              <br>
-              <tr>
-                  <td><label for="identificacion">Identificacion:</label></td>
-                  <td><input id="identificacion" type="text"></td>
-              </tr>
-              <br>
+            <tr>
+                <td><label for="tipoIdentificacion">Tipo de Identificación:</label></td>
+                <td><mat-form-field appearance="fill">
+                    <mat-label>Seleccione una Opción</mat-label>
+                      <mat-select >
+                        <mat-option value="1" onclick="dispone.disabled=false">RUC</mat-option>
+                        <mat-option value="2" onclick="dispone.disabled=true">Cédula de Identidad</mat-option>
+                      </mat-select>
+                  </mat-form-field></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="identificacion">Identificacion:</label></td>
+                <td><input id="identificacion" type="text"></td>
+            </tr>
+            <br>
               <tr>
                   <td><label for="razonSocial">Razón Social:</label></td>
                   <td><input id="razonSocial" type="text"></td>
@@ -115,15 +37,19 @@
               </tr>
               <br>
               <tr>
-                  <td><label for="nombreComercial">Nombre Comercial:</label></td>
-                  <td><input id="nombreComercial" type="text"></td>
-                  <td>(Nombre Completo)</td>
-              </tr>
-              <br>
-
-              <tr>
                   <td><label for="estadoContribuyente">Estado Contribuyente:</label></td>
                   <td><input id="estadoContribuyente" type="text"></td>
+              </tr>
+            <br>
+            <tr>
+                <td><label for="nombreComercial">Nombre Comercial:</label></td>
+                <td><input id="nombreComercial" type="text"></td>
+                <td>(Nombre Completo)</td>
+            </tr>
+            <br>
+              <tr>
+                  <td><label for="tipoSociedad">Tipo de Sociedad:</label></td>
+                  <td><input id="tipoSociedad" type="text"></td>
               </tr>
               <br>
               <tr>

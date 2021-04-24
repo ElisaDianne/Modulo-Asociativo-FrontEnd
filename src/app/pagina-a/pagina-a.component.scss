@@ -1,0 +1,77 @@
+.spacer {
+    margin-left: 5%;
+}
+
+.main {
+    flex-direction: row;
+    padding-top: 2%;
+    display: flex;
+    min-height: 80%;
+}
+
+.contenido {
+
+    float: left;
+    width: 62.5%;
+
+
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    padding: 1%;
+
+}
+
+.definiciones {
+    float: right;
+    width: 25%;
+    border: 1px solid gray;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    padding: 1%;
+
+}
+
+mat-form-field {
+    margin-left: 1%;
+}
+
+mat-label {
+    margin-left: 1%;
+}
+
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    flex-direction: row;
+    display: flex;
+}
+
+button {
+    margin: 1%;
+}
+
+.botones {
+    float: right;
+    flex-direction: row;
+    display: flex;
+
+}
+
+.example-full-width {
+    padding-top: 1%;
+}
+input{
+    margin-right:200px;
+    width: 65%;
+}

@@ -17,6 +17,7 @@ import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import{PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
+import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
@@ -60,6 +61,7 @@ import { from } from 'rxjs';
     MatToolbarModule,
     MatGridListModule,
     MatButtonModule,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
