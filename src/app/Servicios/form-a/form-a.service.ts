@@ -1,0 +1,27 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FormAService {
+  ubi_local=environment.apiA;
+  tokenprueba='eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGxpSWQiOjY3LCJ1c2VyX25hbWUiOiIxNzI0Nzg2MTcxIiwic2NvcGUiOlsic2VjcmV0Il0sInJvbGVzIjpbeyJpZFJvbCI6NzYsIm5vbWJyZVJvbCI6IlJPTF9URUNOSUNPX0ZBQ0lMSVRBRE9SX0RFX0NBTVBPIiwicGVybWlzb3MiOlsiaHR0cDovLzEwLjEwLjEuMTIxL2FwaV9kaW5hcmRhcC9hcGkvZGluYXJkYXAvaW50ZXJvcGVyYWRvci8xLyIsImh0dHA6Ly8xMC4xMC4xLjEyMS9hcGlfZGluYXJkYXAvYXBpL2RpbmFyZGFwL2ludGVyb3BlcmFkb3IvMTQvIiwiaHR0cDovLzEwLjEwLjEuMTIxOjgwODAvbWljcm9fY2F0YWxvZ28tMC4wLjEvYXBpL3RpcG9DYXRhbG9nby9maW5kQWxsIl19XSwicmVjdXJzb3MiOlt7Im1ldG9kbyI6IkdFVCIsInBhdGgiOiJodHRwOi8vMTAuMTAuMS4xMjEvYXBpX2RpbmFyZGFwL2FwaS9kaW5hcmRhcC9pbnRlcm9wZXJhZG9yLzEvIn0seyJtZXRvZG8iOiJHRVQiLCJwYXRoIjoiaHR0cDovLzEwLjEwLjEuMTIxL2FwaV9kaW5hcmRhcC9hcGkvZGluYXJkYXAvaW50ZXJvcGVyYWRvci8xNC8ifSx7Im1ldG9kbyI6IkdFVCIsInBhdGgiOiJodHRwOi8vMTAuMTAuMS4xMjE6ODA4MC9taWNyb19jYXRhbG9nby0wLjAuMS9hcGkvdGlwb0NhdGFsb2dvL2ZpbmRBbGwifV0sImV4cCI6MTYxOTU3MzU4MiwidXN1YXJpb3MiOlt7InVzdUlkIjoxMDM0MywidXN1cElkIjoxMDIwMywicGVyZmlsVGlwbyI6W3sidHBlZk5vbWJyZSI6IlRlY25pY28gRmFjaWxpdGFkb3IgZGUgQ2FtcG8ifV19XSwiYXV0aG9yaXRpZXMiOlsiUk9MX1RFQ05JQ09fRkFDSUxJVEFET1JfREVfQ0FNUE8iXSwianRpIjoiODBmMTk5ZDUtMzhiNS00ZWRmLWE4NGQtNzNjYmQ4ZWYyNWZiIiwicGVyX2lkIjo2MzI0OTcsImNsaWVudF9pZCI6InVzcl9zaXJ1c2FmYyJ9.munPCnhdl-8DFrSxNqs2_OqzBxk536o6-a-i-REmFuqqz1Xjd6iJEIXd0ebuIG9OlYh5LbxED1d7LgDOAe9YZSLCTrClfMCuo272u3eNFau2BPwLMGDSj6nWYpgtPt_S7y37lGNjrg7VmLTJkC10urxdz6JQcAsULl8v4N5g3Osf0_AjxmWwo_UodELw_q15U7XiEQxoq1G-JqvDL8fF28-fGHMuDPFochc186UmfDI2cAUadSspTwD2xfgcNnARWN2RhMcwfdVWhflvCd7RiKRRSZ5n-wx8ckqwPveNM9juZ2x31TWK6T4GCd_tJC58w0Ouu-UjssOsuDSJIXBOcg';
+  constructor(public http: HttpClient) { }
+
+  getInterOperador(id_RUC,tokenprueba)
+{
+  const head = new HttpHeaders({
+    "Content-Type":"application/json",
+    Accept: "application/json",
+    Authorization:"Bearer " + tokenprueba,
+
+  });
+  var link = this.ubi_local+
+  "dinardap/interoperador/" +id_RUC +"/1703612869001";
+  return this.http.get(link,{headers:head});
+}
+}
+
+
