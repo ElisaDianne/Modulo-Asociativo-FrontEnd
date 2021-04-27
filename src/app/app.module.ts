@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {LOGINComponent } from './login/login.component';
+import {Login2Component } from './login2/login2.component';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaCComponent } from './pagina-c/pagina-c.component';
@@ -15,6 +17,7 @@ import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import{PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
+import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,12 +33,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from "@angular/common/http";
 import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LOGINComponent,
     PaginaAComponent,
     PaginaBComponent,
     PaginaCComponent,
@@ -48,6 +52,7 @@ import { from } from 'rxjs';
     PaginaJComponent,
     PaginaLComponent,
     PaginaKComponent,
+    Login2Component,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +61,7 @@ import { from } from 'rxjs';
     MatToolbarModule,
     MatGridListModule,
     MatButtonModule,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
@@ -68,6 +74,7 @@ import { from } from 'rxjs';
     MatSliderModule,
     MatExpansionModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

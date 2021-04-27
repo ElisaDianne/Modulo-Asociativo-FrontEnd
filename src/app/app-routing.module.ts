@@ -1,7 +1,9 @@
 
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { LOGINComponent } from './login/login.component';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaCComponent } from './pagina-c/pagina-c.component';
@@ -14,10 +16,13 @@ import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import {PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
+import { Login2Component } from './login2/login2.component';
 
 import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
+  {path: 'login2', component: Login2Component },
+  { path: 'LOGIN', component: LOGINComponent },
   { path: 'PaginaA', component: PaginaAComponent },
   { path: 'PaginaB', component: PaginaBComponent },
   { path: 'PaginaC', component: PaginaCComponent },

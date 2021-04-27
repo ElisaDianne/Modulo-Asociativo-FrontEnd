@@ -9,27 +9,28 @@
 
 <div class="main" role="main">
   <div class="contenido">
+    <p>1. Datos del Encuestado</p>
     <div>
       <!-- <h3>1.  Si la persona que proporcionó los datos no fue el productor o representante legal del establecimiento, plasmar la siguiente información del informante calificado.</h3> -->
 
       <table>
         <tr>
-            <td><label for="cedula">Número de cédula</label></td>
-            <td><input id="cedula" type="text"></td>
-            <td><label for="nombre">Nombre completo</label></td>
-            <td><input id="nombre" type="text"></td>
+          <td><label for="cedula">Número de cédula</label></td>
+          <td><input id="cedula" type="text"></td>
+          <td><label for="nombre">Nombre completo</label></td>
+          <td><input id="nombre" type="text"></td>
         </tr>
         <br>
         <tr>
-            <td><label for="Celular">Celular</label></td>
-            <td><input id="Fecha" type="text"></td>
-            <td><label for="TelefonoFijo">Teléfono fijo</label></td>
-            <td><input type="text"></td>
+          <td><label for="Celular">Celular</label></td>
+          <td><input id="Fecha" type="text"></td>
+          <td><label for="TelefonoFijo">Teléfono fijo</label></td>
+          <td><input type="text"></td>
         </tr>
         <br>
         <tr>
-            <td><label for="Correo Electronico">Correo Eléctronico</label></td>
-            <td><input type="email"></td>
+          <td><label for="Correo Electronico">Correo Eléctronico</label></td>
+          <td><input type="email"></td>
 
         </tr>
 
@@ -46,18 +47,16 @@
           <input id="Correo" type="mail"> <br><br><br>
           <label for="Fecha">Fecha de la encuesta</label>
           <input id="Fecha" type="date"><br><br><br> -->
-          <div class="in-flex">
+      <div class="in-flex">
 
-              <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
+        <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
 
-              <mat-toolbar color="primary" class="fondoBajo">
-                <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
-                <div class="spacer"></div>
+        <mat-toolbar color="primary" class="fondoBajo">
+          <!-- <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" /> -->
+          <div class="spacer"></div>
 
-                <span style="text-align: center;">ACUERDO DE CONFIDENCIALIDAD Y ENTREGA DE INFORMACIÓN</span>
-              </mat-toolbar>
-
-
+          <span style="text-align: center;">ACUERDO DE CONFIDENCIALIDAD Y ENTREGA DE INFORMACIÓN</span>
+        </mat-toolbar>
 
 
 
@@ -71,7 +70,9 @@
 
 
 
-          </div>
+
+
+      </div>
 
 
 
@@ -95,14 +96,7 @@ Además acepto conocer que los datos PROPORCIONADOS para la obtención del Sello
 
         <label for="firma">Para constancia, el encuestador firma el presente documento:</label><br><br>
 
-
-
-        <canvas id="draw-canvas" width="200" height="160" class="firmao" style="padding-right: 50px;"></canvas><br>
-
-        <label><strong style="text-align: center; ">____________________________________________________
-            <br>
-
-          </strong> </label>
+        <input type="file" style="padding-left: 1cm;"> <br><br>
         <label for="firmaEncues" class="firma__Encuestado">Firma del Encuestado</label>
         <mat-form-field appearance="fill" class="fill_apparence">
           <mat-label>Fecha del la Encuesta</mat-label>
@@ -146,24 +140,27 @@ Además acepto conocer que los datos PROPORCIONADOS para la obtención del Sello
     padding-right: 40px;
     min-width: 100px;
   }
-  .in-flex{
-            flex:1;
-            padding: 50px;
-            margin-left: -50px;
-            padding-right: 40px;
-            width: 100%;
+
+  .in-flex {
+    flex: 1;
+    padding: 50px;
+    margin-left: -50px;
+    padding-right: 40px;
+    width: 100%;
 
 
-        }
-        .in-flex:first-child{
-            flex:2;
-            padding: 1px;
-        }
-        .in-flex div {
-            padding:25px;
+  }
+
+  .in-flex:first-child {
+    flex: 2;
+    padding: 1px;
+  }
+
+  .in-flex div {
+    padding: 25px;
 
 
-        }
+  }
 
   .spacer {
     margin-left: 5%;
@@ -280,7 +277,6 @@ Además acepto conocer que los datos PROPORCIONADOS para la obtención del Sello
   div label strong {
     margin-bottom: -20px;
   }
-
 </style>
 <!-- <style>
 

@@ -72,101 +72,85 @@
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
-    <span>E. DATOS DE LOS SOCIOS ACTIVOS DE LA ORGANIZACIÓN</span>
+    <span>E. DATOS JURIDICOS DE LA ORGANIZACIÓN</span>
 </mat-toolbar>
 <div class="main" role="main">
     <div class="contenido">
         <div>
-            <h3>1. DATOS DE LOS SOCIOS ACTIVOS DE LA ORGANIZACIÓN</h3>
+            <h3>1. Datos de la Organización</h3>
             <form class="example-form">
                 <mat-form-field appearance="fill">
-                    <mat-label>Número de cédula del socio</mat-label>
-                    <input matInput placeholder="Numero de cedula" value="" type="text">
+                    <mat-label>Figura Organizatavia</mat-label>
+                    <input matInput placeholder="" value="" type="text">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Fecha de Nacimiento</mat-label>
-                    <input matInput id="Fecha" type="date">
+                    <mat-label>Código SUIOS</mat-label>
+                    <input matInput placeholder="" value="" type="text">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Nombres y Apellidos del Socio</mat-label>
-                    <input matInput placeholder="Nombre y Apellido" value="" type="text">
+                    <mat-label>Grado o Nivel</mat-label>
+                    <input matInput id="Grado" type="text">
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Sexo</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Masculino</option>
-                        <option value="1">Femenino</option>
-                    </select>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>¿Está registrado como productor/ra AFC?</mat-label>
-                    <select matNativeControl required>
-                        <option value="0">Si</option>
-                        <option value="1">No</option>
-                    </select>
-                </mat-form-field>
                 <br>
-                <button mat-raised-button color="primary">Agregar</button>
+
             </form>
         </div>
 
-        <div>
-            <table style="width:100%">
-                <tr>
-                    <th>Número de Cédula del socio</th>
-                    <th>Nombres y Apellidos</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Sexo</th>
-                    <th>¿Está registrado como productor/ra AFC?</th>
-                    <th></th>
-
-                </tr>
-                <tr>
-                    <td>1798765432</td>
-                    <td>Juan Paúl Perez Oviedo</td>
-                    <td>20-11-1996</td>
-                    <td>M</td>
-                    <td>SI</td>
-                    <td>
-                        <button mat-raised-button color="warn">Eliminar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1801234567</td>
-                    <td>Flor Maria de la Torre</td>
-                    <td>11-06-1992</td>
-                    <td>F</td>
-                    <td>NO</td>
-                    <td>
-                        <button mat-raised-button color="warn">Eliminar</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
         <br>
         <div>
             <form class="example-form">
-                <h3>2. NÚMERO DE SOCIOS</h3>
+                <h3>2. Qué institución le otorgó a la organización la personalidad jurídica?</h3>
+                <mat-form-field appearance="fill">
+                    <mat-label>Institución</mat-label>
+                    <mat-select>
+                        <mat-option value="1" onclick="institucion.disabled=true">MAG</mat-option>
+                        <mat-option value="2" onclick="institucion.disabled=true">SEPS</mat-option>
+                        <mat-option value="3" onclick="institucion.disabled=true">MIES</mat-option>
+                        <mat-option value="4" onclick="institucion.disabled=false">Otro</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Especifique</mat-label>
+                    <input matInput id="institucion" placeholder="" value="" type="text" disabled>
+                </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <mat-label>Número Socios Iniciales</mat-label>
-                    <input matInput placeholder="" value="" type="text">
+
+
+            </form>
+
+        </div>
+        <div>
+            <form class="example-form">
+                <h3>3. Bajo que instrumento legal obtuvo la personería jurídica a la organización?</h3>
+                <mat-form-field appearance="fill">
+                    <mat-label>Instrumento Legal</mat-label>
+                    <mat-select>
+                        <mat-option value="1">Decreto</mat-option>
+                        <mat-option value="2">Resolución</mat-option>
+                        <mat-option value="3">ROEPS</mat-option>
+                        <mat-option value="4">Acuerdo</mat-option>
+                    </mat-select>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Número Socios Actuales</mat-label>
-                    <input matInput placeholder="" value="" type="text">
+                    <mat-label>Nro</mat-label>
+                    <input matInput placeholder="" value="" type="text" >
                 </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Fecha</mat-label>
+                    <input matInput placeholder="" value="" type="date">
+                </mat-form-field>
+
 
             </form>
 
         </div>
         <div class="botones">
             <button mat-raised-button color="warn" [routerLink]="'/PaginaD'">Anterior</button>
-            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaF'">Siguiente</button>
+            <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+                [routerLink]="'/PaginaF'">Siguiente</button>
         </div>
 
 
