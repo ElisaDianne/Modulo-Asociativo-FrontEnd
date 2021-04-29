@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LOGINComponent } from './login/login.component';
-import {Login2Component } from './login2/login2.component';
 import { PaginaAComponent } from './pagina-a/pagina-a.component';
 import { PaginaBComponent } from './pagina-b/pagina-b.component';
 import { PaginaCComponent } from './pagina-c/pagina-c.component';
@@ -52,7 +51,7 @@ import { from } from 'rxjs';
     PaginaJComponent,
     PaginaLComponent,
     PaginaKComponent,
-    Login2Component,
+
   ],
   imports: [
     BrowserModule,
