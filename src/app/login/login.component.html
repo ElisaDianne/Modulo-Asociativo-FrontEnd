@@ -8,41 +8,40 @@
 
 <div class="main" role="main">
     <div class="contenido">
-        
-		
+
+
 		<div class="header">
-			
+
 		</div>
 		<br>
-    
+
     <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
 
       <mat-card class="box">
         <mat-card-header>
           <mat-card-title>Log in</mat-card-title>
         </mat-card-header>
-    
-        <form class="example-form" id="formularioData"  >
+
+        <form [formGroup]="formularioData" (ngSubmit)="login(formularioData.value)" class="example-form" id="formularioData" >
           <mat-card-content>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Username" id="usupClave">
+              <input  [formControl]="formularioData.get('usupLogin')" matInput placeholder="Username" id="usupLogin" formControlName="usupLogin">
             </mat-form-field>
-    
+
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" id="usupLogin" type="password">
+              <input  [formControl]="formularioData.get('usupClave')" matInput placeholder="Password" id="usupClave" formControlName="usupClave" type="password">
             </mat-form-field>
           </mat-card-content>
           <button mat-stroked-button color="accent" class="btn-block">Log in</button>
         </form>
       </mat-card>
-    
     </div>
 
     </div>
     </div>
-   
 
 
-   
 
-    
+
+
+
