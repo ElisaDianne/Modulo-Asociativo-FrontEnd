@@ -41,7 +41,7 @@
                   <br>
                   <tr>
                       <td><label for="estadoContribuyente">Estado Contribuyente:</label></td>
-                      <td><input id="estadoContribuyente" type="text"></td>
+                      <td><input [formControl]="formularioDataA.get('estadoContribuyente')" id="estadoContribuyente" formControlName="estadoContribuyente"  type="text"></td>
                   </tr>
                 <br>
                 <tr>
@@ -81,7 +81,7 @@
                   </tr>
                   <br>
                   <br>
-                  <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+                  <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;" class="btn-block">Cargar Datos</button>
               </table>
             </form>
         </div>

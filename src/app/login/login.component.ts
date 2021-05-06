@@ -54,20 +54,17 @@ export class LOGINComponent implements OnInit {
         this.mitoken = data["access_token"]; //guardo el token
         localStorage.setItem('token',this.mitoken);
         var ejemJson = JSON.parse(atob(data["access_token"].split(".")[1])); //descifro el token
+        console.log(ejemJson);
         //ingreso de varios perfiles de usuario
         if(ejemJson["authorities"].length > 0) {
-          //his.storage.set("userid", ejemJson["per_id"]);
-          //this.storage.set("ci", ejemJson["user_name"]);
+
           this.srvApi.getPerson(user, this.mitoken).subscribe(
             (data) => {
               console.log(data);
               this.router.navigateByUrl('PaginaA')
             },
             (error) => {
-              //this.storage.set("status", false);
               console.log(error);
-              //this.mensajeError = error;
-              //Alert("¡Datos incorrectos debes validar brigada!");
             }
           )
         }
