@@ -20,10 +20,20 @@ export class PaginaAComponent implements OnInit {
   firstConnection = "";
   statuslogin = false;
   mestado = 0;
-  character =[];
+  character;
+  datosPagA:any=[];
+  serealizado:any;
   formularioDataA : FormGroup = new FormGroup({
     identi: new FormControl("", [Validators.required]),
-
+    rSocial:new FormControl(""),
+    eContribuyente:new FormControl(""),
+    nComercial:new FormControl(""),
+    tSociedad:new FormControl(""),
+    aEconomica:new FormControl(""),
+    tFijo:new FormControl(""),
+    tCelular:new FormControl(""),
+    cElectronico:new FormControl(""),
+    pWeb:new FormControl(""),
   });
 
 
@@ -34,6 +44,15 @@ export class PaginaAComponent implements OnInit {
   ngOnInit(): void {
     this.formularioDataA.setValue({
       identi: '',
+      rSocial:'',
+      eContribuyente:'',
+      nComercial:'',
+      tSociedad:'',
+      aEconomica:'',
+      tFijo:'',
+      tCelular:'',
+      cElectronico:'',
+      pWeb:'',
     });
   }
   pagAOnline(ruc){
@@ -41,6 +60,7 @@ export class PaginaAComponent implements OnInit {
           this.srvApi.getPerson(ruc, this.mitoken).subscribe(
             (data) => {
               console.log(data);
+              this.datosPagA=(data);
 
             },
             (error) => {
@@ -51,8 +71,28 @@ export class PaginaAComponent implements OnInit {
 
   async paginaA(form) {
     var mruc =form.identi;
+    var msocial= form.rSocial;
+    var mcontribuyente= form.eContribuyente;
+    var mcomercial= form.nComercial;
+    var msociedad= form.tSociedad;
+    var meconomica= form.aEconomica;
+    var mfijo= form.tFijo;
+    var mcelular= form.tCelular;
+    var melectronico= form.cElectronico;
+    var mweb= form.pWeb;
+
+
+
+
     console.log(mruc);
+    console.log(msocial);
+
     const ruc = mruc;
     this.pagAOnline(ruc);
+
+
+    let formObj = this.formularioDataA.getRawValue();
+    let serializado=JSON.stringify(formObj);
+    console.log(serializado);
   }
 }
