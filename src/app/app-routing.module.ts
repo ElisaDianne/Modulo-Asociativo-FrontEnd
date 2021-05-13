@@ -20,7 +20,7 @@ import { PaginaLComponent } from './pagina-l/pagina-l.component';
 
 import { AppComponent } from './app.component';
 const routes: Routes = [
-  { path: '', component:LOGINComponent },
+  { path: '', component: LOGINComponent },
   { path: 'LOGIN', component: LOGINComponent },
   { path: 'PaginaA', component: PaginaAComponent },
   { path: 'PaginaB', component: PaginaBComponent },
