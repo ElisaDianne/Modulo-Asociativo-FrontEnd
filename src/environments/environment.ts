@@ -8,7 +8,7 @@ export const environment = {
   host:"http://10.10.1.121:8080/",
   api_token: "servicio_seguridad-0.0.1/api/oauth/token",
   api_persona:"http://10.10.1.121:8080/api_dinardap/api/dinardap/interoperador/1/",
-  apiA_persona: "http://10.10.1.121:8080/api_dinardap/api/dinardap/interoperador/13/",
+  apiA_persona: "http://10.10.1.121:8080/api_dinardap/api/dinardap/interoperador/14/",
   version_date: +new Date("19/04/2021"),
   version: "V1.1",
   production: true

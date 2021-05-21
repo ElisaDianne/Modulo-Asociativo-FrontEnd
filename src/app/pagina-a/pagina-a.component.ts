@@ -111,6 +111,12 @@ export class PaginaAComponent implements OnInit {
         :this.formularioDataA.get('pWeb').hasError('text')?'URL invalido':
          '';
   }
+  getErrorSignal() {
+    return this.formularioDataA.get('pWeb').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('pWeb').hasError('text')?'URL invalido':
+         '';
+  }
 
   
   ngOnInit(): void {
