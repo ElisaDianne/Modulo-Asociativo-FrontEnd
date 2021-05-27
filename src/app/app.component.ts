@@ -19,5 +19,5 @@ import { PaginaJComponent } from './pagina-j/pagina-j.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Modulo-Asociativo-FrontEnd';
+  title = 'Modulo-Asociativo-FrontEnd';  
 }

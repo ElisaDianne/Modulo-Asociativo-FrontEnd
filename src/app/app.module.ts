@@ -35,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { from } from 'rxjs';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,10 +51,11 @@ import { from } from 'rxjs';
     PaginaIComponent,
     PaginaJComponent,
     PaginaLComponent,
-    PaginaKComponent,
+    PaginaKComponent,    
 
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

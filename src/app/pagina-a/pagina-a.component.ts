@@ -4,6 +4,7 @@ import { FormGroup, Validators,  FormControl } from '@angular/forms';
 import { environment } from './../../environments/environment';
 
 
+
 // function emailDomainValidatos  (control:FormControl){
 //   let email =control.value;
 //   if(email && email.indexOf("@") != -1 ){
@@ -25,6 +26,10 @@ import { environment } from './../../environments/environment';
   styleUrls: ['./pagina-a.component.scss']
 })
 export class PaginaAComponent implements OnInit {
+  actividadEconomica?:string;
+  estadoContribuyente?:string;
+  razonSocial?:string;
+  contentData;
   //actividadEconomica: any;
   production = environment.production;
   version = environment.version;
@@ -51,12 +56,90 @@ export class PaginaAComponent implements OnInit {
     //  [Validators.required,Validators.pattern("[^ @]*@[^ @]"),emailDomainValidatos]),
     pWeb:new FormControl('',[Validators.required])
   });
+ 
+
   
 
   constructor(
     public srvApi: FormAService,
-  ) {}
-  
+    
+  ) {    
+    this.contentData=this.formularioDataA.valueChanges.subscribe(formValue => {
+      // console.log(formValue.identi)
+      const Ruc =String(formValue.identi) ;
+      if(Ruc.length ==13 )
+      {
+        console.log('imprimir');
+        this.pagAOnline(Ruc);
+      }
+    });
+  }
+  //liberar la memoria 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.contentData.unsubscribe();
+  }
+  getRuc(Ruc){
+    console.log(Ruc);
+  }
+  //para el signo de * requerimiento en los labels//
+  getErrorMessagerCdondicionalID() {
+    return this.formularioDataA.get('identi').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('identi').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicional() {
+    return this.formularioDataA.get('rSocial').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('rSocial').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicionaleContri() {
+    return this.formularioDataA.get('eContribuyente').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('eContribuyente').hasError('text')?'':
+         '';
+  }
+  getErrorMessageCdondicionalnComercial() {
+    return this.formularioDataA.get('nComercial').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('nComercial').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicionalTS() {
+    return this.formularioDataA.get('tSociedad').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('tSociedad').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicionalAE() {
+    return this.formularioDataA.get('aEconomica').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('aEconomica').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicionalTC() {
+    return this.formularioDataA.get('tCelular').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('tCelular').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicionalCE() {
+    return this.formularioDataA.get('cElectronico').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('cElectronico').hasError('text')?'':
+         '';
+  }
+  getErrorMessagerCdondicionalPW() {
+    return this.formularioDataA.get('pWeb').hasError('required')
+      ? '*'            
+        :this.formularioDataA.get('pWeb').hasError('text')?'':
+         '';
+  }
+  //fin de los labels con requerimientos *
+  //inicio para los mensajes debajo del textbox
   getErrorMessagerSocial() {
     return this.formularioDataA.get('rSocial').hasError('required')
       ? 'Nombre Completo'            
@@ -117,7 +200,7 @@ export class PaginaAComponent implements OnInit {
         :this.formularioDataA.get('pWeb').hasError('text')?'URL invalido':
          '';
   }
-
+//fin de los mensajes del textbox
   
   ngOnInit(): void {
     this.formularioDataA.setValue({
@@ -139,7 +222,6 @@ export class PaginaAComponent implements OnInit {
             (data) => {
               console.log(data);
               this.datosPagA=(data);
-
             },
             (error) => {
               console.log(error);
