@@ -44,8 +44,7 @@
                         <mat-error *ngIf="formularioDataA.get('rSocial').invalid">{{
                           getErrorMessagerSocial()
                         }}</mat-error>
-                      </td>
-                      
+                      </td>                      
                   </tr>
                   <br>
                   <tr>
@@ -160,7 +159,7 @@
 
       <div class="botones">
 
-          <button  mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaB'">Siguiente</button>
+          <button [disabled]="formularioDataA.invalid" mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaB'">Siguiente</button>
       </div>
 
 

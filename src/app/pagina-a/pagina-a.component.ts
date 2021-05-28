@@ -202,6 +202,8 @@ export class PaginaAComponent implements OnInit {
   }
 //fin de los mensajes del textbox
   
+
+
   ngOnInit(): void {
     this.formularioDataA.setValue({
       identi: '',
