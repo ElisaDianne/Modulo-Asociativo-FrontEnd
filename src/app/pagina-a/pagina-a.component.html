@@ -20,12 +20,14 @@
                     <td><mat-form-field appearance="fill">
                         <mat-label>Seleccione una Opción</mat-label>
                           <mat-select >
-                            <mat-option value="1" onclick="dispone.disabled=false">RUC</mat-option>
+                            <mat-option (click) = toogleTag() value="1" onclick="dispone.disabled=false">RUC</mat-option>
                             <mat-option value="2" onclick="dispone.disabled=true">Cédula de Identidad</mat-option>
                           </mat-select>
                       </mat-form-field></td>
                 </tr>
                 <br>
+                <div *ngIf = "isShow">
+                  <table > 
                 <tr>
                     <td><mat-error *ngIf="formularioDataA.get('identi')"><label class="aviso" for="identificacion">Identificacion:</label>
                       {{getErrorMessagerCdondicionalID()}}
@@ -118,7 +120,7 @@
                           {{getErrorMessagerCdondicionalTC()
                         }}</mat-error>
                       </td>
-                      <td><input [formControl]="formularioDataA.get('tCelular')"  id="telefonoCelular" formControlName="tCelular"  type="number" maxlength="10" oninput="if(this.value.length>this.maxLength)this.value= this.value.slice(0,this.maxLength);">
+                      <td><input [formControl]="formularioDataA.get('tCelular')" pattern="[09]+[0-9]*" id="telefonoCelular" formControlName="tCelular"  type="number" maxlength="10" oninput="if(this.value.length>this.maxLength)this.value= this.value.slice(0,this.maxLength);" placeholder="09XXXXXXXX">
                         <mat-error *ngIf="formularioDataA.get('tCelular').invalid">{{
                           getErrorMessagetCelular()
                         }}</mat-error>
@@ -144,12 +146,14 @@
                           {{getErrorMessagerCdondicionalPW()
                         }}</mat-error>
                       </td>                      
-                      <td><input [formControl]="formularioDataA.get('pWeb')"  id="paginaWeb"  formControlName='pWeb' type="text">
+                      <td><input [formControl]="formularioDataA.get('pWeb')" pattern="(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*" id="paginaWeb"  formControlName='pWeb' type="text" placeholder="www.ejemplo.com">
                         <mat-error *ngIf="formularioDataA.get('pWeb').invalid">{{
                           getErrorMessagepWeb()
                         }}</mat-error>                     
                       </td>                       
-                  </tr>                  
+                  </tr>  
+                </table >
+                </div>                
               </table>
             </form>
         </div>

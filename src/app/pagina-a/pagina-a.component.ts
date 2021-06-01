@@ -30,6 +30,7 @@ export class PaginaAComponent implements OnInit {
   estadoContribuyente?:string;
   razonSocial?:string;
   contentData;
+  isShow:boolean=false;
   //actividadEconomica: any;
   production = environment.production;
   version = environment.version;
@@ -54,7 +55,7 @@ export class PaginaAComponent implements OnInit {
     tCelular:new FormControl('',[Validators.required,Validators.maxLength(10)]),
     cElectronico: new FormControl('', [Validators.required, Validators.email]),
     //  [Validators.required,Validators.pattern("[^ @]*@[^ @]"),emailDomainValidatos]),
-    pWeb:new FormControl('',[Validators.required])
+    pWeb:new FormControl('',[Validators.required,Validators.pattern("(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*")])
   });
  
 
@@ -179,7 +180,7 @@ export class PaginaAComponent implements OnInit {
   getErrorMessagetCelular() {
     return this.formularioDataA.get('tCelular').hasError('required')
       ? 'Campo requerido'            
-        :this.formularioDataA.get('tCelular').hasError('maxLength')?'max 10 num.':
+        :this.formularioDataA.get('tCelular').hasError('pattern')?'No pertenece a celular':
          '';
   }
   getErrorMessagecElectronico() {
@@ -190,18 +191,15 @@ export class PaginaAComponent implements OnInit {
   }
   getErrorMessagepWeb() {
     return this.formularioDataA.get('pWeb').hasError('required')
-      ? 'Campo requerido'            
-        :this.formularioDataA.get('pWeb').hasError('text')?'URL invalido':
+      ? 'Pagina Web'            
+        :this.formularioDataA.get('pWeb').hasError('pattern')?'URL invalido':
          '';
   }
-  getErrorSignal() {
-    return this.formularioDataA.get('pWeb').hasError('required')
-      ? '*'            
-        :this.formularioDataA.get('pWeb').hasError('text')?'URL invalido':
-         '';
-  }
-//fin de los mensajes del textbox
   
+//fin de los mensajes del textbox
+   toogleTag(){
+    this.isShow=!this.isShow;
+  } 
 
 
   ngOnInit(): void {
