@@ -21,7 +21,7 @@
                         <mat-label>Seleccione una Opción</mat-label>
                           <mat-select >
                             <mat-option (click) = toogleTag() value="1" onclick="dispone.disabled=false">RUC</mat-option>
-                            <mat-option value="2" onclick="dispone.disabled=true">Cédula de Identidad</mat-option>
+                            <mat-option (click) = toogleTag() value="2" onclick="dispone.disabled=true">Cédula de Identidad</mat-option>
                           </mat-select>
                       </mat-form-field></td>
                 </tr>
@@ -59,8 +59,7 @@
                         <mat-error *ngIf="formularioDataA.get('eContribuyente').invalid">{{
                           getErrorMessageeContribuyente()
                         }}</mat-error>
-                      </td>
-                      
+                      </td>      
                   </tr>
                 <br>
                 <tr>

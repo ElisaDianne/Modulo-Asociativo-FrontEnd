@@ -18,27 +18,29 @@
                             <mat-form-field appearance="fill">
                                 <mat-label>Seleccione una Opción</mat-label>
                                 <mat-select>
-                                    <mat-option value="1" onclick="dispone.disabled=false">Si</mat-option>
-                                    <mat-option value="2" onclick="dispone.disabled=true">No</mat-option>
+                                    <mat-option (click) = toogleTag() value="1" onclick="dispone.disabled=false">Si</mat-option>
+                                    <mat-option (click) = toogleTag() value="2" onclick="dispone.disabled=true">No</mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </td>
-                        <label>Superficie (ha) o (m2)</label>                        
+                        <!-- <label>Superficie (ha) o (m2)</label>                        
                         <td>                                                        
                             <mat-form-field class="spacer">
                                 <mat-label>Especifique</mat-label>
                                 <input matInput id="dispone" placeholder="" value="" type="text" disabled>
                             </mat-form-field>
-                        </td>
+                        </td> -->
                     </tr>
                 </table>
             </form>
         </div>
         <br>
 
-        <div>
+        <div *ngIf = "isShow" >
             <h3>2. DATOS DE LA UBICACIÓN DE LA ORGANIZACIÓN</h3>
             <form class="example-form">
+                <tr>
+                <td>
                 <mat-form-field appearance="fill">
                     <mat-label>Provincia Matriz</mat-label>
                     <select matNativeControl required>
@@ -68,30 +70,35 @@
                         <option value="23">Azuay </option>
                     </select>
                 </mat-form-field>
-
+                </td>    
+                <td>    
                 <mat-form-field appearance="fill">
                     <mat-label>Dirección</mat-label>
                     <input matInput placeholder="Dirección Matríz" value="" type="text">
                 </mat-form-field>
-
-
-
+                </td>                    
+                </tr>  
+                <br>              
+                <tr>
+                <td>    
                 <mat-form-field appearance="fill">
                     <mat-label>Cantón Matriz</mat-label>
                     <select matNativeControl required>
                         <option value="0">Quito</option>
                         <option value="1">Mera</option>
                         <option value="2">Santa Clara</option>
-
                     </select>
                 </mat-form-field>
-
-
+                </td>    
+                
                 <mat-form-field appearance="fill">
                     <mat-label>Sector</mat-label>
                     <input matInput placeholder="Sector" value="" type="text">
                 </mat-form-field>
-
+                </tr>
+                <br>
+                <tr>
+                <td>                
                 <mat-form-field appearance="fill">
                     <mat-label>Parroquia Matriz</mat-label>
                     <select matNativeControl required>
@@ -99,18 +106,20 @@
 
                     </select>
                 </mat-form-field>
-
+                </td>
+                <td>
                 <mat-form-field appearance="fill">
                     <mat-label>Superficie</mat-label>
                     <input matInput placeholder="Sector" value="" type="text">
                 </mat-form-field>
-                
+                </td>
+                </tr>
                 <br>
             </form>
         </div>
         <br>
 
-        <div>
+        <div *ngIf = "isShow">
             <form class="example-form">
                 <h3>3. COORDENADAS UTM(GPS) DE LA SEDE DE LA ORGANIZACIÓN</h3>
 
@@ -131,7 +140,7 @@
             </form>
         </div>
         <br>
-        <div>
+        <div *ngIf = "isShow">
             <table style="width:80%">
                 <tr>
                     <th>Hemisferio</th>
@@ -157,7 +166,7 @@
             </table>
         </div>
         <br>
-        <div>
+        <div *ngIf = "isShow">
             <form class="example-form">
                 <h3>4. CÓDIGO CATASTRAL DE LA SEDE DE LA ORGANIZACIÓN</h3>
 
@@ -168,16 +177,13 @@
                 <br>
             </form>
         </div>
-        <div class="botones">
+        <div *ngIf = "isShow" class="botones">
             <button mat-raised-button color="warn" [routerLink]="'/PaginaA'">Anterior</button>
             <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
                 [routerLink]="'/PaginaC'">Siguiente</button>
         </div>
-
-
     </div>
-
-    <div class="definiciones">
+    <div class="definiciones" >
         <h1>Definiciones</h1>
         <mat-list role="list">
             <mat-list-item role="listitem">definición 1</mat-list-item>
@@ -185,5 +191,4 @@
             <mat-list-item role="listitem">definición 3</mat-list-item>
         </mat-list>
     </div>
-
 </div>

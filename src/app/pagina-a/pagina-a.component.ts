@@ -31,6 +31,7 @@ export class PaginaAComponent implements OnInit {
   razonSocial?:string;
   contentData;
   isShow:boolean=false;
+  isShow2:boolean=true;
   //actividadEconomica: any;
   production = environment.production;
   version = environment.version;
@@ -199,6 +200,7 @@ export class PaginaAComponent implements OnInit {
 //fin de los mensajes del textbox
    toogleTag(){
     this.isShow=!this.isShow;
+    this.isShow2=!this.isShow2;
   } 
 
 

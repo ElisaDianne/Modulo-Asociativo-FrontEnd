@@ -30,22 +30,30 @@
     }
 
     mat-form-field {
-        margin-left: 20%;
+        margin-left: 5%;
+        
     }
 
+    .home{
+        display: flex;
+        flex-wrap: wrap;
+    }
     mat-label {
+        flex: 1;
         margin-left: 1%;
 
     }
 
     table {
+        flex: 2;
         border-collapse: collapse;
         width: 100%;
     }
 
     th,
     td {
-        text-align: left;
+        flex: auto;
+        text-align: justify;
         padding: 8px;
     }
 
