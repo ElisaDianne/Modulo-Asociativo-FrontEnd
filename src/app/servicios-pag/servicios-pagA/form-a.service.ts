@@ -8,6 +8,7 @@ export class FormAService {
 
   api_token = environment.host + environment.api_token;
   apiA_persona= environment.apiA_persona;
+  apiA_prueba= environment.apiA_prueba;
   constructor(public http: HttpClient) { }
 
   /*postLogin(user,pass){
@@ -34,8 +35,19 @@ export class FormAService {
     this.apiA_persona+
     + ruc_persona;
     return this.http.get(link,{headers:head});
+ 
  }
-
+ getPersonaPrueba(ruc_persona,token){
+  const head =new HttpHeaders({
+    'Content-Type':'application/json',
+    Accept: 'application/json',
+    Authorization:'Bearer ' + token,
+  });
+  var link =
+  this.apiA_prueba+
+  + ruc_persona;
+  return this.http.get(link,{headers:head});
+  }
  enviar(datos, token){
    console.log(datos);
    const head=new HttpHeaders({

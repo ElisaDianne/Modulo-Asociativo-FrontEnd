@@ -32,6 +32,10 @@ export class PaginaAComponent implements OnInit {
   contentData;
   isShow:boolean=false;
   isShow2:boolean=true;
+  //varaibles locales 
+  filtro1?:string;
+  filtro2?:string;
+  filtro3?:string;  
   //actividadEconomica: any;
   production = environment.production;
   version = environment.version;
@@ -223,7 +227,30 @@ export class PaginaAComponent implements OnInit {
           this.srvApi.getPerson(ruc, this.mitoken).subscribe(
             (data) => {
               console.log(data);
-              this.datosPagA=(data);
+              // this.srvApi.getPersonaPrueba(ruc,this.mitoken).subscribe(
+              //   res=>{
+              //     console.log
+              //     if(res.mensaje !== undefined && res.mensaje !== null ){                    
+              //           //organizacion nueva
+              //           if(res==null){
+              //             this.datosPagA=(data);                          
+              //           }                       
+              //           else if(res.origen ==="BDC" ){                                                                                                 
+              //           //aqui completamos data
+              //             if(res.orgRazonSocial === null){
+              //               this.rSocial=(data.rSocial)
+              //             }
+              //           }
+              //           else if(res.origen ==="Sirus"){
+              //           //aqui completamos data
+              //           }
+              //           else if (res.origen ==="BDC_Sirus"){
+              //             //completamos y comparamos los datos y damos prioridad
+              //           }
+              //     }
+              //   }                
+              // )   
+              this.datosPagA=(data);                          
             },
             (error) => {
               console.log(error);
