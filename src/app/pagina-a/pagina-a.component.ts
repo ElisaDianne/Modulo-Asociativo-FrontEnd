@@ -26,16 +26,13 @@ import { environment } from './../../environments/environment';
   styleUrls: ['./pagina-a.component.scss']
 })
 export class PaginaAComponent implements OnInit {
-  actividadEconomica?:string;
-  estadoContribuyente?:string;
-  razonSocial?:string;
   contentData;
   isShow:boolean=false;
   isShow2:boolean=true;
-  //varaibles locales 
+  //varaibles locales
   filtro1?:string;
   filtro2?:string;
-  filtro3?:string;  
+  filtro3?:string;
   //actividadEconomica: any;
   production = environment.production;
   version = environment.version;
@@ -62,14 +59,14 @@ export class PaginaAComponent implements OnInit {
     //  [Validators.required,Validators.pattern("[^ @]*@[^ @]"),emailDomainValidatos]),
     pWeb:new FormControl('',[Validators.required,Validators.pattern("(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*")])
   });
- 
 
-  
+
+
 
   constructor(
     public srvApi: FormAService,
-    
-  ) {    
+
+  ) {
     this.contentData=this.formularioDataA.valueChanges.subscribe(formValue => {
       // console.log(formValue.identi)
       const Ruc =String(formValue.identi) ;
@@ -80,7 +77,7 @@ export class PaginaAComponent implements OnInit {
       }
     });
   }
-  //liberar la memoria 
+  //liberar la memoria
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
@@ -92,55 +89,55 @@ export class PaginaAComponent implements OnInit {
   //para el signo de * requerimiento en los labels//
   getErrorMessagerCdondicionalID() {
     return this.formularioDataA.get('identi').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('identi').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicional() {
     return this.formularioDataA.get('rSocial').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('rSocial').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicionaleContri() {
     return this.formularioDataA.get('eContribuyente').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('eContribuyente').hasError('text')?'':
          '';
   }
   getErrorMessageCdondicionalnComercial() {
     return this.formularioDataA.get('nComercial').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('nComercial').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicionalTS() {
     return this.formularioDataA.get('tSociedad').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('tSociedad').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicionalAE() {
     return this.formularioDataA.get('aEconomica').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('aEconomica').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicionalTC() {
     return this.formularioDataA.get('tCelular').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('tCelular').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicionalCE() {
     return this.formularioDataA.get('cElectronico').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('cElectronico').hasError('text')?'':
          '';
   }
   getErrorMessagerCdondicionalPW() {
     return this.formularioDataA.get('pWeb').hasError('required')
-      ? '*'            
+      ? '*'
         :this.formularioDataA.get('pWeb').hasError('text')?'':
          '';
   }
@@ -148,64 +145,64 @@ export class PaginaAComponent implements OnInit {
   //inicio para los mensajes debajo del textbox
   getErrorMessagerSocial() {
     return this.formularioDataA.get('rSocial').hasError('required')
-      ? 'Nombre Completo'            
+      ? 'Nombre Completo'
         :this.formularioDataA.get('rSocial').hasError('text')?'Estado Contribuyente':
          '';
   }
   getErrorMessageeContribuyente() {
     return this.formularioDataA.get('eContribuyente').hasError('required')
-      ? 'Campo Requerido'            
+      ? 'Campo Requerido'
         :this.formularioDataA.get('eContribuyente').hasError('text')?'Estado Contribuyente':
          '';
   }
   getErrorMessagenComercial() {
     return this.formularioDataA.get('nComercial').hasError('required')
-      ? 'Nombre Completo'            
+      ? 'Nombre Completo'
         :this.formularioDataA.get('nComercial').hasError('text')?'Nombre Comercial':
          '';
   }
   getErrorMessagetSociedad() {
     return this.formularioDataA.get('tSociedad').hasError('required')
-      ? 'Campo Requerido'            
+      ? 'Campo Requerido'
         :this.formularioDataA.get('tSociedad').hasError('text')?'Tipo de Sociedad':
          '';
   }
   getErrorMessageaEconomica() {
     return this.formularioDataA.get('aEconomica').hasError('required')
-      ? 'Campo Requerido'            
+      ? 'Campo Requerido'
         :this.formularioDataA.get('aEconomica').hasError('text')?'Actividad Economica':
          '';
   }
   getErrorMessagetFijo() {
     return this.formularioDataA.get('tFijo').hasError('required')
-      ? ''            
+      ? ''
         :this.formularioDataA.get('tFijo').hasError('maxLength')?'max 7 num.':
          '';
   }
   getErrorMessagetCelular() {
     return this.formularioDataA.get('tCelular').hasError('required')
-      ? 'Campo requerido'            
+      ? 'Campo requerido'
         :this.formularioDataA.get('tCelular').hasError('pattern')?'No pertenece a celular':
          '';
   }
   getErrorMessagecElectronico() {
     return this.formularioDataA.get('cElectronico').hasError('required')
-      ? 'Campo requerido'            
+      ? 'Campo requerido'
         :this.formularioDataA.get('cElectronico').hasError('email')?'email no valido.':
          '';
   }
   getErrorMessagepWeb() {
     return this.formularioDataA.get('pWeb').hasError('required')
-      ? 'Pagina Web'            
+      ? 'Pagina Web'
         :this.formularioDataA.get('pWeb').hasError('pattern')?'URL invalido':
          '';
   }
-  
+
 //fin de los mensajes del textbox
    toogleTag(){
     this.isShow=!this.isShow;
     this.isShow2=!this.isShow2;
-  } 
+  }
 
 
   ngOnInit(): void {
@@ -227,30 +224,82 @@ export class PaginaAComponent implements OnInit {
           this.srvApi.getPerson(ruc, this.mitoken).subscribe(
             (data) => {
               console.log(data);
-              // this.srvApi.getPersonaPrueba(ruc,this.mitoken).subscribe(
-              //   res=>{
-              //     console.log
-              //     if(res.mensaje !== undefined && res.mensaje !== null ){                    
-              //           //organizacion nueva
-              //           if(res==null){
-              //             this.datosPagA=(data);                          
-              //           }                       
-              //           else if(res.origen ==="BDC" ){                                                                                                 
-              //           //aqui completamos data
-              //             if(res.orgRazonSocial === null){
-              //               this.rSocial=(data.rSocial)
-              //             }
-              //           }
-              //           else if(res.origen ==="Sirus"){
-              //           //aqui completamos data
-              //           }
-              //           else if (res.origen ==="BDC_Sirus"){
-              //             //completamos y comparamos los datos y damos prioridad
-              //           }
-              //     }
-              //   }                
-              // )   
-              this.datosPagA=(data);                          
+              //estructura para validaciones y filtros
+
+              /*this.srvApi.getPersonaPrueba(ruc,this.mitoken).subscribe(
+                 res=>{
+                   console.log
+                   if(res.mensaje !== undefined && res.mensaje !== null ){
+                         //organizacion nueva
+                         if(res==null){
+                           this.datosPagA=(data);
+                         }
+                         else if(res.origen ==="BDC" ){
+                         //aqui completamos data
+                           if(res.orgRazonSocial === null){
+                             this.formularioDataA.setValue({
+                              rSocial:data[16]
+                            });
+                           }
+                           if(res.orgActEconomica === null){
+                            this.formularioDataA.setValue({
+                              aEconomica:data[2]
+                            });
+                          }
+
+                          this.formularioDataA.setValue({
+                            nComercial:res.orgNombreComercial,
+                            tFijo:res.orgTelefono,
+                            tCelular:res.orgCelular,
+                            cElectronico:res.orgCorreo,
+                            pWeb:res.orgPaginaWeb,
+                          });
+                         }
+                         else if(res.origen ==="Sirus"){
+                         //aqui completamos data
+                          if(res.razonSocial === null){
+                            this.formularioDataA.setValue({
+                              rSocial:data[16]
+                            });
+                          }
+                          if(res.actEconomica === null){
+                            this.formularioDataA.setValue({
+                              aEconomica:data[2]
+                            });
+                          }
+                          this.formularioDataA.setValue({
+                            nComercial:res.nombreComercial,
+                            tFijo:res.telfDomicilio,
+                            tCelular:res.telfTrabajo,
+                            cElectronico:res.correo,
+                            pWeb:res.paginaWeb,
+                          });
+                         }
+                         else if (res.origen ==="BDC_Sirus"){
+                           //completamos y comparamos los datos y damos prioridad
+                          if(res.razonSocial !== data[16]){
+                            this.formularioDataA.setValue({
+                              rSocial:res.razonSocial
+                            });
+                          }
+                          if(res.actEconomica !== data[2]){
+                            this.formularioDataA.setValue({
+                              aEconomica:res.actEconomica
+                            });
+                          }
+                          this.formularioDataA.setValue({
+                            nComercial:res.nombreComercial,
+                            tFijo:res.telfDomicilio,
+                            tCelular:res.telfTrabajo,
+                            cElectronico:res.correo,
+                            pWeb:res.paginaWeb,
+                          });
+
+                        }
+                   }
+                 }
+               )*/
+              this.datosPagA=(data);
             },
             (error) => {
               console.log(error);
