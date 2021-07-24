@@ -305,16 +305,17 @@ export class PaginaAComponent implements OnInit {
               }
               else if (res.origen === "BDC_Sirus") {
                 //completamos y comparamos los datos y damos prioridad
-                if (res.organizacionRazonSocial === null) {
+                if (res.organizacionRazonSocial !== data[16]) {
                   tempRazonSocial = data[16]; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
                   });*/
                 }
                 else{
-                  tempRazonSocial = res.organizacionRazonSocial;
+                  //tempRazonSocial = res.organizacionRazonSocial;
+                  tempRazonSocial =  "ENTRO AL ELSE"
                 }
-                if (res.organizacionActividad === null) {
+                if (res.organizacionActividad !== data[2]) {
                   tempActividad = data[2];
                   /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
@@ -326,7 +327,7 @@ export class PaginaAComponent implements OnInit {
 
                 this.formularioDataA.setValue({
                   identi: ruc,
-                  rSocial: "",
+                  rSocial: tempRazonSocial,
                   eContribuyente: data[3],
                   aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
