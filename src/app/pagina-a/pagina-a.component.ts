@@ -68,12 +68,17 @@ export class PaginaAComponent implements OnInit {
     public srvApi: FormAService,
 
   ) {
+    let ignoreRucUpdates = false;
     this.contentData = this.formularioDataA.valueChanges.subscribe(formValue => {
       // console.log(formValue.identi)
       const Ruc = String(formValue.identi);
-      if (Ruc.length == 13) {
+      if (Ruc.length == 13 && ignoreRucUpdates === false) {
         console.log('imprimir');
         this.pagAOnline(Ruc);
+        ignoreRucUpdates = true;
+      }
+      else{
+        ignoreRucUpdates = false;
       }
     });
   }
