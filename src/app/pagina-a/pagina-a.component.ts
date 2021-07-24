@@ -2,6 +2,7 @@ import { FormAService } from './../servicios-pag/servicios-pagA/form-a.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { environment } from './../../environments/environment';
+import { Console } from 'console';
 
 
 
@@ -313,7 +314,8 @@ export class PaginaAComponent implements OnInit {
                 }
                 else{
                   //tempRazonSocial = res.organizacionRazonSocial;
-                  tempRazonSocial =  "ENTRO AL ELSE"
+                  tempRazonSocial =  "ENTRO AL ELSE razon social"
+                  console.log(tempRazonSocial)
                 }
                 if (res.organizacionActividad !== data[2]) {
                   tempActividad = data[2];
@@ -322,7 +324,9 @@ export class PaginaAComponent implements OnInit {
                   });*/
                 }
                 else{
-                  tempActividad = res.organizacionActividad;
+                  //tempActividad = res.organizacionActividad;
+                  tempActividad =  "ENTRO AL ELSE act economica "
+                  console.log(tempActividad)
                 }
 
                 this.formularioDataA.setValue({
