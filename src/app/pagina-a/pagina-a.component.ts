@@ -223,18 +223,13 @@ export class PaginaAComponent implements OnInit {
     this.srvApi.getPerson(ruc, this.mitoken).subscribe(
       (data) => {
         console.log(data);
-        //estructura para validaciones y filtro
-      },
-      (error) => {
-        console.log("Error inesperado")
-        console.log(error);
         this.srvApi.getPersonaPrueba(ruc, this.mitoken).subscribe(
           (res) => {
             console.log(res)
             if (res !== undefined && res !== null) {
               //organizacion nueva
               if (res == null) {
-                this.datosPagA = (error);
+                this.datosPagA = (data);
               }/*
                         else if(res.origen ==="BDC" ){
                         //aqui completamos data
@@ -260,16 +255,16 @@ export class PaginaAComponent implements OnInit {
 
               else if (res.origen === "Sirus") {
                 //aqui completamos data
-                /*if (res.organizacionRazonSocial === null) {
+                if (res.organizacionRazonSocial === null) {
                   this.formularioDataA.setValue({
-                    rSocial: error[16]
+                    rSocial: data[16]
                   });
-                }*/
-                /*if (res.organizacionActividad === null) {
+                }
+                if (res.organizacionActividad === null) {
                   this.formularioDataA.setValue({
-                    aEconomica: error[2]
+                    aEconomica: data[2]
                   });
-                }*/
+                }
                 this.formularioDataA.setValue({
                   identi:ruc,
                   rSocial: res.organizacionRazonSocial,
@@ -283,16 +278,16 @@ export class PaginaAComponent implements OnInit {
               }
               else if (res.origen === "BDC_Sirus") {
                 //completamos y comparamos los datos y damos prioridad
-                /*if (res.organizacionRazonSocial !== error[16]) {
+                if (res.organizacionRazonSocial !== data[16]) {
                   this.formularioDataA.setValue({
                     rSocial: res.organizacionRazonSocial
                   });
-                }*/
-                /*if (res.organizacionActividad !== error[2]) {
+                }
+                if (res.organizacionActividad !== data[2]) {
                   this.formularioDataA.setValue({
                     aEconomica: res.organizacionActividad
                   });
-                }*/
+                }
                 this.formularioDataA.setValue({
                   identi: ruc,
                   rSocial: res.organizacionRazonSocial,
@@ -303,12 +298,16 @@ export class PaginaAComponent implements OnInit {
                   cElectronico: res.organizacionCorreo,
                   pWeb: res.orgPaginaWeb,
                 });
-
               }
-
             }
           }
         )
+        //estructura para validaciones y filtro
+      },
+      (error) => {
+        console.log("Error inesperado")
+        console.log(error);
+        
         this.datosPagA = (error);
       }
     )

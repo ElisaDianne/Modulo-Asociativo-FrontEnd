@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "@ionic/storage-angular": "^3.0.6",
     "angular-md5": "^0.1.10",
     "angular-signature-pad": "0.0.14",
     "md5": "^2.3.0",
