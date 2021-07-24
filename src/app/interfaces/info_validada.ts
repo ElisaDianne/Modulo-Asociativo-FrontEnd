@@ -1,13 +1,11 @@
 export interface Validado {
-    orgId: Number;
-    organizacionIden: String;
-    organizacionRazonSocial: String;
-    organizacionNombre: String;
-    organizacionActividad: String;
-    organizacionTelefono: String;
-    organizacionCelular: String;
-    organizacionCorreo: String;
-    orgPaginaWeb: String;
+    cod: Number;
+    ruc: String;
+    correo: String;
+    nombreComercial: String;
     origen: String;
-    
+    paginaweb: String;
+    razonsocial: String;
+    telfDomicilio: String;
+    telfTrabajo: String;
 }
