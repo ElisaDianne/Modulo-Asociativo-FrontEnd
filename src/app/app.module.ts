@@ -34,6 +34,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { from } from 'rxjs';
+import { GisComponent } from './components/gis/gis.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { from } from 'rxjs';
     PaginaJComponent,
     PaginaLComponent,
     PaginaKComponent,
+    GisComponent,
 
   ],
   imports: [
