@@ -272,7 +272,7 @@ export class PaginaAComponent implements OnInit {
                   tFijo: res['telfDomicilio'],
                   tCelular: res['telfTrabajo'],
                   cElectronico: res['correo'],
-                  pWeb: res['paginaweb']
+                  pWeb: res['paginaWeb']
                 });
               }
 
@@ -301,7 +301,7 @@ export class PaginaAComponent implements OnInit {
                   tFijo: res['telfDomicilio'],
                   tCelular: res['telfTrabajo'],
                   cElectronico: res['correo'],
-                  pWeb: res['paginaweb']
+                  pWeb: res['paginaWeb']
                 });
               }
               else if (res['origen'] === "BDC_Sirus") {
@@ -341,7 +341,7 @@ export class PaginaAComponent implements OnInit {
                   tFijo: res['telfDomicilio'],
                   tCelular: res['telfTrabajo'],
                   cElectronico: res['correo'],
-                  pWeb: res['paginaweb']
+                  pWeb: res['paginaWeb']
                 });
               }
             }
