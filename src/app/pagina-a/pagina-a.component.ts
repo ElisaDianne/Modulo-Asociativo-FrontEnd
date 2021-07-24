@@ -218,92 +218,149 @@ export class PaginaAComponent implements OnInit {
       pWeb: '',
     });
   }
+
   pagAOnline(ruc) {
+    var tempRazonSocial: String;
+    var tempActividad: String;
+
     console.log(ruc);
     this.srvApi.getPerson(ruc, this.mitoken).subscribe(
-      (data) => {
+      data => {
         console.log(data);
         this.srvApi.getPersonaPrueba(ruc, this.mitoken).subscribe(
-          (res) => {
+          res => {
             console.log(res)
             if (res !== undefined && res !== null) {
               //organizacion nueva
-              if (res == null) {
-                this.datosPagA = (data);
+              if (res.origen == "vacia") {
+                this.formularioDataA.setValue({
+                  identi: 'ruc',
+                  rSocial: 'a',
+                  eContribuyente: 'Activo',
+                  nComercial: 'a',
+                  tSociedad: 'Natural',
+                  aEconomica: 'a',
+                  tFijo: 'a',
+                  tCelular: 'a',
+                  cElectronico: 'a',
+                  pWeb: 'a',
+                });
               }
               else if (res.origen === "BDC") {
                 //aqui completamos data
                 if (res.organizacionRazonSocial === null) {
-                  this.formularioDataA.patchValue({
+                  tempRazonSocial = data[16]; 
+                  /*this.formularioDataA.patchValue({
                     rSocial: data[16]
-                  });
+                  });*/
                 }
                 if (res.organizacionActividad === null) {
-                  this.formularioDataA.patchValue({
+                  tempActividad = data[2];
+                  /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
-                  });
+                  });*/
                 }
 
-                this.formularioDataA.patchValue({
+                this.formularioDataA.setValue({
+                  identi: ruc,
+                  rSocial: tempRazonSocial,
+                  eContribuyente: data[3],
+                  aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
+                  tSociedad: "",
                   tFijo: res.organizacionTelefono,
                   tCelular: res.organizacionCelular,
                   cElectronico: res.organizacionCorreo,
-                  pWeb: res.orgPaginaWeb,
+                  pWeb: res.orgPaginaWeb
                 });
               }
 
               else if (res.origen === "Sirus") {
                 //aqui completamos data
                 if (res.organizacionRazonSocial === null) {
-                  this.formularioDataA.patchValue({
+                  tempRazonSocial = data[16]; 
+                  /*this.formularioDataA.patchValue({
                     rSocial: data[16]
-                  });
+                  });*/
                 }
                 if (res.organizacionActividad === null) {
-                  this.formularioDataA.patchValue({
+                  tempActividad = data[2];
+                  /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
-                  });
+                  });*/
                 }
-                this.formularioDataA.patchValue({
+
+                this.formularioDataA.setValue({
                   identi: ruc,
+                  rSocial: tempRazonSocial,
+                  eContribuyente: data[3],
+                  aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
+                  tSociedad: "",
                   tFijo: res.organizacionTelefono,
                   tCelular: res.organizacionCelular,
                   cElectronico: res.organizacionCorreo,
-                  pWeb: res.orgPaginaWeb,
+                  pWeb: res.orgPaginaWeb
                 });
               }
               else if (res.origen === "BDC_Sirus") {
                 //completamos y comparamos los datos y damos prioridad
-                if (res.organizacionRazonSocial !== data[16]) {
-                  this.formularioDataA.patchValue({
-                    rSocial: res.organizacionRazonSocial
-                  });
+                if (res.organizacionRazonSocial === null) {
+                  tempRazonSocial = data[16]; 
+                  /*this.formularioDataA.patchValue({
+                    rSocial: data[16]
+                  });*/
                 }
-                if (res.organizacionActividad !== data[2]) {
-                  this.formularioDataA.patchValue({
-                    aEconomica: res.organizacionActividad
-                  });
+                else{
+                  tempRazonSocial = res.organizacionRazonSocial;
                 }
+                if (res.organizacionActividad === null) {
+                  tempActividad = data[2];
+                  /*this.formularioDataA.patchValue({
+                    aEconomica: data[2]
+                  });*/
+                }
+                else{
+                  tempActividad = res.organizacionActividad;
+                }
+
                 this.formularioDataA.setValue({
                   identi: ruc,
+                  rSocial: tempRazonSocial,
+                  eContribuyente: data[3],
+                  aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
+                  tSociedad: "",
                   tFijo: res.organizacionTelefono,
                   tCelular: res.organizacionCelular,
                   cElectronico: res.organizacionCorreo,
-                  pWeb: res.orgPaginaWeb,
+                  pWeb: res.orgPaginaWeb
                 });
               }
             }
+          },
+          error =>{
+            console.log("Error Inesperado en el API")
+            console.log(error)
+            this.formularioDataA.setValue({
+              identi: ruc,
+              rSocial: 'a',
+              eContribuyente: 'a',
+              nComercial: 'a',
+              tSociedad: 'a',
+              aEconomica: 'a',
+              tFijo: 'a',
+              tCelular: 'a',
+              cElectronico: 'a',
+              pWeb: 'a',
+            });    
           }
         )
         //estructura para validaciones y filtro
       },
-      (error) => {
+      error => {
         console.log("Error inesperado")
         console.log(error);
-
         this.datosPagA = (error);
       }
     )

@@ -9,4 +9,5 @@ export interface Validado {
     organizacionCorreo: String;
     orgPaginaWeb: String;
     origen: String;
+    
 }
