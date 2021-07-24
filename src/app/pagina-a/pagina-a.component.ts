@@ -326,7 +326,7 @@ export class PaginaAComponent implements OnInit {
 
                 this.formularioDataA.setValue({
                   identi: ruc,
-                  rSocial: tempRazonSocial,
+                  rSocial: "",
                   eContribuyente: data[3],
                   aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
