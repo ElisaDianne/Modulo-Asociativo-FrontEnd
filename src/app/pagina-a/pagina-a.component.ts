@@ -312,7 +312,8 @@ export class PaginaAComponent implements OnInit {
               else if (res['origen'] === "BDC_Sirus") {
                 //completamos y comparamos los datos y damos prioridad
                 if (res['razonSocial'] !== data['razonSocial']) {
-                  tempRazonSocial = data['razonSocial']; 
+                  tempRazonSocial = res['razonSocial'];
+                  console.log(res['razonSocial']) 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
                   });*/
@@ -338,7 +339,7 @@ export class PaginaAComponent implements OnInit {
 
                 this.formularioDataA.setValue({
                   identi: ruc,
-                  rSocial: tempRazonSocial,
+                  rSocial: res['razonSocial'],
                   eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res['nombreComercial'],
