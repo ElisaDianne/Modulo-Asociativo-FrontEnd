@@ -250,13 +250,13 @@ export class PaginaAComponent implements OnInit {
               else if (res.origen === "BDC") {
                 //aqui completamos data
                 if (res.organizacionRazonSocial === null) {
-                  tempRazonSocial = data[16]; 
+                  tempRazonSocial = data['razonSocial']; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
                   });*/
                 }
                 if (res.organizacionActividad === null) {
-                  tempActividad = data[2];
+                  tempActividad = data['actividadEconomica'];
                   /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
                   });*/
@@ -265,7 +265,7 @@ export class PaginaAComponent implements OnInit {
                 this.formularioDataA.setValue({
                   identi: ruc,
                   rSocial: tempRazonSocial,
-                  eContribuyente: data[3],
+                  eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
                   tSociedad: "",
@@ -279,13 +279,13 @@ export class PaginaAComponent implements OnInit {
               else if (res.origen === "Sirus") {
                 //aqui completamos data
                 if (res.organizacionRazonSocial === null) {
-                  tempRazonSocial = data[16]; 
+                  tempRazonSocial = data['razonSocial']; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
                   });*/
                 }
                 if (res.organizacionActividad === null) {
-                  tempActividad = data[2];
+                  tempActividad = data['actividadEconomica'];
                   /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
                   });*/
@@ -294,7 +294,7 @@ export class PaginaAComponent implements OnInit {
                 this.formularioDataA.setValue({
                   identi: ruc,
                   rSocial: tempRazonSocial,
-                  eContribuyente: data[3],
+                  eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
                   tSociedad: "",
@@ -306,8 +306,8 @@ export class PaginaAComponent implements OnInit {
               }
               else if (res.origen === "BDC_Sirus") {
                 //completamos y comparamos los datos y damos prioridad
-                if (res.organizacionRazonSocial !== data[16]) {
-                  tempRazonSocial = data[16]; 
+                if (res.organizacionRazonSocial !== data['razonSocial']) {
+                  tempRazonSocial = data['razonSocial']; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
                   });*/
@@ -319,8 +319,8 @@ export class PaginaAComponent implements OnInit {
                   console.log("res.organizacionRazonSocial> ",res.organizacionRazonSocial)
                   console.log(tempRazonSocial)
                 }
-                if (res.organizacionActividad !== data[2]) {
-                  tempActividad = data[2];
+                if (res.organizacionActividad !== data['actividadEconomica']) {
+                  tempActividad = data['actividadEconomica'];
                   /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
                   });*/
@@ -334,7 +334,7 @@ export class PaginaAComponent implements OnInit {
                 this.formularioDataA.setValue({
                   identi: ruc,
                   rSocial: tempRazonSocial,
-                  eContribuyente: data[3],
+                  eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res.organizacionNombre,
                   tSociedad: "",
