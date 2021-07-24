@@ -326,7 +326,7 @@ export class PaginaAComponent implements OnInit {
                   console.log(tempRazonSocial)
                 }
                 if (res['actEconomica'] !== data['actividadEconomica']) {
-                  tempActividad = data['actividadEconomica'];
+                  tempActividad = res['actEconomica'];
                   /*this.formularioDataA.patchValue({
                     aEconomica: data[2]
                   });*/
