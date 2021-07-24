@@ -254,7 +254,7 @@ export class PaginaAComponent implements OnInit {
               }
               else if (res['origen'] === "BDC") {
                 //aqui completamos data
-                if (res['razonsocial'] === "") {
+                if (res['razonSocial'] === "") {
                   tempRazonSocial = data['razonSocial']; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
@@ -283,7 +283,7 @@ export class PaginaAComponent implements OnInit {
 
               else if (res['origen'] === "Sirus") {
                 //aqui completamos data
-                if (res['razonsocial'] === "") {
+                if (res['razonSocial'] === "") {
                   tempRazonSocial = data['razonSocial']; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
@@ -311,7 +311,7 @@ export class PaginaAComponent implements OnInit {
               }
               else if (res['origen'] === "BDC_Sirus") {
                 //completamos y comparamos los datos y damos prioridad
-                if (res['razonsocial'] !== data['razonSocial']) {
+                if (res['razonSocial'] !== data['razonSocial']) {
                   tempRazonSocial = data['razonSocial']; 
                   /*this.formularioDataA.patchValue({
                     rSocial: data[16]
@@ -321,7 +321,7 @@ export class PaginaAComponent implements OnInit {
                   //tempRazonSocial = res.organizacionRazonSocial;
                   tempRazonSocial =  "ENTRO AL ELSE razon social"
                   console.log("Data 16> ",data['razonSocial'])
-                  console.log("res.organizacionRazonSocial> ",res['razonsocial'])
+                  console.log("res.organizacionRazonSocial> ",res['razonSocial'])
                   console.log(tempRazonSocial)
                 }
                 if (res['actEconomica'] !== data['actividadEconomica']) {
