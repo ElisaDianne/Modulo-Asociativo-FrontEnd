@@ -6,10 +6,11 @@ export const environment = {
 
   credential_app: "dXNyX3NpcnVzYWZjOjFuMWFwXzIwMTk=",
   host:"http://10.10.1.121:8080/",
+  host1:"http://127.0.0.1:8080/",
   api_token: "servicio_seguridad-0.0.1/api/oauth/token",
   api_persona:"http://10.10.1.121:8080/api_dinardap/api/dinardap/interoperador/1/",
   apiA_persona: "http://10.10.1.121:8080/api_dinardap/api/dinardap/interoperador/14/",
-  apiA_prueba: "http://10.10.1.121:8080/api_dinardap/api/dinardap/interoperador/14/",
+  apiA_prueba: "http://127.0.0.1:8080/api_ValidacionV1/api/organizacion/prueba/",
   version_date: +new Date("19/04/2021"),
   version: "V1.1",
   production: true

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {environment} from 'src/environments/environment'
+import { Validado } from 'src/app/interfaces/info_validada';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -46,7 +48,7 @@ export class FormAService {
   var link =
   this.apiA_prueba+
   + ruc_persona;
-  return this.http.get(link,{headers:head});
+  return this.http.get<Validado>(link,{headers:head});
   }
  enviar(datos, token){
    console.log(datos);
