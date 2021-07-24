@@ -11,13 +11,25 @@ export class GisComponent implements OnInit {
   canton: string
   parroquia: string
   codParroquia: string
-  latitud: number
-  longitud: number
+  latitud: number = 40.33333
+  longitud: number = 32.4534
+
+  position = {
+    lat: this.latitud,
+    lng: this.longitud
+  }
+
+  label = {
+    color: 'white',
+    text: 'Marcador'
+  }
+  title = 'gmaps'
 
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

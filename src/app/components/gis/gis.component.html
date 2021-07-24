@@ -34,15 +34,19 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Latitud</mat-label>
-            <input matInput>
+            <input matInput type='number' [(ngModel)]='latitud' name='latitud'>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Longitud</mat-label>
-            <input matInput>
+            <input matInput type='number' [(ngModel)]='longitud' name='longitud'>
         </mat-form-field>
     </div>
     <div>
-        <google-map></google-map>
+        <google-map [center]='position'>
+            <map-marker [position]='position' [label]='label' [title]='title'>
+
+            </map-marker>
+        </google-map>
     </div>
 </div>
