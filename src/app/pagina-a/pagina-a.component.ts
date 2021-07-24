@@ -315,6 +315,8 @@ export class PaginaAComponent implements OnInit {
                 else{
                   //tempRazonSocial = res.organizacionRazonSocial;
                   tempRazonSocial =  "ENTRO AL ELSE razon social"
+                  console.log("Data 16> ",data[16])
+                  console.log("res.organizacionRazonSocial> ",res.organizacionRazonSocial)
                   console.log(tempRazonSocial)
                 }
                 if (res.organizacionActividad !== data[2]) {
