@@ -225,7 +225,7 @@ export class PaginaAComponent implements OnInit {
 
   mostrarError(mensaje){
     this.toastr.error(mensaje,"Organizacion no valida",{
-      timeOut: 2000
+      timeOut: 6000
     });
   }
 
