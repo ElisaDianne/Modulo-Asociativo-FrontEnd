@@ -77,7 +77,7 @@ import { from } from 'rxjs';
     MatExpansionModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
