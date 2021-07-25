@@ -242,6 +242,7 @@ export class PaginaAComponent implements OnInit {
             console.log(res)
             //mensajes en caso de org. no validadas
             if(res === 1){
+              console.log(res);
               this.mostrarError("El número de socios activos no satisface los requerimientos");
             }
             else if(res === 2){
