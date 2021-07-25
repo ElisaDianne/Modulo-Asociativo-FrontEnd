@@ -240,7 +240,18 @@ export class PaginaAComponent implements OnInit {
         this.srvApi.getOrgValidada(ruc, this.mitoken).subscribe(
           res => {
             console.log(res)
-            if (res === undefined || res === null) {
+            //mensajes en caso de org. no validadas
+            if(res === 1){
+              this.mostrarError("El número de socios activos no satisface los requerimientos");
+            }
+            else if(res === 2){
+              this.mostrarError("El número de rubros de la org. no satisface los requerimientos");
+            }
+            else if(res === 3){
+              this.mostrarError("El número de actividades realizadas por la org. no satisface los requerimientos");
+            }
+            //condicion en caso de ser org. nueva en SIRUS AFC
+            else if (res === undefined || res === null) {
               this.formularioDataA.setValue({
                 identi: ruc,
                 rSocial: data['razonSocial'],
@@ -254,18 +265,8 @@ export class PaginaAComponent implements OnInit {
                 pWeb: ''
               });
             }
-            else if(res === "cond 1"){
-              this.mostrarError("No valida 1");
-            }
-            else if(res === "cond 2"){
-              this.mostrarError("No Valida 2");
-            }
-            else if(res === "cond 3"){
-              this.mostrarError("No Validad 3");
-            }
-
+            //condicion en caso de existir en BDC
             else if (res['origen'] === "BDC") {
-              //aqui completamos data
               if (res['razonSocial'] === "") {
                 tempRazonSocial = data['razonSocial'];
               }
@@ -286,9 +287,8 @@ export class PaginaAComponent implements OnInit {
                 pWeb: res['paginaWeb']
               });
             }
-
+            //condicion en caso de existir en SIRUS
             else if (res['origen'] === "Sirus") {
-              //aqui completamos data
               if (res['razonSocial'] === "") {
                 tempRazonSocial = data['razonSocial'];
               }
@@ -309,14 +309,13 @@ export class PaginaAComponent implements OnInit {
                 pWeb: res['paginaWeb']
               });
             }
+            //condicion y validacion de campos en caso de existir en BDC & SIRUS 
             else if (res['origen'] === "BDC_Sirus") {
-              //completamos y comparamos los datos y damos prioridad
               if (res['razonSocial'] !== data['razonSocial']) {
                 tempRazonSocial = res['razonSocial'];
                 console.log(res['razonSocial'])
               }
               else {
-                //tempRazonSocial = res.organizacionRazonSocial;
                 tempRazonSocial = data['razonSocial'];
                 console.log("Data 16> ", data['razonSocial'])
                 console.log("res.organizacionRazonSocial> ", res['razonSocial'])
@@ -326,7 +325,6 @@ export class PaginaAComponent implements OnInit {
                 tempActividad = res['actEconomica'];
               }
               else {
-                //tempActividad = res.organizacionActividad;
                 tempActividad = data['actividadEconomica'];
                 console.log(tempActividad)
               }
