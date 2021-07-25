@@ -77,7 +77,7 @@ export class PaginaAComponent implements OnInit {
         this.pagAOnline(Ruc);
         ignoreRucUpdates = true;
       }
-      else{
+      else {
         ignoreRucUpdates = false;
       }
     });
@@ -236,123 +236,121 @@ export class PaginaAComponent implements OnInit {
         this.srvApi.getPersonaPrueba(ruc, this.mitoken).subscribe(
           res => {
             console.log(res)
-            if (res !== undefined && res !== null) {
-              //organizacion nueva
-              if (res['origen'] == "vacia") {
-                this.formularioDataA.setValue({
-                  identi: ruc,
-                  rSocial: data['razonSocial'],
-                  eContribuyente: data['estadoContribuyente'],
-                  nComercial: '',
-                  tSociedad: data['tipoContribuyente'],
-                  aEconomica: data['actividadEconomica'],
-                  tFijo: '',
-                  tCelular: '',
-                  cElectronico: '',
-                  pWeb: ''
-                });
-              }
-              else if (res['origen'] === "BDC") {
-                //aqui completamos data
-                if (res['razonSocial'] === "") {
-                  tempRazonSocial = data['razonSocial']; 
-                  /*this.formularioDataA.patchValue({
-                    rSocial: data[16]
-                  });*/
-                }
-                if (res['actEconomica'] === "") {
-                  tempActividad = data['actividadEconomica'];
-                  /*this.formularioDataA.patchValue({
-                    aEconomica: data[2]
-                  });*/
-                }
-
-                this.formularioDataA.setValue({
-                  identi: ruc,
-                  rSocial: tempRazonSocial,
-                  eContribuyente: data['estadoContribuyente'],
-                  aEconomica: tempActividad,
-                  nComercial: res['nombreComercial'],
-                  tSociedad: data['tipoContribuyente'],
-                  tFijo: '2487512',
-                  tCelular: res['telfTrabajo'],
-                  cElectronico: res['correo'],
-                  pWeb: res['paginaWeb']
-                });
-              }
-
-              else if (res['origen'] === "Sirus") {
-                //aqui completamos data
-                if (res['razonSocial'] === "") {
-                  tempRazonSocial = data['razonSocial']; 
-                  /*this.formularioDataA.patchValue({
-                    rSocial: data[16]
-                  });*/
-                }
-                if (res['actEconomica'] === "") {
-                  tempActividad = data['actividadEconomica'];
-                  /*this.formularioDataA.patchValue({
-                    aEconomica: data[2]
-                  });*/
-                }
-
-                this.formularioDataA.setValue({
-                  identi: ruc,
-                  rSocial: tempRazonSocial,
-                  eContribuyente: data['estadoContribuyente'],
-                  aEconomica: tempActividad,
-                  nComercial: res['nombreComercial'],
-                  tSociedad: data['tipoContribuyente'],
-                  tFijo: '2456789',
-                  tCelular: res['telfTrabajo'],
-                  cElectronico: res['correo'],
-                  pWeb: res['paginaWeb']
-                });
-              }
-              else if (res['origen'] === "BDC_Sirus") {
-                //completamos y comparamos los datos y damos prioridad
-                if (res['razonSocial'] !== data['razonSocial']) {
-                  tempRazonSocial = res['razonSocial'];
-                  console.log(res['razonSocial']) 
-                  /*this.formularioDataA.patchValue({
-                    rSocial: data[16]
-                  });*/
-                }
-                else{
-                  //tempRazonSocial = res.organizacionRazonSocial;
-                  tempRazonSocial =  data['razonSocial'];
-                  console.log("Data 16> ",data['razonSocial'])
-                  console.log("res.organizacionRazonSocial> ",res['razonSocial'])
-                  console.log(tempRazonSocial)
-                }
-                if (res['actEconomica'] !== data['actividadEconomica']) {
-                  tempActividad = res['actEconomica'];
-                  /*this.formularioDataA.patchValue({
-                    aEconomica: data[2]
-                  });*/
-                }
-                else{
-                  //tempActividad = res.organizacionActividad;
-                  tempActividad =  data['actividadEconomica'];
-                  console.log(tempActividad)
-                }
-
-                this.formularioDataA.setValue({
-                  identi: ruc,
-                  rSocial: res['razonSocial'],
-                  eContribuyente: data['estadoContribuyente'],
-                  aEconomica: tempActividad,
-                  nComercial: res['nombreComercial'],
-                  tSociedad: data['tipoContribuyente'],
-                  tFijo: '2578140',
-                  tCelular: res['telfTrabajo'],
-                  cElectronico: res['correo'],
-                  pWeb: res['paginaWeb']
-                });
-              }
+            if (res === undefined || res === null) {
+              this.formularioDataA.setValue({
+                identi: ruc,
+                rSocial: data['razonSocial'],
+                eContribuyente: data['estadoContribuyente'],
+                nComercial: '',
+                tSociedad: data['tipoContribuyente'],
+                aEconomica: data['actividadEconomica'],
+                tFijo: '',
+                tCelular: '',
+                cElectronico: '',
+                pWeb: ''
+              });
             }
+            else if (res['origen'] === "BDC") {
+              //aqui completamos data
+              if (res['razonSocial'] === "") {
+                tempRazonSocial = data['razonSocial'];
+                /*this.formularioDataA.patchValue({
+                  rSocial: data[16]
+                });*/
+              }
+              if (res['actEconomica'] === "") {
+                tempActividad = data['actividadEconomica'];
+                /*this.formularioDataA.patchValue({
+                  aEconomica: data[2]
+                });*/
+              }
+
+              this.formularioDataA.setValue({
+                identi: ruc,
+                rSocial: tempRazonSocial,
+                eContribuyente: data['estadoContribuyente'],
+                aEconomica: tempActividad,
+                nComercial: res['nombreComercial'],
+                tSociedad: data['tipoContribuyente'],
+                tFijo: '2487512',
+                tCelular: res['telfTrabajo'],
+                cElectronico: res['correo'],
+                pWeb: res['paginaWeb']
+              });
+            }
+
+            else if (res['origen'] === "Sirus") {
+              //aqui completamos data
+              if (res['razonSocial'] === "") {
+                tempRazonSocial = data['razonSocial'];
+                /*this.formularioDataA.patchValue({
+                  rSocial: data[16]
+                });*/
+              }
+              if (res['actEconomica'] === "") {
+                tempActividad = data['actividadEconomica'];
+                /*this.formularioDataA.patchValue({
+                  aEconomica: data[2]
+                });*/
+              }
+
+              this.formularioDataA.setValue({
+                identi: ruc,
+                rSocial: tempRazonSocial,
+                eContribuyente: data['estadoContribuyente'],
+                aEconomica: tempActividad,
+                nComercial: res['nombreComercial'],
+                tSociedad: data['tipoContribuyente'],
+                tFijo: '2456789',
+                tCelular: res['telfTrabajo'],
+                cElectronico: res['correo'],
+                pWeb: res['paginaWeb']
+              });
+            }
+            else if (res['origen'] === "BDC_Sirus") {
+              //completamos y comparamos los datos y damos prioridad
+              if (res['razonSocial'] !== data['razonSocial']) {
+                tempRazonSocial = res['razonSocial'];
+                console.log(res['razonSocial'])
+                /*this.formularioDataA.patchValue({
+                  rSocial: data[16]
+                });*/
+              }
+              else {
+                //tempRazonSocial = res.organizacionRazonSocial;
+                tempRazonSocial = data['razonSocial'];
+                console.log("Data 16> ", data['razonSocial'])
+                console.log("res.organizacionRazonSocial> ", res['razonSocial'])
+                console.log(tempRazonSocial)
+              }
+              if (res['actEconomica'] !== data['actividadEconomica']) {
+                tempActividad = res['actEconomica'];
+                /*this.formularioDataA.patchValue({
+                  aEconomica: data[2]
+                });*/
+              }
+              else {
+                //tempActividad = res.organizacionActividad;
+                tempActividad = data['actividadEconomica'];
+                console.log(tempActividad)
+              }
+
+              this.formularioDataA.setValue({
+                identi: ruc,
+                rSocial: res['razonSocial'],
+                eContribuyente: data['estadoContribuyente'],
+                aEconomica: tempActividad,
+                nComercial: res['nombreComercial'],
+                tSociedad: data['tipoContribuyente'],
+                tFijo: '2578140',
+                tCelular: res['telfTrabajo'],
+                cElectronico: res['correo'],
+                pWeb: res['paginaWeb']
+              });
+            }
+
           },
-          error =>{
+          error => {
             console.log("Error Inesperado en el API")
             console.error(error)
             this.formularioDataA.setValue({
@@ -366,7 +364,7 @@ export class PaginaAComponent implements OnInit {
               tCelular: '',
               cElectronico: '',
               pWeb: '',
-            });    
+            });
           }
         )
         //estructura para validaciones y filtro
