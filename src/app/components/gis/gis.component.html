@@ -1,7 +1,7 @@
 <div class="content">
     <h1>Componente GIS</h1>
     <hr>
-    <div fxLayout="row" fxLayoutGap="10px" class="container">
+    <div fxLayout="row" fxLayoutGap="10px">
         <div fxLayoutAlign="center center">
             <mat-form-field appearance="fill">
                 <mat-label>Provincia</mat-label>
@@ -30,7 +30,7 @@
             </mat-form-field>
         </div>
     </div>
-    <div fxLayout="row" fxLayoutGap="10px" class="container">
+    <div fxLayout="row" fxLayoutGap="10px">
         <div fxLayoutAlign="center center">
             <mat-form-field appearance="fill" style="width: 100%;">
                 <mat-label>Cod. Parroquia</mat-label>
@@ -43,21 +43,58 @@
         <div fxLayoutAlign="center center">
             <mat-form-field appearance="fill">
                 <mat-label>Latitud</mat-label>
-                <input matInput type='number' [(ngModel)]='latitud' name='latitud'>
+                <input matInput type='number' [(ngModel)]='position.lat' name='latitud'>
             </mat-form-field>
         </div>
         <div fxLayoutAlign="center center">
             <mat-form-field appearance="fill">
                 <mat-label>Longitud</mat-label>
-                <input matInput type='number' [(ngModel)]='longitud' name='longitud'>
+                <input matInput type='number' [(ngModel)]='position.lng' name='longitud'>
             </mat-form-field>
         </div>
     </div>
     <div>
-        <google-map [center]='position' (mapClick)='onChooseLocation($event)'>
+        <google-map [center]='getPosition()' (mapClick)='onChooseLocation($event)'>
             <map-marker [position]='position' [label]='label' [title]='title'>
 
             </map-marker>
         </google-map>
     </div>
+    
+
+    <div fxLayout="row" fxLayoutGap="10px">
+        <div fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>Coordenada X</mat-label>
+                <input matInput disabled type='number' [value]='coordenadaX' name='coordenadaX'>
+            </mat-form-field>
+        </div>
+        <div fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>Coordenada Y</mat-label>
+                <input matInput disabled type='number' [value]='coordenadaY' name='coordenadaY'>
+            </mat-form-field>
+        </div>
+        <div fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>Coordenada Z</mat-label>
+                <input matInput disabled type='number' [value]='coordenadaZ' name='coordenadaZ'>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+        <div fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>Hemisferio</mat-label>
+                <input matInput disabled type='text' [value]='hemisferio' name='hemisferio'>
+            </mat-form-field>
+        </div>
+        <div fxLayoutAlign="center center">
+            <mat-form-field appearance="fill">
+                <mat-label>Zona</mat-label>
+                <input matInput disabled type='text' [value]='zona' name='zona'>
+            </mat-form-field>
+        </div>
+    </div>
+
 </div>
