@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {environment} from 'src/environments/environment'
-import { Validado } from 'src/app/interfaces/info_validada';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +26,7 @@ export class FormAService {
     parameters.set('idapli','67');
     return this.http.post(link,parameters.toString(),{headers:head});
  }*/
- getPerson(ruc_persona,token){
+ getOrgDinardap(ruc_persona,token){
   const head =new HttpHeaders({
     'Content-Type':'application/json',
     Accept: 'application/json',
@@ -39,7 +38,7 @@ export class FormAService {
     return this.http.get(link,{headers:head});
  
  }
- getPersonaPrueba(ruc_persona,token){
+ getOrgValidada(ruc_persona,token){
   const head =new HttpHeaders({
     'Content-Type':'application/json',
     Accept: 'application/json',

@@ -2,7 +2,6 @@ import { FormAService } from './../servicios-pag/servicios-pagA/form-a.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { environment } from './../../environments/environment';
-import { Console } from 'console';
 
 
 
@@ -34,11 +33,9 @@ export class PaginaAComponent implements OnInit {
   filtro1?: string;
   filtro2?: string;
   filtro3?: string;
-  //actividadEconomica: any;
   production = environment.production;
   version = environment.version;
   version_date = environment.version_date;
-  //formBuilder = any;
   datosPer = [];
   mitoken = localStorage.getItem('token');
   firstConnection = "";
@@ -70,7 +67,6 @@ export class PaginaAComponent implements OnInit {
   ) {
     let ignoreRucUpdates = false;
     this.contentData = this.formularioDataA.valueChanges.subscribe(formValue => {
-      // console.log(formValue.identi)
       const Ruc = String(formValue.identi);
       if (Ruc.length == 13 && ignoreRucUpdates === false) {
         console.log('imprimir');
@@ -230,10 +226,10 @@ export class PaginaAComponent implements OnInit {
     var tempActividad: String;
 
     console.log(ruc);
-    this.srvApi.getPerson(ruc, this.mitoken).subscribe(
+    this.srvApi.getOrgDinardap(ruc, this.mitoken).subscribe(
       data => {
         console.log(data);
-        this.srvApi.getPersonaPrueba(ruc, this.mitoken).subscribe(
+        this.srvApi.getOrgValidada(ruc, this.mitoken).subscribe(
           res => {
             console.log(res)
             if (res === undefined || res === null) {
@@ -254,15 +250,9 @@ export class PaginaAComponent implements OnInit {
               //aqui completamos data
               if (res['razonSocial'] === "") {
                 tempRazonSocial = data['razonSocial'];
-                /*this.formularioDataA.patchValue({
-                  rSocial: data[16]
-                });*/
               }
               if (res['actEconomica'] === "") {
                 tempActividad = data['actividadEconomica'];
-                /*this.formularioDataA.patchValue({
-                  aEconomica: data[2]
-                });*/
               }
 
               this.formularioDataA.setValue({
@@ -283,15 +273,9 @@ export class PaginaAComponent implements OnInit {
               //aqui completamos data
               if (res['razonSocial'] === "") {
                 tempRazonSocial = data['razonSocial'];
-                /*this.formularioDataA.patchValue({
-                  rSocial: data[16]
-                });*/
               }
               if (res['actEconomica'] === "") {
                 tempActividad = data['actividadEconomica'];
-                /*this.formularioDataA.patchValue({
-                  aEconomica: data[2]
-                });*/
               }
 
               this.formularioDataA.setValue({
@@ -312,9 +296,6 @@ export class PaginaAComponent implements OnInit {
               if (res['razonSocial'] !== data['razonSocial']) {
                 tempRazonSocial = res['razonSocial'];
                 console.log(res['razonSocial'])
-                /*this.formularioDataA.patchValue({
-                  rSocial: data[16]
-                });*/
               }
               else {
                 //tempRazonSocial = res.organizacionRazonSocial;
@@ -325,9 +306,6 @@ export class PaginaAComponent implements OnInit {
               }
               if (res['actEconomica'] !== data['actividadEconomica']) {
                 tempActividad = res['actEconomica'];
-                /*this.formularioDataA.patchValue({
-                  aEconomica: data[2]
-                });*/
               }
               else {
                 //tempActividad = res.organizacionActividad;
@@ -366,7 +344,6 @@ export class PaginaAComponent implements OnInit {
             });
           }
         )
-        //estructura para validaciones y filtro
       },
       error => {
         console.log("Error inesperado")

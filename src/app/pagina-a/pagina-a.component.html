@@ -4,179 +4,205 @@
 
   <span>A. DATOS DE LA ORGANIZACIÓN</span>
 </mat-toolbar>
-<!--<div class="enunciado" style=" padding:30px 3% 0px ;">
-  <h3> Los datos que le solicitan en este formulario son estrictamente confidenciales y en ninguna circunstancia
-  pueden ser usados con un objeto diferente al procesamiento estadístico por parte del MAG. </h3>
-</div>-->
 <div class="main" role="main">
 
   <div class="contenido">
-      <div>        
-          <div >
-            <form [formGroup]="formularioDataA" (ngSubmit)="paginaA(formularioDataA.value)">
-              <table >
+    <div>
+      <div>
+        <form [formGroup]="formularioDataA" (ngSubmit)="paginaA(formularioDataA.value)">
+          <table>
+            <tr>
+              <td><label for="tipoIdentificacion">Tipo de Identificación</label></td>
+              <td>
+                <mat-form-field appearance="fill">
+                  <mat-label>Seleccione una Opción</mat-label>
+                  <mat-select>
+                    <mat-option (click)=toogleTag() value="1" onclick="dispone.disabled=false">RUC</mat-option>
+                    <mat-option (click)=toogleTag() value="2" onclick="dispone.disabled=true">Cédula de Identidad
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+            <br>
+            <div *ngIf="isShow">
+              <table>
                 <tr>
-                    <td><label for="tipoIdentificacion">Tipo de Identificación</label></td>
-                    <td><mat-form-field appearance="fill">
-                        <mat-label>Seleccione una Opción</mat-label>
-                          <mat-select >
-                            <mat-option (click) = toogleTag() value="1" onclick="dispone.disabled=false">RUC</mat-option>
-                            <mat-option (click) = toogleTag() value="2" onclick="dispone.disabled=true">Cédula de Identidad</mat-option>
-                          </mat-select>
-                      </mat-form-field></td>
-                </tr>
-                <br>
-                <div *ngIf = "isShow">
-                  <table > 
-                <tr>
-                    <td><mat-error *ngIf="formularioDataA.get('identi')"><label class="aviso" for="identificacion">Identificacion:</label>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('identi')"><label class="aviso"
+                        for="identificacion">Identificacion:</label>
                       {{getErrorMessagerCdondicionalID()}}
-                    </mat-error></td>
-                    <td>
-                      <input [formControl]="formularioDataA.get('identi')" formControlName="identi"type="text" maxlength="13" (change)="getRuc($event.target.value)"></td>
+                    </mat-error>
+                  </td>
+                  <td>
+                    <input [formControl]="formularioDataA.get('identi')" formControlName="identi" type="text"
+                      maxlength="13" (change)="getRuc($event.target.value)">
+                  </td>
                 </tr>
-                <br>
-                  <tr>
-                      <td>
-                        <mat-error *ngIf="formularioDataA.get('rSocial')"><label class="aviso"for="razonSocial">Razón Social:</label>
-                          {{getErrorMessagerCdondicional()
-                        }}</mat-error>
-                      </td>                    
-                      <td><input [formControl]="formularioDataA.get('rSocial')" id="razonSocial" formControlName='rSocial'  type="text" value="{{datosPagA.razonSocial}}">
-                        <mat-error *ngIf="formularioDataA.get('rSocial').invalid">{{
-                          getErrorMessagerSocial()
-                        }}</mat-error>
-                      </td>                      
-                  </tr>
-                  <br>
-                  <tr>
-                      <td>
-                        <mat-error *ngIf="formularioDataA.get('eContribuyente')"><label class="aviso"for="estadoContribuyente">Estado Contribuyente:</label>
-                          {{getErrorMessagerCdondicionaleContri()
-                        }}</mat-error>
-                      </td>
-                      <td><input [formControl]="formularioDataA.get('eContribuyente')" id="estadoContribuyente" formControlName='eContribuyente'  type="text" value="{{datosPagA.estadoContribuyente}}">
-                        <mat-error *ngIf="formularioDataA.get('eContribuyente').invalid">{{
-                          getErrorMessageeContribuyente()
-                        }}</mat-error>
-                      </td>      
-                  </tr>
                 <br>
                 <tr>
-                    <td>
-                      <mat-error *ngIf="formularioDataA.get('nComercial')"><label class="aviso"for="nombreComercial">Nombre Comercial:</label>
-                        {{getErrorMessageCdondicionalnComercial()
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('rSocial')"><label class="aviso" for="razonSocial">Razón
+                        Social:</label>
+                      {{getErrorMessagerCdondicional()
                       }}</mat-error>
-                    </td>
-                    <td><input [formControl]="formularioDataA.get('nComercial')"  id="nombreComercial" formControlName='nComercial'type="text" >
-                      <mat-error *ngIf="formularioDataA.get('nComercial').invalid">{{
-                        getErrorMessagenComercial()
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('rSocial')" id="razonSocial" formControlName='rSocial'
+                      type="text" value="{{datosPagA.razonSocial}}">
+                    <mat-error *ngIf="formularioDataA.get('rSocial').invalid">{{
+                      getErrorMessagerSocial()
                       }}</mat-error>
-                    </td>
-                    
+                  </td>
                 </tr>
                 <br>
-                  <tr>
-                      <td>
-                        <mat-error *ngIf="formularioDataA.get('tSociedad')"><label class="aviso"for="tSociedad">Tipo de Sociedad:</label>
-                          {{getErrorMessagerCdondicionalTS()
-                        }}</mat-error>
-                      </td>
-                      <td><input [formControl]="formularioDataA.get('tSociedad')"  id="tipoSociedad" formControlName='tSociedad'type="text">
-                        <mat-error *ngIf="formularioDataA.get('tSociedad').invalid">{{
-                          getErrorMessagetSociedad()
-                        }}</mat-error>
-                      </td>
-                      
-                  </tr>
-                  <br>
-                  <tr>
-                      <td>
-                        <mat-error *ngIf="formularioDataA.get('aEconomica')"><label class="aviso"for="actividadEconomica">Actividad Económica:</label>
-                          {{getErrorMessagerCdondicionalAE()
-                        }}</mat-error>
-                      </td>
-                      <td><input [formControl]="formularioDataA.get('aEconomica')"  id="actividadEconomica" formControlName="aEconomica" type="text" value="{{datosPagA.actividadEconomica}}">
-                        <mat-error *ngIf="formularioDataA.get('aEconomica').invalid">{{
-                          getErrorMessageaEconomica()
-                        }}</mat-error>
-                      </td>
-                      
-                  </tr>
-                  <br>
-                  <tr>
-                      <td><label >Télefono fijo Organización:</label></td>
-                      <td><input [formControl]="formularioDataA.get('tFijo')"  formControlName="tFijo"  type="number" maxlength="7" oninput="if(this.value.length>this.maxLength)this.value= this.value.slice(0,this.maxLength);">
-                        <mat-error *ngIf="formularioDataA.get('tFijo').invalid">{{
-                          getErrorMessagetFijo()
-                        }}</mat-error>
-                      </td>                          
-                  </tr>                  
-                  <br>
-                  <tr>    
-                    <td>                  
-                        <mat-error *ngIf="formularioDataA.get('tCelular')"><label class="aviso"for="telefonoCelular">Télefono celular Organización:</label>
-                          {{getErrorMessagerCdondicionalTC()
-                        }}</mat-error>
-                      </td>
-                      <td><input [formControl]="formularioDataA.get('tCelular')" pattern="[09]+[0-9]*" id="telefonoCelular" formControlName="tCelular"  type="number" maxlength="10" oninput="if(this.value.length>this.maxLength)this.value= this.value.slice(0,this.maxLength);" placeholder="09XXXXXXXX">
-                        <mat-error *ngIf="formularioDataA.get('tCelular').invalid">{{
-                          getErrorMessagetCelular()
-                        }}</mat-error>
-                      </td>                      
-                  </tr>
-                  <br>
-                  <tr>
-                      <td>
-                        <mat-error *ngIf="formularioDataA.get('cElectronico')"><label class="aviso"for="correo">Correo electrónico Organización:</label>
-                          {{getErrorMessagerCdondicionalCE()
-                        }}</mat-error>
-                      </td>
-                      <td><input [formControl]="formularioDataA.get('cElectronico')" pattern="[a-zA-Z0-9!#$%&'_+-]([\.]?[a-zA-Z0-9!#$%&'_+-])+@[a-zA-Z0-9]([^@&%$/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" id="correo" type="email" class="form-control" formControlName="email"requiered>
-                        <mat-error *ngIf="formularioDataA.get('cElectronico').invalid">{{
-                          getErrorMessagecElectronico()
-                        }}</mat-error>
-                      </td>                                            
-                  </tr>
-                  <br>
-                  <tr>                    
-                      <td>                                                        
-                        <mat-error *ngIf="formularioDataA.get('pWeb')"><label class="aviso"for="paginaWeb">Página Web:</label>
-                          {{getErrorMessagerCdondicionalPW()
-                        }}</mat-error>
-                      </td>                      
-                      <td><input [formControl]="formularioDataA.get('pWeb')" pattern="(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*" id="paginaWeb"  formControlName='pWeb' type="text" placeholder="www.ejemplo.com">
-                        <mat-error *ngIf="formularioDataA.get('pWeb').invalid">{{
-                          getErrorMessagepWeb()
-                        }}</mat-error>                     
-                      </td>                       
-                  </tr>  
-                </table >
-                </div>                
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('eContribuyente')"><label class="aviso"
+                        for="estadoContribuyente">Estado Contribuyente:</label>
+                      {{getErrorMessagerCdondicionaleContri()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('eContribuyente')" id="estadoContribuyente"
+                      formControlName='eContribuyente' type="text" value="{{datosPagA.estadoContribuyente}}">
+                    <mat-error *ngIf="formularioDataA.get('eContribuyente').invalid">{{
+                      getErrorMessageeContribuyente()
+                      }}</mat-error>
+                  </td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('nComercial')"><label class="aviso"
+                        for="nombreComercial">Nombre Comercial:</label>
+                      {{getErrorMessageCdondicionalnComercial()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('nComercial')" id="nombreComercial"
+                      formControlName='nComercial' type="text">
+                    <mat-error *ngIf="formularioDataA.get('nComercial').invalid">{{
+                      getErrorMessagenComercial()
+                      }}</mat-error>
+                  </td>
+
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('tSociedad')"><label class="aviso" for="tSociedad">Tipo de
+                        Sociedad:</label>
+                      {{getErrorMessagerCdondicionalTS()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('tSociedad')" id="tipoSociedad"
+                      formControlName='tSociedad' type="text">
+                    <mat-error *ngIf="formularioDataA.get('tSociedad').invalid">{{
+                      getErrorMessagetSociedad()
+                      }}</mat-error>
+                  </td>
+
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('aEconomica')"><label class="aviso"
+                        for="actividadEconomica">Actividad Económica:</label>
+                      {{getErrorMessagerCdondicionalAE()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('aEconomica')" id="actividadEconomica"
+                      formControlName="aEconomica" type="text" value="{{datosPagA.actividadEconomica}}">
+                    <mat-error *ngIf="formularioDataA.get('aEconomica').invalid">{{
+                      getErrorMessageaEconomica()
+                      }}</mat-error>
+                  </td>
+
+                </tr>
+                <br>
+                <tr>
+                  <td><label>Télefono fijo Organización:</label></td>
+                  <td><input [formControl]="formularioDataA.get('tFijo')" formControlName="tFijo" type="number"
+                      maxlength="7"
+                      oninput="if(this.value.length>this.maxLength)this.value= this.value.slice(0,this.maxLength);">
+                    <mat-error *ngIf="formularioDataA.get('tFijo').invalid">{{
+                      getErrorMessagetFijo()
+                      }}</mat-error>
+                  </td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('tCelular')"><label class="aviso"
+                        for="telefonoCelular">Télefono celular Organización:</label>
+                      {{getErrorMessagerCdondicionalTC()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('tCelular')" pattern="[09]+[0-9]*" id="telefonoCelular"
+                      formControlName="tCelular" type="number" maxlength="10"
+                      oninput="if(this.value.length>this.maxLength)this.value= this.value.slice(0,this.maxLength);"
+                      placeholder="09XXXXXXXX">
+                    <mat-error *ngIf="formularioDataA.get('tCelular').invalid">{{
+                      getErrorMessagetCelular()
+                      }}</mat-error>
+                  </td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('cElectronico')"><label class="aviso" for="correo">Correo
+                        electrónico Organización:</label>
+                      {{getErrorMessagerCdondicionalCE()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('cElectronico')"
+                      pattern="[a-zA-Z0-9!#$%&'_+-]([\.]?[a-zA-Z0-9!#$%&'_+-])+@[a-zA-Z0-9]([^@&%$/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
+                      id="correo" type="email" class="form-control" formControlName="email" requiered>
+                    <mat-error *ngIf="formularioDataA.get('cElectronico').invalid">{{
+                      getErrorMessagecElectronico()
+                      }}</mat-error>
+                  </td>
+                </tr>
+                <br>
+                <tr>
+                  <td>
+                    <mat-error *ngIf="formularioDataA.get('pWeb')"><label class="aviso" for="paginaWeb">Página
+                        Web:</label>
+                      {{getErrorMessagerCdondicionalPW()
+                      }}</mat-error>
+                  </td>
+                  <td><input [formControl]="formularioDataA.get('pWeb')"
+                      pattern="(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*" id="paginaWeb"
+                      formControlName='pWeb' type="text" placeholder="www.ejemplo.com">
+                    <mat-error *ngIf="formularioDataA.get('pWeb').invalid">{{
+                      getErrorMessagepWeb()
+                      }}</mat-error>
+                  </td>
+                </tr>
               </table>
-            </form>
-        </div>
+            </div>
+          </table>
+        </form>
       </div>
+    </div>
 
 
 
-      <div class="botones">
+    <div class="botones">
 
-          <button [disabled]="formularioDataA.invalid" mat-raised-button style="background-color: #5cb85c !important; color: white !important;"  [routerLink]="'/PaginaB'">Siguiente</button>
-      </div>
+      <button [disabled]="formularioDataA.invalid" mat-raised-button
+        style="background-color: #5cb85c !important; color: white !important;"
+        [routerLink]="'/PaginaB'">Siguiente</button>
+    </div>
 
 
   </div>
 
   <div class="definiciones">
-      <h1>Definiciones</h1>
-      <mat-list role="list">
-          <mat-list-item role="listitem">Definición 1</mat-list-item>
-          <mat-list-item role="listitem">Definición 2</mat-list-item>
-          <mat-list-item role="listitem">Definición 3</mat-list-item>
-      </mat-list>
+    <h1>Definiciones</h1>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Definición 1</mat-list-item>
+      <mat-list-item role="listitem">Definición 2</mat-list-item>
+      <mat-list-item role="listitem">Definición 3</mat-list-item>
+    </mat-list>
   </div>
 
 </div>
-
-
