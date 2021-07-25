@@ -33,6 +33,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { ToastrModule } from 'ngx-toastr';
 import { from } from 'rxjs';
 
 
@@ -76,6 +77,7 @@ import { from } from 'rxjs';
     MatExpansionModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent],

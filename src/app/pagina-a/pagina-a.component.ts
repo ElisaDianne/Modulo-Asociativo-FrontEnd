@@ -2,6 +2,7 @@ import { FormAService } from './../servicios-pag/servicios-pagA/form-a.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { environment } from './../../environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -63,6 +64,7 @@ export class PaginaAComponent implements OnInit {
 
   constructor(
     public srvApi: FormAService,
+    private toastr: ToastrService
 
   ) {
     let ignoreRucUpdates = false;
@@ -221,6 +223,12 @@ export class PaginaAComponent implements OnInit {
     });
   }
 
+  mostrarError(mensaje){
+    this.toastr.error(mensaje,"Organizacion no valida",{
+      timeOut: 50
+    });
+  }
+
   pagAOnline(ruc) {
     var tempRazonSocial: String;
     var tempActividad: String;
@@ -246,6 +254,16 @@ export class PaginaAComponent implements OnInit {
                 pWeb: ''
               });
             }
+            else if(res === "cond 1"){
+              this.mostrarError("No valida 1");
+            }
+            else if(res === "cond 2"){
+              this.mostrarError("No Valida 2");
+            }
+            else if(res === "cond 3"){
+              this.mostrarError("No Validad 3");
+            }
+
             else if (res['origen'] === "BDC") {
               //aqui completamos data
               if (res['razonSocial'] === "") {
