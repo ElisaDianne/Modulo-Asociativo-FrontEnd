@@ -240,16 +240,16 @@ export class PaginaAComponent implements OnInit {
               //organizacion nueva
               if (res['origen'] == "vacia") {
                 this.formularioDataA.setValue({
-                  identi: 'ruc',
-                  rSocial: 'a',
-                  eContribuyente: 'Activo',
-                  nComercial: 'a',
-                  tSociedad: 'Natural',
-                  aEconomica: 'a',
-                  tFijo: '2589613',
-                  tCelular: 'a',
-                  cElectronico: 'a',
-                  pWeb: 'a',
+                  identi: ruc,
+                  rSocial: data['razonSocial'],
+                  eContribuyente: data['estadoContribuyente'],
+                  nComercial: '',
+                  tSociedad: data['tipoContribuyente'],
+                  aEconomica: data['actividadEconomica'],
+                  tFijo: '',
+                  tCelular: '',
+                  cElectronico: '',
+                  pWeb: ''
                 });
               }
               else if (res['origen'] === "BDC") {
@@ -273,7 +273,7 @@ export class PaginaAComponent implements OnInit {
                   eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res['nombreComercial'],
-                  tSociedad: "",
+                  tSociedad: data['tipoContribuyente'],
                   tFijo: '2487512',
                   tCelular: res['telfTrabajo'],
                   cElectronico: res['correo'],
@@ -302,7 +302,7 @@ export class PaginaAComponent implements OnInit {
                   eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res['nombreComercial'],
-                  tSociedad: "",
+                  tSociedad: data['tipoContribuyente'],
                   tFijo: '2456789',
                   tCelular: res['telfTrabajo'],
                   cElectronico: res['correo'],
@@ -320,7 +320,7 @@ export class PaginaAComponent implements OnInit {
                 }
                 else{
                   //tempRazonSocial = res.organizacionRazonSocial;
-                  tempRazonSocial =  "ENTRO AL ELSE razon social"
+                  tempRazonSocial =  data['razonSocial'];
                   console.log("Data 16> ",data['razonSocial'])
                   console.log("res.organizacionRazonSocial> ",res['razonSocial'])
                   console.log(tempRazonSocial)
@@ -333,7 +333,7 @@ export class PaginaAComponent implements OnInit {
                 }
                 else{
                   //tempActividad = res.organizacionActividad;
-                  tempActividad =  "ENTRO AL ELSE act economica "
+                  tempActividad =  data['actividadEconomica'];
                   console.log(tempActividad)
                 }
 
@@ -343,7 +343,7 @@ export class PaginaAComponent implements OnInit {
                   eContribuyente: data['estadoContribuyente'],
                   aEconomica: tempActividad,
                   nComercial: res['nombreComercial'],
-                  tSociedad: "",
+                  tSociedad: data['tipoContribuyente'],
                   tFijo: '2578140',
                   tCelular: res['telfTrabajo'],
                   cElectronico: res['correo'],
@@ -354,18 +354,18 @@ export class PaginaAComponent implements OnInit {
           },
           error =>{
             console.log("Error Inesperado en el API")
-            console.log(error)
+            console.error(error)
             this.formularioDataA.setValue({
               identi: ruc,
-              rSocial: 'a',
-              eContribuyente: 'a',
-              nComercial: 'a',
-              tSociedad: 'a',
-              aEconomica: 'a',
+              rSocial: '',
+              eContribuyente: '',
+              nComercial: '',
+              tSociedad: '',
+              aEconomica: '',
               tFijo: '2456178',
-              tCelular: 'a',
-              cElectronico: 'a',
-              pWeb: 'a',
+              tCelular: '',
+              cElectronico: '',
+              pWeb: '',
             });    
           }
         )
@@ -373,7 +373,7 @@ export class PaginaAComponent implements OnInit {
       },
       error => {
         console.log("Error inesperado")
-        console.log(error);
+        console.error(error);
         this.datosPagA = (error);
       }
     )
