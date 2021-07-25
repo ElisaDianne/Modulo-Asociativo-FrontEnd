@@ -32,4 +32,13 @@ export class GisComponent implements OnInit {
   }
 
 
+  onChooseLocation(e) {
+    console.log(e)
+    const latLng = e.latLng
+    this.position = {
+      lat: latLng.lat(),
+      lng: latLng.lng()
+    }
+  }
+
 }
