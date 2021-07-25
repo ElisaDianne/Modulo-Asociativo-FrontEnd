@@ -348,22 +348,21 @@ export class PaginaAComponent implements OnInit {
                 pWeb: res['paginaWeb']
               });
             }
-
           },
           error => {
             console.log("Error Inesperado en el API")
             console.error(error)
             this.formularioDataA.setValue({
               identi: ruc,
-              rSocial: '',
-              eContribuyente: '',
+              rSocial: data['razonSocial'],
+              eContribuyente: data['estadoContribuyente'],
               nComercial: '',
-              tSociedad: '',
-              aEconomica: '',
-              tFijo: '2456178',
+              tSociedad: data['tipoContribuyente'],
+              aEconomica: data['actividadEconomica'],
+              tFijo: '',
               tCelular: '',
               cElectronico: '',
-              pWeb: '',
+              pWeb: ''
             });
           }
         )
