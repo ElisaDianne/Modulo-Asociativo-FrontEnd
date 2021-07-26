@@ -244,48 +244,12 @@ export class PaginaAComponent implements OnInit {
             if(res === 1){
               console.log(res);
               this.mostrarError("El número de socios activos no satisface los requerimientos");
-              this.formularioDataA.setValue({
-                identi: '',
-                rSocial: '',
-                eContribuyente: '',
-                nComercial: '',
-                tSociedad: '',
-                aEconomica: '',
-                tFijo: '',
-                tCelular: '',
-                cElectronico: '',
-                pWeb: '',
-              });
             }
             else if(res === 2){
               this.mostrarError("El número de rubros de la org. no satisface los requerimientos");
-              this.formularioDataA.setValue({
-                identi: '',
-                rSocial: '',
-                eContribuyente: '',
-                nComercial: '',
-                tSociedad: '',
-                aEconomica: '',
-                tFijo: '',
-                tCelular: '',
-                cElectronico: '',
-                pWeb: '',
-              });
             }
             else if(res === 3){
               this.mostrarError("El número de actividades realizadas por la org. no satisface los requerimientos");
-              this.formularioDataA.setValue({
-                identi: '',
-                rSocial: '',
-                eContribuyente: '',
-                nComercial: '',
-                tSociedad: '',
-                aEconomica: '',
-                tFijo: '',
-                tCelular: '',
-                cElectronico: '',
-                pWeb: '',
-              });
             }
             //condicion en caso de ser org. nueva en SIRUS AFC
             else if (res === undefined || res === null) {
@@ -384,18 +348,6 @@ export class PaginaAComponent implements OnInit {
             console.log("Error Inesperado en el API");
             console.error(error);
             this.mostrarError("No se encuentra la org. dentro de nuestros registros");
-            this.formularioDataA.setValue({
-              identi: '',
-              rSocial: '',
-              eContribuyente: '',
-              nComercial: '',
-              tSociedad: '',
-              aEconomica: '',
-              tFijo: '',
-              tCelular: '',
-              cElectronico: '',
-              pWeb: '',
-            });
           }
         )
       },
