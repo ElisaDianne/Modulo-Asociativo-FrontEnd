@@ -348,6 +348,18 @@ export class PaginaAComponent implements OnInit {
             console.log("Error Inesperado en el API");
             console.error(error);
             this.mostrarError("No se encuentra la org. dentro de nuestros registros");
+            this.formularioDataA.setValue({
+              identi: ruc,
+              rSocial: data['razonSocial'],
+              eContribuyente: data['estadoContribuyente'],
+              nComercial: '',
+              tSociedad: data['tipoContribuyente'],
+              aEconomica: data['actividadEconomica'],
+              tFijo: '',
+              tCelular: '',
+              cElectronico: '',
+              pWeb: ''
+            });
           }
         )
       },
