@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { GoogleMap, MapMarker, GoogleMapsModule } from '@angular/google-maps';
 
-const utmObj = require('utm-latlng')
+import { GisService } from 'src/app/servicios/gis.service';
+
+// const utmObj = require('utm-latlng')
+import * as utmObj from 'utm-latlng'
 const utm = new utmObj()
 
 @Component({
@@ -26,9 +29,13 @@ export class GisComponent implements OnInit {
     }
   }
 
-  provincia: string
-  canton: string
-  parroquia: string
+  provincias: any[]
+  cantones: any[]
+  parroquias: any[]
+
+  selectedProvincia: string
+  selectedCanton: string
+  selectedParroquia: string
   codParroquia: string
 
   xCoordinate: number
@@ -37,9 +44,10 @@ export class GisComponent implements OnInit {
   zoneNumber: number
   zoneLetter: string
 
-  constructor() { }
+  constructor(private gisService: GisService) { }
 
   ngOnInit(): void {
+    this.getAllProvincias()
   }
   
   ngAfterViewInit(): void {
@@ -75,5 +83,34 @@ export class GisComponent implements OnInit {
 
   centerMap(pos) {
     this.map.panTo(pos)
+  }
+
+  getAllProvincias() {
+    this.gisService.getAllProvincias().subscribe((prov) => {
+      console.log('provincias', prov)
+      this.provincias = prov
+    })
+  }
+
+  onProvinciaChange(value: any) {
+    console.log('provincia', value);
+    this.selectedProvincia = value
+    this.gisService.getChildrenByUbiId(value.ubiId).subscribe((c) => {
+      this.cantones = c
+    })
+  }
+
+  onCantonChange(value: any) {
+    console.log('canton', value);
+    this.selectedCanton = value
+    this.gisService.getChildrenByUbiId(value.ubiId).subscribe((p) => {
+      this.parroquias = p
+    })
+  }
+
+  onParroquiaChange(value: any) {
+    console.log('parroquia', value)
+    this.selectedParroquia = value
+    this.codParroquia = value.ubiId
   }
 }

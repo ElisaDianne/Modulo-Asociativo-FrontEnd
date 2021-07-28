@@ -6,8 +6,9 @@
             <div fxLayoutAlign="center center">
                 <mat-form-field appearance="fill">
                     <mat-label>Provincia</mat-label>
-                    <mat-select>
-                        <mat-option>asd
+                    <mat-select [ngModel]='selectedProvincia' (ngModelChange)='onProvinciaChange($event)'>
+                        <mat-option *ngFor='let prov of provincias' [value]='prov'>
+                            {{prov.ubiNombre}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -15,8 +16,9 @@
             <div fxLayoutAlign="center center">
                 <mat-form-field appearance="fill">
                     <mat-label>Cantón</mat-label>
-                    <mat-select>
-                        <mat-option>asd
+                    <mat-select [ngModel]='selectedCanton' (ngModelChange)='onCantonChange($event)'>
+                        <mat-option *ngFor='let cant of cantones' [value]='cant'>
+                            {{cant.ubiNombre}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -24,8 +26,9 @@
             <div fxLayoutAlign="center center">
                 <mat-form-field appearance="fill">
                     <mat-label>Parroquia</mat-label>
-                    <mat-select>
-                        <mat-option>asd
+                    <mat-select [ngModel]='selectedParroquia' (ngModelChange)='onParroquiaChange($event)'>
+                        <mat-option *ngFor='let parr of parroquias' [value]='parr'>
+                            {{parr.ubiNombre}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -33,18 +36,15 @@
         </div>
         <div fxLayout="row" fxLayoutGap="10px">
             <div fxLayoutAlign="center center">
-                <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-form-field appearance="fill">
                     <mat-label>Cod. Parroquia</mat-label>
-                    <mat-select>
-                        <mat-option>asd
-                        </mat-option>
-                    </mat-select>
+                    <input matInput disabled type="number" [ngModel]='codParroquia'>
                 </mat-form-field>
             </div>
             <div fxLayoutAlign="center center">
                 <mat-form-field appearance="fill">
                     <mat-label>Latitud</mat-label>
-                    <input matInput type='number' [(ngModel)]='marker.position.lat' name='latitud'>
+                    <input matInput type='number' [(ngModel)]='marker.position.lat' name='marker.position.lat'>
                 </mat-form-field>
             </div>
             <div fxLayoutAlign="center center">
