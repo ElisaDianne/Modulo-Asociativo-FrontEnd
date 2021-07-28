@@ -56,8 +56,8 @@
         </div>
     </div>
 
-    <div>
-        <google-map [zoom]='12' [center]='' (mapClick)='onChooseLocation($event)' #map>
+    <div style="margin-bottom: 1em;">
+        <google-map [zoom]='6' (mapClick)='onChooseLocation($event)' #map>
             <map-marker [position]='marker.position' [label]='marker.label' [title]='marker.title'
                 [options]='marker.options'>
 

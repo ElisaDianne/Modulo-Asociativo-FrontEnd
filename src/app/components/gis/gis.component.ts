@@ -16,8 +16,8 @@ export class GisComponent implements OnInit {
   @ViewChild('map') map: GoogleMap
   marker = {
     position: {
-      lat: -0.726827638,
-      lng: -79.69816116
+      lat: -0.18851671437938528,
+      lng: -78.478678738125
     },
     label: {
       color: 'white',
@@ -55,7 +55,7 @@ export class GisComponent implements OnInit {
   }
   
   startMap() {
-    this.centerMap(this.marker.position)
+    this.centerMap()
     this.setUtmCoordinates(this.marker.position)    
   }
   onChooseLocation(e) {
@@ -64,12 +64,12 @@ export class GisComponent implements OnInit {
       lng: e.latLng.lng()
     }
     this.setMarkerPosition(markedPos)
-    this.centerMap(this.marker.position)
     this.setUtmCoordinates(markedPos)
   }
 
   setMarkerPosition(newPos) {
     this.marker.position = newPos
+    this.centerMap()
   }
 
   setUtmCoordinates(latLng) {
@@ -81,7 +81,7 @@ export class GisComponent implements OnInit {
     this.zoneLetter = utmConverted.ZoneLetter
   }
 
-  centerMap(pos) {
+  centerMap(pos = this.marker.position) {
     this.map.panTo(pos)
   }
 
@@ -95,16 +95,22 @@ export class GisComponent implements OnInit {
   onProvinciaChange(value: any) {
     console.log('provincia', value);
     this.selectedProvincia = value
+    this.selectedCanton = null
+    this.selectedParroquia = null
     this.gisService.getChildrenByUbiId(value.ubiId).subscribe((c) => {
       this.cantones = c
-    })
+      this.parroquias = []
+      this.setMarkerPosition({ lat: value.ubiLatitud, lng: value.ubiLongitud })
+    })   
   }
 
   onCantonChange(value: any) {
     console.log('canton', value);
     this.selectedCanton = value
+    this.selectedParroquia = null
     this.gisService.getChildrenByUbiId(value.ubiId).subscribe((p) => {
       this.parroquias = p
+      this.setMarkerPosition({ lat: value.ubiLatitud, lng: value.ubiLongitud })
     })
   }
 
@@ -112,5 +118,6 @@ export class GisComponent implements OnInit {
     console.log('parroquia', value)
     this.selectedParroquia = value
     this.codParroquia = value.ubiId
+    this.setMarkerPosition({ lat: value.ubiLatitud, lng: value.ubiLongitud })
   }
 }
