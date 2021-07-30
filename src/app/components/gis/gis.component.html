@@ -60,45 +60,50 @@
         <google-map [zoom]='6' (mapClick)='onChooseLocation($event)' #map>
             <map-marker [position]='marker.position' [label]='marker.label' [title]='marker.title'
                 [options]='marker.options'>
-
             </map-marker>
         </google-map>
+        <button mat-raised-button color='primary' style="margin-top: 1em;"
+        (click)='onValidateLocation()' >
+            Validar coordenadas
+        </button>
     </div>
-
-
-    <div fxLayout="row" fxLayoutGap="10px">
-        <div fxLayoutAlign="center center">
-            <mat-form-field appearance="fill">
-                <mat-label>Coordenada X</mat-label>
-                <input matInput disabled type='number' [value]='xCoordinate' name='xCoordinate'>
-            </mat-form-field>
+    
+    <div>
+        <hr>
+        <h2>Coordenadas UTM</h2>
+        <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Coordenada X</mat-label>
+                    <input matInput disabled type='number' [value]='xCoordinate' name='xCoordinate'>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Coordenada Y</mat-label>
+                    <input matInput disabled type='number' [value]='yCoordinate' name='yCoordinate'>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Hemisferio</mat-label>
+                    <input matInput disabled type='text' [value]='hemisphere' name='hemisphere'>
+                </mat-form-field>
+            </div>
         </div>
-        <div fxLayoutAlign="center center">
-            <mat-form-field appearance="fill">
-                <mat-label>Coordenada Y</mat-label>
-                <input matInput disabled type='number' [value]='yCoordinate' name='yCoordinate'>
-            </mat-form-field>
-        </div>
-        <div fxLayoutAlign="center center">
-            <mat-form-field appearance="fill">
-                <mat-label>Hemisferio</mat-label>
-                <input matInput disabled type='text' [value]='hemisphere' name='hemisphere'>
-            </mat-form-field>
+        <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Numero de Zona</mat-label>
+                    <input matInput disabled type='number' [value]='zoneNumber' name='zoneNumber'>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="fill">
+                    <mat-label>Letra de Zona</mat-label>
+                    <input matInput disabled type='text' [value]='zoneLetter' name='zoneLetter'>
+                </mat-form-field>
+            </div>
         </div>
     </div>
-    <div fxLayout="row" fxLayoutGap="10px">
-        <div fxLayoutAlign="center center">
-            <mat-form-field appearance="fill">
-                <mat-label>Numero de Zona</mat-label>
-                <input matInput disabled type='number' [value]='zoneNumber' name='zoneNumber'>
-            </mat-form-field>
-        </div>
-        <div fxLayoutAlign="center center">
-            <mat-form-field appearance="fill">
-                <mat-label>Letra de Zona</mat-label>
-                <input matInput disabled type='text' [value]='zoneLetter' name='zoneLetter'>
-            </mat-form-field>
-        </div>
-    </div>
-
 </div>

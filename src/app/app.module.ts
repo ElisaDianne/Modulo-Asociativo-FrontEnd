@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar'
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -71,6 +72,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MatSelectModule,
     MatTableModule,
     MatListModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     MatCheckboxModule,
     FormsModule,

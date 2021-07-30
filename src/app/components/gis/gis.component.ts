@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { GoogleMap, MapMarker, GoogleMapsModule } from '@angular/google-maps';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { GisService } from 'src/app/servicios/gis.service';
 
 // const utmObj = require('utm-latlng')
@@ -33,9 +35,9 @@ export class GisComponent implements OnInit {
   cantones: any[]
   parroquias: any[]
 
-  selectedProvincia: string
-  selectedCanton: string
-  selectedParroquia: string
+  selectedProvincia
+  selectedCanton
+  selectedParroquia
   codParroquia: string
 
   xCoordinate: number
@@ -44,7 +46,7 @@ export class GisComponent implements OnInit {
   zoneNumber: number
   zoneLetter: string
 
-  constructor(private gisService: GisService) { }
+  constructor(private gisService: GisService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllProvincias()
@@ -88,7 +90,7 @@ export class GisComponent implements OnInit {
   getAllProvincias() {
     this.gisService.getAllProvincias().subscribe((prov) => {
       console.log('provincias', prov)
-      this.provincias = prov
+      this.provincias = prov.sort((a,b) => a.ubiId - b.ubiId)
     })
   }
 
@@ -98,7 +100,7 @@ export class GisComponent implements OnInit {
     this.selectedCanton = null
     this.selectedParroquia = null
     this.gisService.getChildrenByUbiId(value.ubiId).subscribe((c) => {
-      this.cantones = c
+      this.cantones = c.sort((a,b) => a.ubiId - b.ubiId)
       this.parroquias = []
       this.setMarkerPosition({ lat: value.ubiLatitud, lng: value.ubiLongitud })
     })   
@@ -107,9 +109,10 @@ export class GisComponent implements OnInit {
   onCantonChange(value: any) {
     console.log('canton', value);
     this.selectedCanton = value
+    console.log(this.selectedCanton)
     this.selectedParroquia = null
     this.gisService.getChildrenByUbiId(value.ubiId).subscribe((p) => {
-      this.parroquias = p
+      this.parroquias = p.sort((a,b) => a.ubiId - b.ubiId)
       this.setMarkerPosition({ lat: value.ubiLatitud, lng: value.ubiLongitud })
     })
   }
@@ -119,5 +122,37 @@ export class GisComponent implements OnInit {
     this.selectedParroquia = value
     this.codParroquia = value.ubiId
     this.setMarkerPosition({ lat: value.ubiLatitud, lng: value.ubiLongitud })
+  }
+
+  // sortByUbiId(arr: any[]) {
+  //   console.log('sort1', arr)
+  //   const sortedArr = arr.sort((a,b) => a.ubiId - b.ubiId)
+  //   console.log('sort2', arr)
+  //   return sortedArr
+  // }
+
+  onValidateLocation() {
+    if (!this.selectedCanton) {
+      console.log('No hay canton seleccionado')
+      this.openDefaultSnackBar('Cantón no seleccionado...', 'mat-warn')
+
+      return
+    }
+    this.gisService.validateLocationCanton(this.selectedCanton.ubiId, this.marker.position).subscribe((res) => {
+      console.log('Llego', res)
+      //debugger
+      this.openDefaultSnackBar('Coordenadas dentro de Cantón!', 'mat-primary')
+    }, (e) => {
+      console.log('LLego error', e)
+      this.openDefaultSnackBar('Coordenadas Inválidas!', 'mat-warn')
+    })
+  }
+
+  openDefaultSnackBar(message: string, color: string) {
+    this.snackBar.open(message, '', {
+      duration: 3000,
+      panelClass: ['mat-toolbar', color]
+    })
+
   }
 }
