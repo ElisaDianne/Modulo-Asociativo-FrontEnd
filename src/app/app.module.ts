@@ -16,6 +16,9 @@ import { PaginaHComponent } from './pagina-h/pagina-h.component';
 import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import{PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
+import { GisComponent } from './components/gis/gis.component';
+
+import { LayoutModule } from '@angular/cdk/layout';
 import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -25,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar'
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -34,6 +38,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { from } from 'rxjs';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -51,6 +56,7 @@ import { from } from 'rxjs';
     PaginaJComponent,
     PaginaLComponent,
     PaginaKComponent,
+    GisComponent,
 
   ],
   imports: [
@@ -66,6 +72,7 @@ import { from } from 'rxjs';
     MatSelectModule,
     MatTableModule,
     MatListModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     MatCheckboxModule,
     FormsModule,
@@ -74,6 +81,8 @@ import { from } from 'rxjs';
     MatExpansionModule,
     ReactiveFormsModule,
     HttpClientModule,
+    LayoutModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

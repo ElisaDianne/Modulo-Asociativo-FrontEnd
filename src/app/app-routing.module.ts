@@ -16,6 +16,7 @@ import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import {PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
+import { GisComponent } from './components/gis/gis.component';
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'PaginaJ', component: PaginaJComponent },
   {path:'PaginaK',component:PaginaKComponent},
   { path: 'PaginaL', component: PaginaLComponent },
+  { path: 'gis', component: GisComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
 ];

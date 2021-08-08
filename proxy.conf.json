@@ -1,0 +1,7 @@
+{
+  "/micro_ubicacion-0.0.1": {
+    "target": "http://10.10.1.52:8080",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
