@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MAT_DATE_LOCALE } from '@angular/material/core'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,10 +31,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar'
+import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
@@ -82,6 +85,7 @@ import { DatosRepresentanteLegalComponent } from './components/datos-representan
     MatCheckboxModule,
     FormsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatIconModule,
     MatSliderModule,
     MatExpansionModule,
@@ -90,7 +94,9 @@ import { DatosRepresentanteLegalComponent } from './components/datos-representan
     LayoutModule,
     GoogleMapsModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
