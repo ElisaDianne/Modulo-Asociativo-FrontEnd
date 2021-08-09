@@ -1,3 +1,83 @@
 <div class="content">
-    <h1>Datos Juridicos de la Organizacion</h1>
+    <h1>Datos Juridicos de la Organizacion</h1><hr>
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>Datos de la Organización</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="5%">
+                <mat-form-field appearance="outline">
+                    <mat-label>Figura Organizativa</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Código SUIOS</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Grado o Nivel</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>¿Qué institución le otorgó a la organización la personalidad jurídica?</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="5%">
+                <mat-form-field appearance="outline">
+                    <mat-label>Institución</mat-label>
+                    <mat-select #institucion>
+                        <mat-option value="mag">MAG</mat-option>
+                        <mat-option value="seps">SEPS</mat-option>
+                        <mat-option value="mies">MIES</mat-option>
+                        <mat-option value="otro">Otro</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="institucion.value == 'otro'">
+                    <mat-label>Especifique</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>¿Bajo qué instrumento legal obtuvo la personería jurídica a la organización?</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Instrumento</mat-label>
+                    <mat-select #instrumento>
+                        <mat-option value="decreto">Decreto</mat-option>
+                        <mat-option value="roeps">ROEPS</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="instrumento.value" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="5%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{instrumento.value == 'decreto' ? 'Decreto' : 'ROEPS'}} Nro</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha {{instrumento.value == 'decreto' ? 'Decreto' : 'ROEPS'}}</mat-label>
+                        <input matInput >
+                        <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{instrumento.value == 'decreto' ? 'Resolución' : 'Acuerdo'}} Nro</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha {{instrumento.value == 'decreto' ? 'Resolución' : 'Acuerdo'}}</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
