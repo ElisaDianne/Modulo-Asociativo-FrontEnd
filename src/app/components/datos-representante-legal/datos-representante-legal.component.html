@@ -1,86 +1,84 @@
 <div class="content">
-    <h1>Datos del Reprensentante legal</h1>
+    <h1>Datos del Reprensentante Legal</h1>
     <hr>
-    <div style="text-align:center" class="bcg">
-        <div class="campos">
-            <h2>Cédula</h2>
-        
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='number' name='cedula'>
-            </mat-form-field>
-        </div>
-    
-        <div class="campos">
-            <h2>Nombres completos</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='text' name='nombres'>
-            </mat-form-field>
-        </div>
+    <form>
+        <mat-card>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cédula</mat-label>
+                    <input matInput type='number' name='cedula'>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombres completos</mat-label>
+                    <input matInput type='text' name='nombres'>
+                </mat-form-field>
+              </div>
 
-        <div class="campos">
-            <h2>Correo electrónico</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='email' name='correo'>
-            </mat-form-field>
-        </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput type='email' name='correo'>
+                </mat-form-field>
+              </div>
 
-        <div class="campos">
-            <h2>Teléfono fijo</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='number' name='telefono'>
-            </mat-form-field>
-        </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Teléfono fijo</mat-label>
+                    <input matInput type='number' name='telefono'>
+                </mat-form-field>
+              </div>
 
-        <div class="campos">
-            <h2>Teléfono movil</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='number' name='celular'>
-            </mat-form-field>
-        </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Teléfono movil</mat-label>
+                    <input matInput type='text' name='celular'>
+                </mat-form-field>
+              </div>
 
-        <div class="campos">
-            <h2>Usted se registra como</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='text' name='usrc'>
-            </mat-form-field>
-        </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Usted se registra como</mat-label>
+                    <input matInput type='number' name='usrc'>
+                </mat-form-field>
+              </div>
 
-        <div class="campos">
-            <h2>Fecha de nacimiento</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='date' name='fechaNac'>
-            </mat-form-field>
-        </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput type='date' name='fechaNac'>
+                </mat-form-field>
+              </div>
+            </div>
 
-        <div class="campos">
-            <h2>Edad</h2>
-            <mat-form-field appearance="outline">
-                <mat-label> </mat-label>
-                <input matInput type='number' name='Edad'>
-            </mat-form-field>
-        </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Edad</mat-label>
+                    <input matInput type='number' name='Edad'>
+                </mat-form-field>
+              </div>
 
-        <div class="campos">
-            <h2>Género</h2>
-            <mat-form-field appearance="outline">
-                <mat-label>Seleccione una Opción</mat-label>
-                    <mat-select #Genero>
-                        <mat-option value="Femenino" >Femenino</mat-option>
-                        <mat-option value="Masculino" >Masculino</mat-option>
-                        <mat-option value="Otro" >Otro</mat-option>
-                    </mat-select>
-            </mat-form-field>
-            <mat-form-field *ngIf="Genero.value == 'Otro'">
-                <mat-label>Especifique</mat-label>
-                <input matInput type="text">
-            </mat-form-field>
-        </div>
-    </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Género</mat-label>
+                        <mat-select #Genero>
+                            <mat-option value="Femenino" >Femenino</mat-option>
+                            <mat-option value="Masculino" >Masculino</mat-option>
+                            <mat-option value="Otro" >Otro</mat-option>
+                        </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="Genero.value == 'Otro'">
+                    <mat-label>Especifique</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+              </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">Save</button> <!--(click)="saveForm()"-->
+          </mat-card-actions>
+        </mat-card>
+      </form>
 </div>
