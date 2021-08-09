@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datos-juridicos-org.component.scss']
 })
 export class DatosJuridicosOrgComponent implements OnInit {
+  fEstatutoYAcuerdo: File
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onFileEstatutoYAcuerdoChange(e) {
+    console.log(e)
+    this.fEstatutoYAcuerdo = e.target.files[0]
+    console.log(this.fEstatutoYAcuerdo)
+  }
 }

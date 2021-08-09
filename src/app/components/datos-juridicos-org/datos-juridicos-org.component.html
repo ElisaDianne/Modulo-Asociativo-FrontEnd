@@ -1,6 +1,7 @@
 <div class="content">
-    <h1>Datos Juridicos de la Organizacion</h1>
-    <hr>
+    <div class="title">
+        <h1>E. Datos Jurídicos de la Organización</h1>
+    </div>
     <mat-card class="form-card">
         <mat-card-header>
             <mat-card-title>Datos de la Organización</mat-card-title>
@@ -89,4 +90,32 @@
             </div>
         </mat-card-content>
     </mat-card>
+
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>Carga de Archivos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="5%">
+            </div>
+            <mat-list>
+                <mat-list-item>
+                  <!-- <h3 matLine> Archivos </h3> -->
+                  <h3 matLine>
+                    <span> Estatuto de Creación de la Organización </span>
+                    <span class="demo-2"> -- Acuerdo de Personería Jurídica </span>
+                  </h3>
+                  <p matLine>Suba un solo archivo PDF con ambos documentos</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <input type="file" hidden #fileEstatutoYAcuerdo (change)="onFileEstatutoYAcuerdoChange($event)">
+                    <button mat-mini-fab color="primary" (click)="fileEstatutoYAcuerdo.click()">
+                        <mat-icon>attach_file</mat-icon>
+                    </button>
+                    <span>&nbsp; {{fEstatutoYAcuerdo?.name || 'No hay archivo adjunto'}}</span>
+                </mat-list-item>
+              </mat-list>
+        </mat-card-content>
+    </mat-card>
+
 </div>
