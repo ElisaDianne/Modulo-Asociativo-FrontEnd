@@ -15,12 +15,8 @@ import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import {PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { GisComponent } from './components/gis/gis.component';
-<<<<<<< Updated upstream
 import { DatosJuridicosOrgComponent } from './components/datos-juridicos-org/datos-juridicos-org.component';
 
-=======
-import { DatosRepresentanteLegalComponent } from './datos-representante-legal/datos-representante-legal.component';
->>>>>>> Stashed changes
 
 import { AppComponent } from './app.component';
 const routes: Routes = [
@@ -39,11 +35,7 @@ const routes: Routes = [
   {path:'PaginaK',component:PaginaKComponent},
   { path: 'PaginaL', component: PaginaLComponent },
   { path: 'gis', component: GisComponent },
-<<<<<<< Updated upstream
   { path: 'datos-juridicos-organizacion', component: DatosJuridicosOrgComponent },
-=======
-  { path: 'formD', component: DatosRepresentanteLegalComponent },
->>>>>>> Stashed changes
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
 ];
