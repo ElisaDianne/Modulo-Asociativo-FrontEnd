@@ -32,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar'
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
@@ -80,6 +81,7 @@ import { DatosRepresentanteLegalComponent } from './components/datos-representan
     FlexLayoutModule,
     MatCheckboxModule,
     FormsModule,
+    MatDatepickerModule,
     MatIconModule,
     MatSliderModule,
     MatExpansionModule,
