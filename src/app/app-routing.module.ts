@@ -16,7 +16,7 @@ import {PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { GisComponent } from './components/gis/gis.component';
 import { DatosJuridicosOrgComponent } from './components/datos-juridicos-org/datos-juridicos-org.component';
-
+import { DatosRepresentanteLegalComponent } from './components/datos-representante-legal/datos-representante-legal.component';
 
 import { AppComponent } from './app.component';
 const routes: Routes = [
@@ -36,6 +36,7 @@ const routes: Routes = [
   { path: 'PaginaL', component: PaginaLComponent },
   { path: 'gis', component: GisComponent },
   { path: 'datos-juridicos-organizacion', component: DatosJuridicosOrgComponent },
+  { path: 'formD', component: DatosRepresentanteLegalComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
 ];

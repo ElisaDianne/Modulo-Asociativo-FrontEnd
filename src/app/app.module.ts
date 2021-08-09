@@ -40,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { from } from 'rxjs';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { DatosRepresentanteLegalComponent } from './components/datos-representante-legal/datos-representante-legal.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PaginaKComponent,
     GisComponent,
     DatosJuridicosOrgComponent,
+    DatosRepresentanteLegalComponent,
 
   ],
   imports: [
