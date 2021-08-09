@@ -1,5 +1,3 @@
-
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -17,6 +15,7 @@ import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import {PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaLComponent } from './pagina-l/pagina-l.component';
 import { GisComponent } from './components/gis/gis.component';
+import { DatosJuridicosOrgComponent } from './components/datos-juridicos-org/datos-juridicos-org.component';
 
 
 import { AppComponent } from './app.component';
@@ -36,6 +35,7 @@ const routes: Routes = [
   {path:'PaginaK',component:PaginaKComponent},
   { path: 'PaginaL', component: PaginaLComponent },
   { path: 'gis', component: GisComponent },
+  { path: 'datos-juridicos-organizacion', component: DatosJuridicosOrgComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' },
 ];

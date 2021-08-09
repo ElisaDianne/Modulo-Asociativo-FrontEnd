@@ -17,6 +17,7 @@ import { PaginaIComponent } from './pagina-i/pagina-i.component';
 import{PaginaKComponent}from'./pagina-k/pagina-k.component';
 import { PaginaJComponent } from './pagina-j/pagina-j.component';
 import { GisComponent } from './components/gis/gis.component';
+import { DatosJuridicosOrgComponent } from './components/datos-juridicos-org/datos-juridicos-org.component';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatCardModule} from '@angular/material/card';
@@ -57,6 +58,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PaginaLComponent,
     PaginaKComponent,
     GisComponent,
+    DatosJuridicosOrgComponent,
 
   ],
   imports: [
