@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datos-juridicos-org.component.scss']
 })
 export class DatosJuridicosOrgComponent implements OnInit {
-  fEstatutoYAcuerdo: File
+  fileEstatutoYAcuerdo: File
+  fileCertificado: File
 
   constructor() { }
 
@@ -15,7 +16,11 @@ export class DatosJuridicosOrgComponent implements OnInit {
 
   onFileEstatutoYAcuerdoChange(e) {
     console.log(e)
-    this.fEstatutoYAcuerdo = e.target.files[0]
-    console.log(this.fEstatutoYAcuerdo)
+    this.fileEstatutoYAcuerdo = e.target.files[0]
+    console.log(this.fileEstatutoYAcuerdo)
+  }
+
+  onFileCertificadoChange(e) {
+    this.fileCertificado = e.target.files[0]
   }
 }

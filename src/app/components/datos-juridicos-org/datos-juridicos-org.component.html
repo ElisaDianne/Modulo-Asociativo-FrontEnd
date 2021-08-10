@@ -100,21 +100,55 @@
             </div>
             <mat-list>
                 <mat-list-item>
-                  <!-- <h3 matLine> Archivos </h3> -->
-                  <h3 matLine>
-                    <span> Estatuto de Creación de la Organización </span>
-                    <span class="demo-2"> -- Acuerdo de Personería Jurídica </span>
-                  </h3>
-                  <p matLine>Suba un solo archivo PDF con ambos documentos</p>
+                    <h3 matLine>
+                        <span> Estatuto de Creación de la Organización </span>
+                        <span class="demo-2"> -- Acuerdo de Personería Jurídica </span>
+                    </h3>
+                    <p matLine>Suba un solo archivo PDF con ambos documentos</p>
                 </mat-list-item>
                 <mat-list-item>
-                    <input type="file" hidden #fileEstatutoYAcuerdo (change)="onFileEstatutoYAcuerdoChange($event)">
-                    <button mat-mini-fab color="primary" (click)="fileEstatutoYAcuerdo.click()">
+                    <input type="file" hidden #inputFileEstatutoYAcuerdo
+                        (change)="onFileEstatutoYAcuerdoChange($event)">
+                    <button mat-mini-fab color="primary" (click)="inputFileEstatutoYAcuerdo.click()">
                         <mat-icon>attach_file</mat-icon>
                     </button>
-                    <span>&nbsp; {{fEstatutoYAcuerdo?.name || 'No hay archivo adjunto'}}</span>
+                    <span>&nbsp; {{fileEstatutoYAcuerdo?.name || 'No hay archivo adjunto'}}</span>
+                    <button mat-icon-button>
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>delete</mat-icon>
+                    </button>
                 </mat-list-item>
-              </mat-list>
+            </mat-list><br>
+
+            <mat-divider [inset]="true"></mat-divider>
+            <mat-list>
+                <mat-list-item>
+                    <mat-checkbox #certificacionCalidad>Cuenta con certificación de calidad</mat-checkbox>
+                </mat-list-item>
+                <div *ngIf="certificacionCalidad.checked">
+                    <mat-list-item>
+                        <h3 matLine>
+                            <span> Certificado de Calidad </span>
+                        </h3>
+                        <p matLine>Adjunte el certificado en formato PDF</p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <input type="file" hidden #inputFileCertificado (change)="onFileCertificadoChange($event)">
+                        <button mat-mini-fab color="primary" (click)="inputFileCertificado.click()">
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                        <span>&nbsp; {{fileCertificado?.name || 'No hay archivo adjunto'}}</span>
+                        <button mat-icon-button>
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                        <button mat-icon-button>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-list-item>
+                </div>
+            </mat-list>
         </mat-card-content>
     </mat-card>
 
