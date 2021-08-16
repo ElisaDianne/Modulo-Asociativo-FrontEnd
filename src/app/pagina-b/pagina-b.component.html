@@ -91,8 +91,8 @@
                             <mat-form-field appearance="fill">
                                 <mat-label>Seleccione una Opción</mat-label>
                                 <mat-select>
-                                    <mat-option value="1" onclick="dispone.disabled=false">Si</mat-option>
-                                    <mat-option value="2" onclick="dispone.disabled=true">No</mat-option>
+                                    <mat-mat-option value="1" onclick="dispone.disabled=false">Si</mat-mat-option>
+                                    <mat-mat-option value="2" onclick="dispone.disabled=true">No</mat-mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </td>
@@ -115,30 +115,30 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Provincia Matriz</mat-label>
                     <select matNativeControl required>
-                        <option value="0">Bolívar</option>
-                        <option value="1">Cañar</option>
-                        <option value="2">Carchi</option>
-                        <option value="3">Chimborazo</option>
-                        <option value="4">Cotopaxi</option>
-                        <option value="5">El Oro</option>
-                        <option value="6">Esmeraldas</option>
-                        <option value="7">Galápagos</option>
-                        <option value="8">Guayas</option>
-                        <option value="9">Imbabura</option>
-                        <option value="10">Loja</option>
-                        <option value="11">Los Ríos</option>
-                        <option value="12">Manabí</option>
-                        <option value="13">Morona Santiago</option>
-                        <option value="14">Napo</option>
-                        <option value="15">Orellana</option>
-                        <option value="16">Pastaza</option>
-                        <option value="17">Pichincha</option>
-                        <option value="18">Santa Elena</option>
-                        <option value="19">Santo Domingo de los Tsáchilas</option>
-                        <option value="20">Sucumbíos</option>
-                        <option value="21">Tungurahua</option>
-                        <option value="22">Zamora Chinchipe</option>
-                        <option value="23">Azuay </option>
+                        <mat-option value="0">Bolívar</mat-option>
+                        <mat-option value="1">Cañar</mat-option>
+                        <mat-option value="2">Carchi</mat-option>
+                        <mat-option value="3">Chimborazo</mat-option>
+                        <mat-option value="4">Cotopaxi</mat-option>
+                        <mat-option value="5">El Oro</mat-option>
+                        <mat-option value="6">Esmeraldas</mat-option>
+                        <mat-option value="7">Galápagos</mat-option>
+                        <mat-option value="8">Guayas</mat-option>
+                        <mat-option value="9">Imbabura</mat-option>
+                        <mat-option value="10">Loja</mat-option>
+                        <mat-option value="11">Los Ríos</mat-option>
+                        <mat-option value="12">Manabí</mat-option>
+                        <mat-option value="13">Morona Santiago</mat-option>
+                        <mat-option value="14">Napo</mat-option>
+                        <mat-option value="15">Orellana</mat-option>
+                        <mat-option value="16">Pastaza</mat-option>
+                        <mat-option value="17">Pichincha</mat-option>
+                        <mat-option value="18">Santa Elena</mat-option>
+                        <mat-option value="19">Santo Domingo de los Tsáchilas</mat-option>
+                        <mat-option value="20">Sucumbíos</mat-option>
+                        <mat-option value="21">Tungurahua</mat-option>
+                        <mat-option value="22">Zamora Chinchipe</mat-option>
+                        <mat-option value="23">Azuay </mat-option>
                     </select>
                 </mat-form-field>
 
@@ -152,7 +152,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Cantón Matriz</mat-label>
                     <select matNativeControl required>
-                        <option value="0">Quito</option>
+                        <mat-option value="0">Quito</mat-option>
 
                     </select>
                 </mat-form-field>
@@ -166,7 +166,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Parroquia Matriz</mat-label>
                     <select matNativeControl required>
-                        <option value="0">Itchimbia</option>
+                        <mat-option value="0">Itchimbia</mat-option>
 
                     </select>
                 </mat-form-field>
@@ -257,4 +257,97 @@
         </mat-list>
     </div>
 
+
+
+</div>
+
+<div class="content">
+    <div class="title">
+        <h1>B. DATOS DE UBICACIÓN DE MATRIZ</h1>
+    </div>
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>1. LA ORGANIZACIÓN DISPONE DE SEDE PROPIA?</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Seleccione una respuesta</mat-label>
+                    <mat-select  matNativeControl required #SedePropia>
+                        <mat-mat-option value="Si" >Si</mat-mat-option>
+                        <mat-mat-option value="No" >No</mat-mat-option>
+                    </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Superficie (ha o m2)</mat-label>
+                <input matInput type='text' name='Superficie'>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>2. DATOS DE LA UBICACIÓN DE LA ORGANIZACIÓN</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Provincia Matriz</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0">Bolívar</mat-mat-option>
+                    <mat-option value="1">Cañar</mat-option>
+                    <mat-option value="2">Carchi</mat-option>
+                    <mat-option value="3">Chimborazo</mat-option>
+                    <mat-option value="4">Cotopaxi</mat-option>
+                    <mat-option value="5">El Oro</mat-option>
+                    <mat-option value="6">Esmeraldas</mat-option>
+                    <mat-option value="7">Galápagos</mat-option>
+                    <mat-option value="8">Guayas</mat-option>
+                    <mat-option value="9">Imbabura</mat-option>
+                    <mat-option value="10">Loja</mat-option>
+                    <mat-option value="11">Los Ríos</mat-option>
+                    <mat-option value="12">Manabí</mat-option>
+                    <mat-option value="13">Morona Santiago</mat-option>
+                    <mat-option value="14">Napo</mat-option>
+                    <mat-option value="15">Orellana</mat-option>
+                    <mat-option value="16">Pastaza</mat-option>
+                    <mat-option value="17">Pichincha</mat-option>
+                    <mat-option value="18">Santa Elena</mat-option>
+                    <mat-option value="19">Santo Domingo de los Tsáchilas</mat-option>
+                    <mat-option value="20">Sucumbíos</mat-option>
+                    <mat-option value="21">Tungurahua</mat-option>
+                    <mat-option value="22">Zamora Chinchipe</mat-option>
+                    <mat-option value="23">Azuay </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Dirección</mat-label>
+                <input matInput type='text' name='Direccion'>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Cantón Matriz</mat-label>
+                <mat-select matNativeControl required>
+                        <mat-option value="0">Quito</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Sector</mat-label>
+                <input matInput type='text' name='Sector'>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Parroquia Matriz</mat-label>
+                <mat-select matNativeControl required>
+                    <mat-option value="0">Ichimbia</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Superficie</mat-label>
+                <input matInput type='number' name='Superficie'>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
 </div>
