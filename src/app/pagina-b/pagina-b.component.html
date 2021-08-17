@@ -1,77 +1,4 @@
-<style>
-    .spacer {
-        margin-left: 5%;
-
-    }
-
-    .main {
-        flex-direction: row;
-        padding-top: 2%;
-        display: flex;
-        min-height: 80%;
-    }
-
-    .contenido {
-        float: left;
-        width: 62.5%;
-        border: 1px solid gray;
-        margin-left: 2.5%;
-        padding: 1%;
-    }
-
-    .definiciones {
-        float: right;
-        width: 25%;
-        border: 1px solid gray;
-        margin-left: 2.5%;
-        margin-right: 5%;
-        padding: 1%;
-
-    }
-
-    mat-form-field {
-        margin-left: 20%;
-    }
-
-    mat-label {
-        margin-left: 1%;
-
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th,
-    td {
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    button {
-        margin: 1%;
-    }
-
-    .botones {
-        float: right;
-        flex-direction: row;
-        display: flex;
-
-    }
-
-    .example-full-width {
-
-        padding-left: 20%;
-
-    }
-</style>
-
-<mat-toolbar color="primary">
+<!--<mat-toolbar color="primary">
     <img width="40" alt="Angular Logo" src="../../assets/MGSF.png" />
     <div class="spacer"></div>
 
@@ -91,8 +18,8 @@
                             <mat-form-field appearance="fill">
                                 <mat-label>Seleccione una Opción</mat-label>
                                 <mat-select>
-                                    <mat-mat-option value="1" onclick="dispone.disabled=false">Si</mat-mat-option>
-                                    <mat-mat-option value="2" onclick="dispone.disabled=true">No</mat-mat-option>
+                                    <option value="1" onclick="dispone.disabled=false">Si</option>
+                                    <option value="2" onclick="dispone.disabled=true">No</option>
                                 </mat-select>
                             </mat-form-field>
                         </td>
@@ -115,30 +42,30 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Provincia Matriz</mat-label>
                     <select matNativeControl required>
-                        <mat-option value="0">Bolívar</mat-option>
-                        <mat-option value="1">Cañar</mat-option>
-                        <mat-option value="2">Carchi</mat-option>
-                        <mat-option value="3">Chimborazo</mat-option>
-                        <mat-option value="4">Cotopaxi</mat-option>
-                        <mat-option value="5">El Oro</mat-option>
-                        <mat-option value="6">Esmeraldas</mat-option>
-                        <mat-option value="7">Galápagos</mat-option>
-                        <mat-option value="8">Guayas</mat-option>
-                        <mat-option value="9">Imbabura</mat-option>
-                        <mat-option value="10">Loja</mat-option>
-                        <mat-option value="11">Los Ríos</mat-option>
-                        <mat-option value="12">Manabí</mat-option>
-                        <mat-option value="13">Morona Santiago</mat-option>
-                        <mat-option value="14">Napo</mat-option>
-                        <mat-option value="15">Orellana</mat-option>
-                        <mat-option value="16">Pastaza</mat-option>
-                        <mat-option value="17">Pichincha</mat-option>
-                        <mat-option value="18">Santa Elena</mat-option>
-                        <mat-option value="19">Santo Domingo de los Tsáchilas</mat-option>
-                        <mat-option value="20">Sucumbíos</mat-option>
-                        <mat-option value="21">Tungurahua</mat-option>
-                        <mat-option value="22">Zamora Chinchipe</mat-option>
-                        <mat-option value="23">Azuay </mat-option>
+                        <option value="0">Bolívar</option>
+                        <option value="1">Cañar</option>
+                        <option value="2">Carchi</option>
+                        <option value="3">Chimborazo</option>
+                        <option value="4">Cotopaxi</option>
+                        <option value="5">El Oro</option>
+                        <option value="6">Esmeraldas</option>
+                        <option value="7">Galápagos</option>
+                        <option value="8">Guayas</option>
+                        <option value="9">Imbabura</option>
+                        <option value="10">Loja</option>
+                        <option value="11">Los Ríos</option>
+                        <option value="12">Manabí</option>
+                        <option value="13">Morona Santiago</option>
+                        <option value="14">Napo</option>
+                        <option value="15">Orellana</option>
+                        <option value="16">Pastaza</option>
+                        <option value="17">Pichincha</option>
+                        <option value="18">Santa Elena</option>
+                        <option value="19">Santo Domingo de los Tsáchilas</option>
+                        <option value="20">Sucumbíos</option>
+                        <option value="21">Tungurahua</option>
+                        <option value="22">Zamora Chinchipe</option>
+                        <option value="23">Azuay </option>
                     </select>
                 </mat-form-field>
 
@@ -152,7 +79,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Cantón Matriz</mat-label>
                     <select matNativeControl required>
-                        <mat-option value="0">Quito</mat-option>
+                        <option value="0">Quito</option>
 
                     </select>
                 </mat-form-field>
@@ -166,7 +93,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Parroquia Matriz</mat-label>
                     <select matNativeControl required>
-                        <mat-option value="0">Itchimbia</mat-option>
+                        <option value="0">Itchimbia</option>
 
                     </select>
                 </mat-form-field>
@@ -259,7 +186,7 @@
 
 
 
-</div>
+</div>-->
 
 <div class="content">
     <div class="title">
@@ -273,8 +200,8 @@
             <mat-form-field appearance="outline">
                 <mat-label>Seleccione una respuesta</mat-label>
                     <mat-select  matNativeControl required #SedePropia>
-                        <mat-mat-option value="Si" >Si</mat-mat-option>
-                        <mat-mat-option value="No" >No</mat-mat-option>
+                        <mat-option value="Si" >Si</mat-option>
+                        <mat-option value="No" >No</mat-option>
                     </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline">
@@ -292,7 +219,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Provincia Matriz</mat-label>
                 <mat-select matNativeControl required>
-                    <mat-option value="0">Bolívar</mat-mat-option>
+                    <mat-option value="0">Bolívar</mat-option>
                     <mat-option value="1">Cañar</mat-option>
                     <mat-option value="2">Carchi</mat-option>
                     <mat-option value="3">Chimborazo</mat-option>
@@ -350,4 +277,65 @@
             </mat-form-field>
         </mat-card-content>
     </mat-card>
+
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>3. COORDENADAS UTM(GPS) DE LA SEDE DE LA ORGANIZACIÓN</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="5%">
+                <mat-form-field appearance="outline">
+                    <mat-label>Coordenada X</mat-label>
+                    <input matInput type='text' name='Coordenada X'>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Coordenada Y</mat-label>
+                    <input matInput type='text' name='Coordenada Y'>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Coordenada Z</mat-label>
+                    <input matInput type='text' name='Coordenada Z'>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Hemisferio</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option value="0">Norte</mat-option>
+                        <mat-option value="1">Sur</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Zona</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option value="0">15</mat-option>
+                        <mat-option value="0">16</mat-option>
+                        <mat-option value="0">17</mat-option>
+                        <mat-option value="0">18</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>4. CÓDIGO CATASTRAL DE LA SEDE DE LA ORGANIZACIÓN</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="5%">
+                <mat-form-field appearance="outline">
+                    <mat-label>Código Castral</mat-label>
+                    <input matInput type='number' name='CodigoCastral Z'>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="botones">
+        <button mat-raised-button color="warn" [routerLink]="'/PaginaA'">Anterior</button>
+        <button mat-raised-button style="background-color: #5cb85c !important; color: white !important;"
+            [routerLink]="'/PaginaC'">Siguiente</button>
+    </div>
 </div>
