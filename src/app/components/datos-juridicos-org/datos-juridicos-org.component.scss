@@ -1,12 +1,28 @@
-.form-card {
-    width: 80%;
-    margin: 2em;
-    background-color: #f9f9f9;
-}
-
 .title {
     background-color: #0275d8;
     color: #ffffff;
     padding: 1.5em;
    }
 
+.form-card {
+    width: 80%;
+    margin: 2em;
+    background-color: #f9f9f9;
+}
+
+button {
+    margin: 1%;
+}
+
+.botones {
+    float: left;
+    flex-direction: row;
+    display: flex;
+
+}
+
+mat-form-field{
+    max-width: 50%;
+    width: 20rem;
+    margin-left: 23%;
+}

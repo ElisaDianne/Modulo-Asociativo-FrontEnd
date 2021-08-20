@@ -4,64 +4,55 @@
     <form>
         <mat-card>
           <mat-card-content>
-            <div class="row">
-              <div class="col-md-6">
+            <div fxLayout="row wrap" fxLayoutGap="5%">
                 <mat-form-field appearance="outline">
                     <mat-label>Cédula</mat-label>
                     <input matInput type='number' name='cedula'>
                 </mat-form-field>
-              </div>
-              <div class="col-md-6">
+              
                 <mat-form-field appearance="outline">
                     <mat-label>Nombres completos</mat-label>
                     <input matInput type='text' name='nombres'>
                 </mat-form-field>
               </div>
 
-              <div class="col-md-6">
+              <div fxLayout="row wrap" fxLayoutGap="5%">
                 <mat-form-field appearance="outline">
                     <mat-label>Correo electrónico</mat-label>
                     <input matInput type='email' name='correo'>
                 </mat-form-field>
-              </div>
 
-              <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Teléfono fijo</mat-label>
                     <input matInput type='number' name='telefono'>
                 </mat-form-field>
               </div>
 
-              <div class="col-md-6">
+              <div fxLayout="row wrap" fxLayoutGap="5%">
                 <mat-form-field appearance="outline">
                     <mat-label>Teléfono movil</mat-label>
                     <input matInput type='number' name='celular'>
                 </mat-form-field>
-              </div>
 
-              <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Usted se registra como</mat-label>
                     <input matInput type='text' name='usrc'>
                 </mat-form-field>
               </div>
 
-              <div class="col-md-6">
+              <div fxLayout="row wrap" fxLayoutGap="5%">
                 <mat-form-field appearance="outline">
                     <mat-label>Fecha de nacimiento</mat-label>
                     <input matInput type='date' name='fechaNac'>
                 </mat-form-field>
-              </div>
-            </div>
 
-            <div class="col-md-6">
                 <mat-form-field appearance="outline">
                     <mat-label>Edad</mat-label>
                     <input matInput type='number' name='Edad'>
                 </mat-form-field>
               </div>
 
-              <div class="col-md-6">
+              <div fxLayout="row wrap" fxLayoutGap="5%">
                 <mat-form-field appearance="outline">
                     <mat-label>Género</mat-label>
                         <mat-select #Genero>

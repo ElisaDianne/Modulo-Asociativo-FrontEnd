@@ -210,8 +210,17 @@
             </mat-form-field>
         </mat-card-content>
     </mat-card>
-
     <mat-card class="form-card">
+        <mat-card-header>
+            <mat-card-title>2. DATOS DE LA UBICACIÓN DE LA ORGANIZACIÓN Y
+                COORDENADAS UTM (GPS) DE LA SEDE DE LA ORGANIZACIÓN</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <app-gis></app-gis>
+        </mat-card-content>
+    </mat-card>
+
+    <!--<mat-card class="form-card">
         <mat-card-header>
             <mat-card-title>2. DATOS DE LA UBICACIÓN DE LA ORGANIZACIÓN</mat-card-title>
         </mat-card-header>
@@ -318,16 +327,16 @@
                 </mat-form-field>
             </div>
         </mat-card-content>
-    </mat-card>
+    </mat-card>-->
 
     <mat-card class="form-card">
         <mat-card-header>
-            <mat-card-title>4. CÓDIGO CATASTRAL DE LA SEDE DE LA ORGANIZACIÓN</mat-card-title>
+            <mat-card-title>3. CÓDIGO CATASTRAL DE LA SEDE DE LA ORGANIZACIÓN</mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="5%">
                 <mat-form-field appearance="outline">
-                    <mat-label>Código Castral</mat-label>
+                    <mat-label>Código Catastral (opcional)</mat-label>
                     <input matInput type='number' name='CodigoCastral Z'>
                 </mat-form-field>
             </div>
